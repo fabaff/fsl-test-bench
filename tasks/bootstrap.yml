@@ -16,14 +16,6 @@
 - name: unpack the archive
   command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
 
-- name: download an another css file
-  get_url: url=http://bootswatch.com/spacelab/bootstrap.css
-           dest=/var/www/lighttpd/bootstrap/css/bootstrap.css
-
-- name: download an another css file
-  get_url: url=http://bootswatch.com/spacelab/bootstrap.min.css
-           dest=/var/www/lighttpd/bootstrap/css/bootstrap.min.css
-
 - name: delete the archive
   file: path=/var/www/lighttpd/bootstrap.zip
         state=absent
