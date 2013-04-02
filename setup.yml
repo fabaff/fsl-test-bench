@@ -1,0 +1,43 @@
+# This playbook contains tasks to perform on a fresh Fedora installation to
+# create a Fedora Security Lab Test bench. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: ansible-playbook setup.yml -f 10
+# 
+---
+- hosts: fsl
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive-variables.yml
+
+  tasks:
+#    - include: tasks/motd.yml
+#    - include: tasks/rpmfusion.yml
+#    - include: tasks/sshd.yml
+#    - include: tasks/lighttpd.yml
+#    - include: tasks/phpinfo.yml
+#    - include: tasks/mysql.yml
+#    - include: tasks/phpmyadmin.yml
+#    - include: tasks/linfo.yml
+#    - include: tasks/bootstrap.yml
+#    - include: tasks/php-shell-detector.yml
+
+# Vulnerable Web Application
+#    - include: tasks/dvwa.yml
+#    - include: tasks/sqlol.yml
+#    - include: tasks/bwapp.yml
+#    - include: tasks/sqli.yml
+
+# Shells
+#    - include: tasks/phpshell.yml
+#    - include: tasks/b374k.yml
+#    - include: tasks/ani-shell.yml
+#    - include: tasks/wso.yml
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
