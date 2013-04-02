@@ -1,0 +1,68 @@
+# This playbook install the default html files. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install archiver package
+  command: /usr/bin/dnf -y install unzip
+
+- name: downloads the bootstrap zip archive
+  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
+           dest=/var/www/lighttpd/bootstrap.zip
+           mode=0440
+
+- name: unpack the archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
+
+- name: download an another css file
+  get_url: url=http://bootswatch.com/spacelab/bootstrap.css
+           dest=/var/www/lighttpd/bootstrap/css/bootstrap.css
+
+- name: download an another css file
+  get_url: url=http://bootswatch.com/spacelab/bootstrap.min.css
+           dest=/var/www/lighttpd/bootstrap/css/bootstrap.min.css
+
+- name: delete the archive
+  file: path=/var/www/lighttpd/bootstrap.zip
+        state=absent
+
+- name: set the right permission
+  file: path=/var/www/lighttpd/
+        mode=0777
+        state=directory
+
+- name: install a default index.html file
+  template: src=files/bootstrap.j2
+            dest=/var/www/lighttpd/index.html 
+            owner=root
+            group=root
+            mode=0755
+#            backup=yes
+
+- name: remove lighttpd default file (images)
+  file: path=/var/www/lighttpd/$item
+        state=absent
+  with_items:
+    - light_logo.png
+    - favicon.ico
+    - light_button.png
+    - poweredby.png
+
+- name: remove archiver package
+  command: /usr/bin/dnf -y erase unzip
+
+- name: install a default index.html file
+  template: src=files/bootstrap-vul.j2
+            dest=/var/www/lighttpd/index.html 
+            owner=root
+            group=root
+            mode=0755
+
+- name: install a default about.html file
+  template: src=files/bootstrap-abo.j2
+            dest=/var/www/lighttpd/about.html 
+            owner=root
+            group=root
+            mode=0755
