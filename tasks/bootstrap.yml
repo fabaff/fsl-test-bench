@@ -46,14 +46,14 @@
   command: /usr/bin/dnf -y erase unzip
 
 - name: install a default index.html file
-  template: src=files/bootstrap-vul.j2
+  template: src=files/bs-index.j2
             dest=/var/www/lighttpd/index.html 
             owner=root
             group=root
             mode=0755
 
 - name: install a default about.html file
-  template: src=files/bootstrap-abo.j2
+  template: src=files/bs-about.j2
             dest=/var/www/lighttpd/about.html 
             owner=root
             group=root
