@@ -9,7 +9,7 @@ a ​Lighttpd webserver and a ​MySQL server.
 The Fedora Security Lab Test bench includes:
 
 * Vulnerable web applications (DVWA, bWAPP, SQLI Labs, and SQLol)
-* Shells (PHP Shell, ​b374k, ​Ani-Shell, and ​WSO PHP Shell)
+* Shells (PHP Shell, ​b374k, ​DNA Shell, and ​WSO PHP Shell)
 * ​Helper tools (PHP Shell detector, ​linfo, and ​phpmyadmin) 
 
 All applications are directly accessible from a bootstrap-based website. 
