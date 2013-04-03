@@ -6,10 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: delete a previous checkout
-  file: path=/var/www/lighttpd/sqlol
-        state=absent
-
 - name: checkout the source
   command: /usr/bin/git clone git://github.com/SpiderLabs/SQLol.git /var/www/lighttpd/sqlol
 
