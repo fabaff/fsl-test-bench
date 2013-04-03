@@ -1,0 +1,29 @@
+# This playbook install the DNA Shell (http://sourceforge.net/projects/dna-shell).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory
+  file: path=/var/www/lighttpd/dnashell
+        state=directory
+
+- name: download the source
+  get_url: url=http://downloads.sourceforge.net/project/dna-shell/dnashell.php
+           dest=/var/www/lighttpd/dnashell/dnashell.php
+           mode=0775
+
+- name: set the permissions
+  file: path=/var/www/lighttpd
+        mode=0777
+        state=directory
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--SH-->'
+              insertafter='            <!--SH-->'
+              line='            <a href="/dnashell/dnashell.php" class="btn btn-primary">DNA Shell</a></br>'
+
+- name: restart lighttpd
+  service: name=lighttpd state=restarted
