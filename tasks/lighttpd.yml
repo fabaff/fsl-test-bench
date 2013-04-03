@@ -41,17 +41,12 @@
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-service=http
 
-- name: add some details to the default index.html file
-  lineinfile: dest=/var/www/lighttpd/index.html
-              regexp='^<body>'
-              insertafter='^<body>'
-              line='<body>\n\n<h3>Lighttpd is running on $ansible_distribution $ansible_distribution_version.</h3>'
-              state=present
-
-# If you want your own index.html file
-#- name: install a default index.html file
-#  template: src=files/lighttpd.j2 
-#            dest=/var/www/lighttpd/index.html
-#            owner=lighttpd
-#            group=lighttpd
-#            mode=0644
+- name: remove lighttpd default file (images)
+  file: path=/var/www/lighttpd/$item
+        state=absent
+  with_items:
+    - index.html
+    - light_logo.png
+    - favicon.ico
+    - light_button.png
+    - poweredby.png

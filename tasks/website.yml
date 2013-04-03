@@ -22,15 +22,6 @@
         mode=0777
         state=directory
 
-- name: remove lighttpd default file (images)
-  file: path=/var/www/lighttpd/$item
-        state=absent
-  with_items:
-    - light_logo.png
-    - favicon.ico
-    - light_button.png
-    - poweredby.png
-
 - name: install a default index.html file
   template: src=files/index.j2
             dest=/var/www/lighttpd/index.html 
