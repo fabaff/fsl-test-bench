@@ -6,7 +6,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: downloads the archive
+- name: download the archive
   get_url: url=http://dvwa.googlecode.com/files/DVWA-$dvwa_version.zip
            dest=/var/www/lighttpd/dvwa-$dvwa_version.zip
            mode=0440
@@ -31,6 +31,3 @@
               regexp='^<!--VA-->'
               insertafter='        <!--VA-->'
               line='        <a href="/dvwa" class="btn btn-inverse">DVWA</a></br>'
-
-- name: restart lighttpd
-  service: name=lighttpd state=restarted
