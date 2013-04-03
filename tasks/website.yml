@@ -1,0 +1,60 @@
+# This playbook install the default html files incl. bootstrap. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: downloads the bootstrap zip archive
+  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
+           dest=/var/www/lighttpd/bootstrap.zip
+           mode=0440
+
+- name: unpack the archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
+
+- name: delete the archive
+  file: path=/var/www/lighttpd/bootstrap.zip
+        state=absent
+
+- name: set the right permission
+  file: path=/var/www/lighttpd/
+        mode=0777
+        state=directory
+
+- name: remove lighttpd default file (images)
+  file: path=/var/www/lighttpd/$item
+        state=absent
+  with_items:
+    - light_logo.png
+    - favicon.ico
+    - light_button.png
+    - poweredby.png
+
+- name: install a default index.html file
+  template: src=files/index.j2
+            dest=/var/www/lighttpd/index.html 
+            owner=root
+            group=root
+            mode=0755
+
+- name: install a default about.html file
+  template: src=files/about.j2
+            dest=/var/www/lighttpd/about.html 
+            owner=root
+            group=root
+            mode=0755
+
+- name: install a default contact.html file
+  template: src=files/contact.j2
+            dest=/var/www/lighttpd/contact.html 
+            owner=root
+            group=root
+            mode=0755
+
+- name: copy the fsl banner image
+  copy: src=./files/Spins-banner_security.png
+        dest=/var/www/lighttpd/Spins-banner_security.png
+        owner=root
+        group=root
+        mode=0755
