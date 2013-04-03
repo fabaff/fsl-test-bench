@@ -6,10 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: delete a previous checkout
-  file: path=/var/www/lighttpd/php-shell-detector
-        state=absent
-
 - name: checkout from the git repo
   git: repo=git://github.com/emposha/PHP-Shell-Detector.git
        dest=/var/www/lighttpd/php-shell-detector
