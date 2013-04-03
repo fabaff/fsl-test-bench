@@ -10,7 +10,7 @@
   file: path=/var/www/lighttpd/phpinfo
         owner=root
         group=root
-        mode=0755
+        mode=0777
         state=directory
 
 - name: create a new file with lineinfile
@@ -35,4 +35,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/phpinfo" class="btn btn-primary">phpInfo</a></br>'
+              line='        <a href="/phpinfo/index.php" class="btn btn-primary">phpInfo</a></br>'
