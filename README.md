@@ -50,8 +50,6 @@ At the moment the structure of the repository looks like this:
 .
 ├── files ----------- Template files
 ├── handlers -------- Handlers for services
-├── maintenance ----- Complete playbooks
-├── maintenance.yml - Regular tasks to perform on a running system
 ├── README.md ------- This files
 ├── tasks ----------- A collection of tasks
 ├── setup.yml ------- Collected tasks for a fresh installed system
