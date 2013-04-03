@@ -10,7 +10,7 @@
   file: path=/var/www/lighttpd/escobar
         state=directory
 
-- name: download the source tarball
+- name: download the source
   get_url: url=http://downloads.sourceforge.net/project/esc0b4rshell/esc0b4r.php
            dest=/var/www/lighttpd/escobar/esc0b4r.php
            mode=0775
