@@ -12,11 +12,6 @@
 - name: set the default mysql password
   command: /usr/bin/sed -i "s|$password = ''|$password = '$mysql_root_password'|g" /var/www/lighttpd/sqlol/includes/database.config.php
 
-- name: set the right permission
-  file: path=/var/www/lighttpd/
-        mode=0777
-        state=directory
-
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--VA-->'

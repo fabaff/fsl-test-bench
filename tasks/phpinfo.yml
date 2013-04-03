@@ -10,7 +10,7 @@
   file: path=/var/www/lighttpd/phpinfo
         owner=root
         group=root
-        mode=0777
+        mode=0775
         state=directory
 
 - name: create a new file with lineinfile
@@ -25,11 +25,6 @@
               regexp='^'
               line='<?php\nphpinfo();\n?>'
               state=present
-
-- name: set the permissions
-  file: path=/var/www/lighttpd/
-        mode=0777
-        state=directory
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html

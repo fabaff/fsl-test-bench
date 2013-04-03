@@ -18,11 +18,6 @@
   file: path=/var/www/lighttpd/dvwa-$dvwa_version.zip
         state=absent
 
-- name: set the permissions
-  file: path=/var/www/lighttpd
-        mode=0777
-        state=directory
-
 - name: install a default configuration file
   template: src=files/dvwa.j2
             dest=/var/www/lighttpd/dvwa/config/config.inc.php

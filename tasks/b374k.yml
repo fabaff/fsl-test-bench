@@ -14,11 +14,6 @@
            dest=/var/www/lighttpd/b374k/b374k.php
            mode=0777
 
-- name: set the right permission
-  file: path=/var/www/lighttpd/
-        mode=0777
-        state=directory
-
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'

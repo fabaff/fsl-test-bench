@@ -21,11 +21,6 @@
 - name: rename the folder
   command: /usr/bin/mv /var/www/lighttpd/bWAPP /var/www/lighttpd/bwapp
 
-- name: set the right permission
-  file: path=/usr/share/webapps/
-        mode=0777
-        state=directory
-
 - name: set the default mysql password
   command: /usr/bin/sed -i 's|$password = ""|$password = "$mysql_root_password"|g' /var/www/lighttpd/bwapp/config.inc.php
 

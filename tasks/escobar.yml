@@ -15,11 +15,6 @@
            dest=/var/www/lighttpd/escobar/esc0b4r.php
            mode=0775
 
-- name: set the permissions
-  file: path=/var/www/lighttpd
-        mode=0777
-        state=directory
-
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'

@@ -5,7 +5,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: downloads the bootstrap zip archive
+- name: download the bootstrap zip archive
   get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
            dest=/var/www/lighttpd/bootstrap.zip
            mode=0440
@@ -16,11 +16,6 @@
 - name: delete the archive
   file: path=/var/www/lighttpd/bootstrap.zip
         state=absent
-
-- name: set the right permission
-  file: path=/var/www/lighttpd/
-        mode=0777
-        state=directory
 
 - name: install a default index.html file
   template: src=files/index.j2

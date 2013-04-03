@@ -28,22 +28,8 @@
     - README.txt
     - __MACOSX
 
-- name: reset the default user name
-  lineinfile: dest=/var/www/lighttpd/ani-shell/Ani-Shell.php
-              regexp='^$user'
-              insertafter='$user'
-              line='$user = "root";'
-
-- name: reset the password
-  lineinfile: dest=/var/www/lighttpd/ani-shell/Ani-Shell.php
-              regexp='^$pass'
-              insertafter='$pass'
-              line='$pass = "$server_root_password";'
-
-- name: set the permissions
-  file: path=/var/www/lighttpd
-        mode=0777
-        state=directory
+- name: no login
+  command: /usr/bin/sed -i 's|$lock = "on";|$lock = "off";|g' /var/www/lighttpd/ani-shell/Ani-Shell.php
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html

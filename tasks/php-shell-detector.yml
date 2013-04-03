@@ -10,11 +10,6 @@
   git: repo=git://github.com/emposha/PHP-Shell-Detector.git
        dest=/var/www/lighttpd/php-shell-detector
 
-- name: set the right permission
-  file: path=/var/www/lighttpd/
-        mode=0777
-        state=directory
-
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
