@@ -15,28 +15,38 @@
     - variables/sensitive-variables.yml
 
   tasks:
+
+# Common tasks
+#    - include: tasks/preparation.yml
 #    - include: tasks/motd.yml
-#    - include: tasks/rpmfusion.yml
 #    - include: tasks/sshd.yml
 #    - include: tasks/lighttpd.yml
-#    - include: tasks/phpinfo.yml
+
+# FSL Test bench specific stuff
+    - include: tasks/website.yml
 #    - include: tasks/mysql.yml
-#    - include: tasks/phpmyadmin.yml
-#    - include: tasks/linfo.yml
-#    - include: tasks/bootstrap.yml
-#    - include: tasks/php-shell-detector.yml
+    - include: tasks/phpinfo.yml
+    - include: tasks/php-shell-detector.yml
+    - include: tasks/linfo.yml
+    - include: tasks/phpmyadmin.yml
 
 # Vulnerable Web Application
-#    - include: tasks/dvwa.yml
-#    - include: tasks/sqlol.yml
-#    - include: tasks/bwapp.yml
-#    - include: tasks/sqli.yml
+    - include: tasks/sqlol.yml
+    - include: tasks/sqli.yml
+    - include: tasks/bwapp.yml
+    - include: tasks/dvwa.yml
+#    - include: tasks/wacko.yml
 
 # Shells
-#    - include: tasks/phpshell.yml
-#    - include: tasks/b374k.yml
+    - include: tasks/b374k.yml
 #    - include: tasks/ani-shell.yml
 #    - include: tasks/wso.yml
+    - include: tasks/escobar.yml
+    - include: tasks/dnashell.yml
+    - include: tasks/phpshell.yml
+
+# Common tasks
+#    - include: tasks/cleanup.yml
 
   handlers:
    - include: handlers/system.yml
