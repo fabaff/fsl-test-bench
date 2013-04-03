@@ -28,4 +28,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--VA-->'
               insertafter='        <!--VA-->'
-              line='        <a href="/bwapp" class="btn btn-primary">bWAPP</a></br>'
+              line='        <a href="/bwapp" class="btn btn-inverse">bWAPP</a></br>'

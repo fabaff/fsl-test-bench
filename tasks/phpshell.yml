@@ -29,4 +29,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='        <!--SH-->'
-              line='        <a href="/phpshell/phpshell.php" class="btn btn-primary">PHPShell</a></br>'
+              line='        <a href="/phpshell/phpshell.php" class="btn btn-inverse">PHPShell</a></br>'

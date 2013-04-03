@@ -30,4 +30,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/phpinfo/index.php" class="btn btn-primary">phpInfo</a></br>'
+              line='        <a href="/phpinfo/index.php" class="btn btn-inverse">phpInfo</a></br>'

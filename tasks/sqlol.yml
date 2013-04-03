@@ -16,4 +16,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--VA-->'
               insertafter='        <!--VA-->'
-              line='        <a href="/sqlol" class="btn btn-primary">SQLol</a></br>'
+              line='        <a href="/sqlol" class="btn btn-inverse">SQLol</a></br>'

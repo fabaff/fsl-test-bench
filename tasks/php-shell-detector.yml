@@ -14,7 +14,7 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/php-shell-detector/shelldetect.php" class="btn btn-primary">PHP Shell Detector</a></br>'
+              line='        <a href="/php-shell-detector/shelldetect.php" class="btn btn-inverse">PHP Shell Detector</a></br>'
 
 - name: reset the username and the password
   command: /usr/bin/sed -i 's|  private $authentication = array("username" => "admin", "password" => "protect");|  private $authentication = array("username" => "root", "password" => "$server_root_password");|g' /var/www/lighttpd/php-shell-detector/shelldetect.php

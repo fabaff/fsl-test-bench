@@ -18,4 +18,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='        <!--SH-->'
-              line='        <a href="/wso/wso.php" class="btn btn-primary">WSO</a></br>' 
+              line='        <a href="/wso/wso.php" class="btn btn-inverse">WSO</a></br>' 

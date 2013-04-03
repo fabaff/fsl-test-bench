@@ -18,4 +18,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
-              line='            <a href="/dnashell/dnashell.php" class="btn btn-primary">DNA Shell</a></br>'
+              line='            <a href="/dnashell/dnashell.php" class="btn btn-inverse">DNA Shell</a></br>'
