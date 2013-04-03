@@ -5,10 +5,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: delete a previous checkout
-  file: path=/var/www/lighttpd/sqli-labs
-        state=absent
-
 - name: checkout from the git repo
   git: repo=git://github.com/Audi-1/sqli-labs.git
        dest=/var/www/lighttpd/sqli-labs
