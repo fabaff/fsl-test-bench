@@ -1,0 +1,33 @@
+# This playbook install the WackoPicko Vulnerable Website 
+# (https://github.com/adamdoupe/WackoPicko).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: checkout from the git repo
+  git: repo=git://github.com/adamdoupe/WackoPicko.git
+       dest=/tmp/wacko
+
+- name: rename the source directory
+  command: /bin/mv /tmp/wacko/website/* /var/www/lighttpd/
+
+- name: set the right permission
+  file: path=/var/www/lighttpd/
+        mode=0777
+        state=directory
+
+- name: import the tables of the database
+  shell: /usr/bin/mysql -u root --password=$mysql_root_password < /tmp/wacko/current.sql
+
+- name: remove unneded files
+  file: path=/tmp/wacko/$item
+        state=absent
+  with_items:
+    - LICENSE
+    - README.markdown
+    - current.sql
+
+- name: restart lighttpd
+  service: name=lighttpd state=restarted
