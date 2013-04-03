@@ -1,4 +1,4 @@
-# This playbook customizes the motd file all Fedora hosts.
+# This playbook customizes the motd file of Fedora Security Test bench hosts.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
