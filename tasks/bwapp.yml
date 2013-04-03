@@ -6,9 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: install archiver package
-  command: /usr/bin/dnf -y install unzip
-
 - name: downloads the archive
   get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv$bwapp_version/bWAPPv$bwapp_version.zip
            dest=/var/www/lighttpd/bwapp-$bwapp_version.zip
@@ -36,7 +33,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--VA-->'
               insertafter='        <!--VA-->'
-              line='        <a href="/bwapp" class="btn btn-primary">bWAPP</a>'
-
-- name: remove archiver package
-  command: /usr/bin/dnf -y erase unzip
+              line='        <a href="/bwapp" class="btn btn-primary">bWAPP</a></br>'
