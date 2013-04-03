@@ -10,3 +10,6 @@
 
 - name: remove the tar package
   command: /usr/bin/dnf -y erase tar
+
+- name: remove git
+  command: /usr/bin/dnf -y erase git
