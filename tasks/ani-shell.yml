@@ -5,9 +5,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: install archiver tool
-  command: /usr/bin/dnf -y install unzip
-
 - name: create the directory
   file: path=/var/www/lighttpd/ani-shell
         state=directory
@@ -51,8 +48,5 @@
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
-              insertafter='        <!--SH-->'
-              line='        <a href="/ani-shell/Ani-Shell.php" class="btn btn-primary">Ani-Shell</a>'
-
-- name: remove archiver tool
-  command: /usr/bin/dnf -y erase unzip
+              insertafter='            <!--SH-->'
+              line='            <a href="/ani-shell/Ani-Shell.php" class="btn btn-primary">Ani-Shell</a></br>'
