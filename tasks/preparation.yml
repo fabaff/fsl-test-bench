@@ -11,5 +11,5 @@
 - name: install the tar package
   command: /usr/bin/dnf -y install tar
 
-- name: to use the git module later, git is needed
+- name: install the git package
   command: /usr/bin/dnf -y install git
