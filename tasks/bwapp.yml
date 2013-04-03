@@ -6,7 +6,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: downloads the archive
+- name: download the archive
   get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv$bwapp_version/bWAPPv$bwapp_version.zip
            dest=/var/www/lighttpd/bwapp-$bwapp_version.zip
            mode=0440
