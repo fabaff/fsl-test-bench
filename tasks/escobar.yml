@@ -20,6 +20,3 @@
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
               line='            <a href="/escobar/esc0b4r.php" class="btn btn-inverse">Esc0b4r</a></br>'
-
-- name: restart lighttpd
-  service: name=lighttpd state=restarted
