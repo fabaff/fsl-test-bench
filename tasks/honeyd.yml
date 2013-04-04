@@ -69,7 +69,15 @@
            dest=/usr/share/honeyd/scripts/qpop.sh
            mode=0775
 
-- name: start the honeyd and enable it
+- name: enable lighttpd on boot
+  command: systemctl enable honeyd.service
+
+- name: start sshd
   service: name=honeyd
            state=started
-           enabled=yes
+
+# Not working at the moment
+#- name: start the honeyd and enable it
+#  service: name=honeyd
+#           state=started
+#           enabled=yes
