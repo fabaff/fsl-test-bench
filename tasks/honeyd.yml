@@ -1,0 +1,75 @@
+# This playbook install honeyd (http://www.honeyd.org/) incl. several
+# honeypots.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install honeyd packages
+  command: /usr/bin/dnf -y install honeyd
+
+- name: configuration file for the honeypots
+  template: src=files/honeyd.j2 
+            dest=/etc/honeyd.conf
+            owner=root
+            group=root
+            mode=0644
+#            backup=yes
+
+- name: set farpd options
+  lineinfile: dest=/etc/sysconfig/farpd
+              regexp="^OPTIONS"
+              insertafter="OPTIONS"
+              line='OPTIONS_FARPD="-i eth0 ${ansible_eth0.ipv4.network}/8"'
+              state=present
+
+- name: enable farpd conf
+  lineinfile: dest=/etc/sysconfig/farpd
+              regexp="^FARPD"
+              insertafter="FARPD"
+              line='FARPD_CONF="YES"'
+              state=present
+
+- name: enable honeyd conf
+  lineinfile: dest=/etc/sysconfig/honeyd
+              regexp="^HONEYD"
+              insertafter="HONEYD"
+              line='HONEYD_CONF="YES"'
+              state=present
+
+# Add script from 1.6b
+- name: download the ssh honeypot script
+  get_url: url=https://raw.github.com/DataSoft/Honeyd/master/scripts/linux/ssh.sh
+           dest=/usr/share/honeyd/scripts/ssh.sh
+           mode=0775
+
+- name: download the imap honeypot script
+  get_url: url=https://raw.github.com/DataSoft/Honeyd/master/scripts/linux/cyrus-imapd.sh
+           dest=/usr/share/honeyd/scripts/cyrus-imapd.sh
+           mode=0775
+
+- name: download the telnet honeypot script
+  get_url: url=https://raw.github.com/DataSoft/Honeyd/master/scripts/linux/telnetd.sh
+           dest=/usr/share/honeyd/scripts/telnetd.sh
+           mode=0775
+
+- name: download the smtp honeypot script
+  get_url: url=http://www.honeyd.org/contrib/mael/smtp.sh
+           dest=/usr/share/honeyd/scripts/smtp.sh
+           mode=0775
+
+- name: download the ftp honeypot script
+  get_url: url=https://raw.github.com/DataSoft/Honeyd/master/scripts/linux/ftp.sh
+           dest=/usr/share/honeyd/scripts/ftp.sh
+           mode=0775
+
+- name: download the pop3 honeypot script
+  get_url: url=https://raw.github.com/DataSoft/Honeyd/master/scripts/linux/qpop.sh
+           dest=/usr/share/honeyd/scripts/qpop.sh
+           mode=0775
+
+- name: start the honeyd and enable it
+  service: name=honeyd
+           state=started
+           enabled=yes

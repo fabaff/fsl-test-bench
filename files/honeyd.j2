@@ -1,0 +1,54 @@
+# This file contains several honeypots.
+# 
+# Default
+create default
+set default default tcp action block
+set default default udp action block
+set default default icmp action block
+
+# Micrsoft Windows XP
+create windowsxp
+set windowsxp personality "Microsoft Windows XP Professional SP1"
+set windowsxp default tcp action reset
+add windowsxp tcp port 135 open
+add windowsxp tcp port 139 open
+add windowsxp tcp port 445 open
+
+set windowsxp ethernet "00:00:00:00:00:01"
+dhcp windowsxp on eth0
+
+# Micrsoft Windows 2003 Server
+create windows2003
+set windows2003 personality "Microsoft Windows Server 2003"
+set windows2003 default tcp action reset
+add windows2003 tcp port 80 "sh /usr/share/honeyd/scripts/web.sh"
+add windows2003 tcp port 135 open
+add windows2003 tcp port 139 open
+add windows2003 tcp port 445 open
+set windows2003 ethernet "00:00:00:00:00:02"
+dhcp windows2003 on eth0
+
+# Microsoft Windows 7 SP1 (available in 1.6b)
+#create windows7
+#set windows7 personality "Microsoft Windows 7 SP1"
+#set windows7 default tcp action reset
+#set windows7 default udp action reset
+#add windows7 tcp port 135 open
+#add windows7 tcp port 139 open
+#add windows7 tcp port 445 open
+#set windows7 ethernet "00:00:00:00:00:03"
+#dhcp windows7 on eth0
+
+# Debian
+create debian
+set debian personality "Linux 2.4.20"
+set debian default tcp action reset
+set debian default udp action reset
+add debian tcp port 21 "sh /usr/share/honeyd/scripts/ftp.sh"
+add debian tcp port 22 "sh /usr/share/honeyd/scripts/ssh.sh"
+add debian tcp port 23 "sh /usr/share/honeyd/scripts/telnetd.sh"
+add debian tcp port 25 "sh /usr/share/honeyd/scripts/smtp.sh"
+add debian tcp port 110 "sh /usr/share/honeyd/scripts/qpop.sh"
+add debian tcp port 143 "sh /usr/share/honeyd/scripts/cyrus-imapd.sh"
+set debian ethernet "00:00:00:00:00:04"
+dhcp debian on eth0
