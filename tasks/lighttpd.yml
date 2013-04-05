@@ -40,15 +40,6 @@
            state=running
            enabled=yes 
 
-#- name: enable lighttpd on boot
-#  command: systemctl enable lighttpd.service
-# Why is this not working?
-#  service: name=lighttpd enabled=yes
-#  service: name=lighttpd.service enabled=yes
-# -> msg: service name not recognized
-# Seems to be a bug
-
-
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-service=http
 
