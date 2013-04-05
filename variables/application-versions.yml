@@ -32,3 +32,6 @@ ani_version: 1.5
 
 # jQuery - http://jquery.com
 jquery_version: 1.9.1
+
+# kippo - http://code.google.com/p/kippo
+kippo_version: 0.5

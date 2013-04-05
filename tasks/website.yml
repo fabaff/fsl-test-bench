@@ -10,12 +10,17 @@
            dest=/var/www/lighttpd/bootstrap.zip
            mode=0440
 
-- name: unpack the archive
+- name: unpack the bootstrap archive
   command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
 
-- name: delete the archive
+- name: delete the bootstrap archive
   file: path=/var/www/lighttpd/bootstrap.zip
         state=absent
+
+- name: download the jquery library
+  get_url: url=http://code.jquery.com/jquery-$jquery_version.min.js
+           dest=/var/www/lighttpd/bootstrap/js/jquery.min.js
+           mode=0775
 
 - name: install a default index.html file
   template: src=files/index.j2
