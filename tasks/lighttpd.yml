@@ -28,16 +28,32 @@
             group=lighttpd
             mode=0644
 
-- name: enable lighttpd on boot
-  command: systemctl enable lighttpd.service
+- name: create directory for the socket
+  file: path=/var/run/lighttpd
+        state=directory
+        mode=0775
+        owner=lighttpd
+        group=lighttpd
+
+- name: start webserver
+  service: name=lighttpd
+           state=running
+           enabled=yes 
+
+#- name: enable lighttpd on boot
+#  command: systemctl enable lighttpd.service
 # Why is this not working?
 #  service: name=lighttpd enabled=yes
 #  service: name=lighttpd.service enabled=yes
 # -> msg: service name not recognized
 # Seems to be a bug
 
+
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-service=http
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
 
 - name: remove lighttpd default file (images)
   file: path=/var/www/lighttpd/$item
