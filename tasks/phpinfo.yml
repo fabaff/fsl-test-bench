@@ -6,19 +6,26 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the needed directory
+- name: create the directory for phpinfo
   file: path=/var/www/lighttpd/phpinfo
         owner=root
         group=root
         mode=0775
         state=directory
 
-- name: create a new file with lineinfile
+- name: create a new index.php file
   lineinfile: dest=/var/www/lighttpd/phpinfo/index.php
               regexp='^'
               line=''
               state=present
               create=True
+
+- name: set permission for index.php file
+  file: path=/var/www/lighttpd/phpinfo/index.php
+        owner=root
+        group=root
+        mode=0775
+        state=file
 
 - name: add a multiline string to the file and delete the string from before
   lineinfile: dest=/var/www/lighttpd/phpinfo/index.php
