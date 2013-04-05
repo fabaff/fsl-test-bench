@@ -27,8 +27,6 @@
             owner=lighttpd
             group=lighttpd
             mode=0644
-  notify:
-    - start lighttpd
 
 - name: enable lighttpd on boot
   command: systemctl enable lighttpd.service
