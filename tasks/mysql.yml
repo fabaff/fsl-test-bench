@@ -15,9 +15,6 @@
     - php-mysql
     - php-pear
 
-#- name: start mysql
-#  service: name=mysqld state=started
-
 - name: set the mysql root password
   mysql_user: user=root
               password=$mysql_root_password
