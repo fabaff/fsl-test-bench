@@ -15,7 +15,9 @@
   command: /usr/bin/dnf -y erase git
 
 - name: restart lighttpd
-  service: name=lighttpd state=restarted
+  service: name=lighttpd 
+           state=restarted
 
 - name: start mysql
-  service: name=mysqld state=started
+  service: name=mysqld
+           state=started
