@@ -16,3 +16,6 @@
 
 - name: restart lighttpd
   service: name=lighttpd state=restarted
+
+- name: start mysql
+  service: name=mysqld state=started
