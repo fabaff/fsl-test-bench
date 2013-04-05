@@ -72,7 +72,7 @@
 - name: enable lighttpd on boot
   command: systemctl enable honeyd.service
 
-- name: start sshd
+- name: start honeyd
   service: name=honeyd
            state=started
 
