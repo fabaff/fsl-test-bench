@@ -27,7 +27,7 @@
         mode=0775
         state=file
 
-- name: add a multiline string to the file and delete the string from before
+- name: add page content
   lineinfile: dest=/var/www/lighttpd/phpinfo/index.php
               regexp='^'
               line='<?php\nphpinfo();\n?>'
