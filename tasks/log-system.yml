@@ -29,6 +29,7 @@
         dest=/var/www/lighttpd/log-system/log
         owner=root
         group=root
+        mode=0775
         state=link
 
 - name: set selinux context
