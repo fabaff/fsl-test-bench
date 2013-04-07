@@ -1,0 +1,44 @@
+# This playbook install the log viewer for the system logs.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory for log-view
+  file: path=/var/www/lighttpd/log-system
+        owner=root
+        group=root
+        mode=0775
+        state=directory
+
+- name: download the logtail script
+  get_url: url=https://raw.github.com/ukhas/js-logtail/master/logtail.js
+           dest=/var/www/lighttpd/bootstrap/js/logtail.js
+           mode=0775
+
+- name: install the log.html file
+  template: src=files/log-system.j2
+            dest=/var/www/lighttpd/log-system/index.html 
+            owner=lighttpd
+            group=lighttpd
+            mode=0755
+
+- name: create a symlink to the log file
+  file: src=/var/log/messages
+        dest=/var/www/lighttpd/log-system/log
+        owner=root
+        group=root
+        state=link
+
+- name: set selinux context
+  command: chcon -h unconfined_u:object_r:httpd_log_t:s0 /var/log/messages
+
+- name: set selinux context
+  command: chcon -R unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/lighttpd/log-system/log
+
+#- name: add a new entry to the index.html page
+#  lineinfile: dest=/var/www/lighttpd/index.html
+#              regexp='^<!--IN-->'
+#              insertafter='        <!--IN-->'
+#              line='        <a href="/log-system/index.html" class="btn btn-inverse">Log view</a></br>'
