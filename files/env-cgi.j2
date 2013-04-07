@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+echo "Content-type: text/html"
+echo ""
+echo "<html><head><title>Environment variables delivered by CGI</title></head><body>"
+echo "<h1>Environment variables</h1>"
+echo ""
+echo "<pre>$(/usr/bin/env)</pre>"
+echo ""
+echo "<center><small>&copy; <a href="https://fedorahosted.org/security-spin/">Fedora Security Lab</a> 2013 - Page generated on $(date).</small></center>"
+echo "</body></html>"
