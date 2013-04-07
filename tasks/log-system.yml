@@ -5,7 +5,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the directory for log-view
+- name: create the directory for log-system
   file: path=/var/www/lighttpd/log-system
         owner=root
         group=root
