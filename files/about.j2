@@ -22,13 +22,6 @@ The FSL Test bench is licensed under GPLv2.
         padding-top: 20px;
         padding-bottom: 20px;
       }
-      .hero-unit {
-          font-size: 16px;
-          font-weight: 150;
-          line-height: 25px;
-          margin-bottom: 10px;
-          padding: 40px;
-      }
     </style>
     <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -40,9 +33,9 @@ The FSL Test bench is licensed under GPLv2.
     <!-- Fav and touch icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="bootstrap/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="bootstrap/ico/apple-touch-icon-114-precomposed.png">
-      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
-                    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
-                                   <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="bootstrap/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="bootstrap/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="bootstrap/ico/favicon.png">
   </head>
 
   <body>
@@ -63,9 +56,50 @@ The FSL Test bench is licensed under GPLv2.
           </li>
         </ul>
         <div>
+        <div>
+    <div class="alert alert-block" style="margin-left: 50px; margin-right: 50px;">
+            To access the recources mentined on this page a working connection to the internet is needed.
+            </div>
+          <p style="margin-left: 10px; margin-right: 10px;">
+            The <strong>Fedora Security Lab Test bench</strong> provides a save environment for security auditing and testing and can be used for teaching security testing methodologies. At the moment the focus lies on web applications. All application are running on top of a current Fedora installation with a <a href="http://www.lighttpd.net/">Lighttpd</a> webserver and a <a href="http://www.mysql.com/">MySQL</a> server.<p>
+            </p>
+            <h2>Vulnerable web applications</h2>
+            <ul><li><strong><a href="http://www.dvwa.co.uk/">DVWA</a></strong>: Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. The main goals of DVWA are to be an aid for security professionals to test their skills and tools. It should help web developers to better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class.
+            </li></ul><ul><li><strong><a href="http://www.mmeit.be/bwapp/">bWAPP</a></strong>: Or a buggy web application is a web application build to allow security enthusiasts, students, and developers to better secure web applications. bWAPP prepares to conduct successful penetration testing and ethical hacking projects.
+            </li></ul><ul><li><strong><a href="https://github.com/Audi-1/sqli-labs">SQLI Labs</a></strong>: A platform to learn about SQL injection (SQLI). The labs are covering a wide range of injections (Union select, blind, update query, insert query, etc.).
+            </li></ul><ul><li><strong><a href="https://github.com/SpiderLabs/SQLol">SQLol</a></strong>:  A configurable SQL injection environment. SQLol allows to exploit SQL injection flaws, but furthermore allows a large amount of control over the manifestation of the flaw.
+            </li></ul>
+            <h2 id="Shells">Shells</h2>
+            <p>
+            On a productive system <strong>shells</strong> are dangerous because they let an attacker to execute arbitrary shell-commands or browse the filesystem on your server. The shells mentioned below are included to give a taste on how shells works and how they can be detected.
+            </p>
+            <ul>
+            <li><a href="http://phpshell.sourceforge.net/">PHP Shell</a></li>
+            <li><a href="http://code.google.com/p/b374k-shell/">b374k</a></li>
+            <li><a http://sourceforge.net/projects/dna-shell/"> DNA Shell</a></li>
+            <li><a href="https://github.com/orbweb/PHP-SHELL-WSO">WSO PHP Shell</a></li>
+            </ul>
+            <h2>Honeypots</h2>
+            <p>
+            The Honeypots are intended to be targets for port scans.  
+            </p>
+            <ul>
+            <li>Micrsoft Windows XP</li>
+            <li>Micrsoft Windows 2003 Server</li>
+            <li>Linux 2.4.20</li>
+            </ul>
+            <h2>Miscellaneous helpers</h2>
+            <p>
+            Beside the vulnerable web applications and the shells some additional tools are included. They facilitate the maintenance of the Test bench.
+            </p>
+            <ul>
+            <li><a href="https://github.com/emposha/PHP-Shell-Detector">PHP Shell detector</a> - A PHP script which helps you find and identify php/cgi(perl)/asp/aspx shells.</li>
+            <li><a href="http://linfo.sourceforge.net/">linfo</a> - A small PHP application that displays hardware details and real time health of your Test bench system.</li>
+            <li><a href="http://www.phpmyadmin.net">phpmyadmin</a> - A web appplication to handle the administration of MySQL servers.</li>
+            <li>CGI - Simple CGIs which displays details about this system.</li>
+            </ul>
 
-
-
+        </div>
         </div>
       </div>
       <div>
@@ -79,3 +113,4 @@ The FSL Test bench is licensed under GPLv2.
     <script src="bootstrap/js/bootstrap.js"></script>
   </body>
 </html>
+
