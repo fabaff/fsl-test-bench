@@ -10,19 +10,26 @@
   file: path=/var/www/lighttpd/cgi-bin
         state=directory
 
-- name: install the system cgi file
-  template: src=files/system-cgi.j2 
-            dest=/var/www/lighttpd/cgi-bin/system.cgi
-            owner=root
-            group=root
-            mode=0644
-
 - name: install the fsl test bench cgi-bin.html file
   template: src=files/cgi-bin.j2
             dest=/var/www/lighttpd/cgi-bin.html 
             owner=root
             group=root
             mode=0755
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--IN-->'
+              insertafter='            <!--IN-->'
+              line='            <a href="cgi-bin.html" class="btn btn-inverse">CGI</a></br>'
+
+# CGI
+- name: install the system cgi file
+  template: src=files/system-cgi.j2 
+            dest=/var/www/lighttpd/cgi-bin/system.cgi
+            owner=root
+            group=root
+            mode=0644
 
 - name: add a new entry for system.cgi to the index.html page
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
