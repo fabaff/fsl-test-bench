@@ -12,7 +12,7 @@
 
 - name: install the fsl test bench cgi-bin.html file
   template: src=files/cgi-bin.j2
-            dest=/var/www/lighttpd/cgi-bin.html 
+            dest=/var/www/lighttpd/cgi-bin.html
             owner=root
             group=root
             mode=0755
@@ -35,7 +35,7 @@
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/system.cgi" class="btn btn-inverse">System infos</a></br>'
+              line='        <a href="/cgi-bin/system.cgi" class="btn btn-inverse">System information</a></br>'
 
 - name: install the env cgi file
   template: src=files/env-cgi.j2 
