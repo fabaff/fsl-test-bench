@@ -22,28 +22,28 @@
            dest=/var/www/lighttpd/bootstrap/js/jquery.min.js
            mode=0775
 
-- name: install a default index.html file
+- name: install the fsl test bench index.html file
   template: src=files/index.j2
             dest=/var/www/lighttpd/index.html 
             owner=root
             group=root
             mode=0755
 
-- name: install a default about.html file
+- name: install the fsl test bench about.html file
   template: src=files/about.j2
             dest=/var/www/lighttpd/about.html 
             owner=root
             group=root
             mode=0755
 
-- name: install a default contact.html file
+- name: install the fsl test bench contact.html file
   template: src=files/contact.j2
             dest=/var/www/lighttpd/contact.html 
             owner=root
             group=root
             mode=0755
 
-- name: copy the fsl banner image
+- name: copy the fsl banner
   copy: src=./files/Spins-banner_security.png
         dest=/var/www/lighttpd/Spins-banner_security.png
         owner=root
