@@ -9,13 +9,15 @@ a ​Lighttpd webserver and a ​MySQL server.
 The Fedora Security Lab Test bench includes:
 
 * Vulnerable web applications (DVWA, bWAPP, SQLI Labs, and SQLol)
-* Shells (PHP Shell, ​b374k, ​DNA Shell, and ​WSO PHP Shell)
-* ​Helper tools (PHP Shell detector, ​linfo, and ​phpmyadmin) 
+* PHP shells (PHP Shell, ​b374k, and ​DNA Shell)
+* Low-interaction honeypots
+* ​Helper tools (Log viewer, CGIs, ​linfo, and ​phpmyadmin) 
 
-All applications are directly accessible from a bootstrap-based website. 
+All applications are directly accessible from a [bootstrap](http://twitter.github.io/bootstrap/)-based website. 
 
 The FSL Test bench repository contains a subset of playbooks from the 
-[**fedora-ansible** git repository](https://github.com/fabaff/fedora-ansible) maintained by [Fabian Affolter](http://fabian-affolter.ch). 
+[**fedora-ansible** git repository](https://github.com/fabaff/fedora-ansible) 
+maintained by [Fabian Affolter](http://fabian-affolter.ch). 
 
 If you have just found Ansible or the Fedora Security Lab, you should start here:
 
@@ -31,10 +33,15 @@ manage, you need to have the client's SSH key in the *authorized_keys* file of
 the management system and Python.
 
 Make sure that [Python](http://www.python.org/) is installed. If not, install
-the Python package.
+the Python package on the managed node(s).
 
 ```bash
 yum -y install python
+```
+The playbooks are using DNF as package management software instead of yum.
+
+```bash
+yum -y install dnf
 ```
 Add the SSH key to the *authorized_keys* file.
 
