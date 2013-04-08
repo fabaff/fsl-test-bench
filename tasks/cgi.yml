@@ -12,7 +12,7 @@
         state=directory
         owner=root
         group=root
-        mode=0777
+        mode=0600
 
 - name: install the fsl test bench cgi-bin.html file
   template: src=files/cgi-bin.j2
