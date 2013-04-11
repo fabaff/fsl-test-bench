@@ -1,0 +1,25 @@
+# This playbook install droopy webserver (http://gitorious.org/droopy).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory
+  file: path=/var/www/lighttpd/droppy
+        state=directory
+
+- name: create the directory
+  file: path=/var/www/lighttpd/droppy/uploads
+        state=directory
+
+- name: download the source
+  get_url: url=http://gitorious.org/droopy/droopy/blobs/raw/master/droopy
+           dest=/var/www/lighttpd/droppy/droopy
+           mode=0777
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8000/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
