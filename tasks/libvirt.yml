@@ -18,4 +18,3 @@
   service: name=libvirtd
            state=running
            enabled=yes
-
