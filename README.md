@@ -22,7 +22,6 @@ maintained by [Fabian Affolter](http://fabian-affolter.ch).
 If you have just found Ansible or the Fedora Security Lab, you should start here:
 
  * [Fedora Security Lab](https://fedorahosted.org/security-spin/)
- * [Ansible project](https://github.com/ansible/ansible)
 
 More details can be found at the [Fedora Security Lab Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
 
