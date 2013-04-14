@@ -1,4 +1,4 @@
-# Fedora Security Lab Test bench - Ansible Contrib Repository
+# Fedora Security Lab Test bench
 
 The Fedora Security Lab Test bench provides a save environment for
 security auditing and testing and can be used for teaching security
