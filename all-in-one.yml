@@ -18,7 +18,6 @@
 # Common tasks
     - include: tasks/preparation.yml
     - include: tasks/motd.yml
-    - include: tasks/sshd.yml
     - include: tasks/lighttpd.yml
 
 # FSL Test bench specific stuff
