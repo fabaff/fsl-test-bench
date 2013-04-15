@@ -1,0 +1,59 @@
+# This playbook contains tasks to perform on a fresh Fedora installation to
+# create a Fedora Security Lab Test bench. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: ansible-playbook setup.yml -f 10
+# 
+---
+- hosts: fsl-tb
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive-variables.yml
+
+  tasks:
+# Common tasks
+    - include: tasks/preparation.yml
+    - include: tasks/motd.yml
+    - include: tasks/sshd.yml
+    - include: tasks/lighttpd.yml
+
+# FSL Test bench specific stuff
+    - include: tasks/website.yml
+    - include: tasks/log-system.yml
+    - include: tasks/cgi.yml
+    - include: tasks/mysql.yml
+    - include: tasks/phpinfo.yml
+    - include: tasks/php-shell-detector.yml
+    - include: tasks/linfo.yml
+    - include: tasks/phpmyadmin.yml
+
+# Vulnerable Web Application
+    - include: tasks/sqlol.yml
+    - include: tasks/sqli.yml
+    - include: tasks/bwapp.yml
+    - include: tasks/dvwa.yml
+#    - include: tasks/wacko.yml
+
+# Honeypot
+    - include: tasks/honeyd.yml
+#    - include: tasks/artillery.yml
+#    - include: tasks/kippo.yml
+
+# Shells
+#    - include: tasks/ani-shell.yml
+#    - include: tasks/wso.yml
+#    - include: tasks/escobar.yml
+    - include: tasks/b374k.yml
+    - include: tasks/dnashell.yml
+    - include: tasks/phpshell.yml
+
+# Common tasks
+    - include: tasks/cleanup.yml
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
