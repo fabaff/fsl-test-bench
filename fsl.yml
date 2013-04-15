@@ -13,8 +13,6 @@
   - name: install $item
     action: yum pkg=$item state=installed
     with_items:
-       - None
-       - None
        - ArpOn
        - afftools
        - aide
@@ -23,6 +21,7 @@
        - argus
        - binwalk
        - bkhive
+       - bonesi
        - chkrootkit
        - cmospwd
        - cowpatty
@@ -91,6 +90,7 @@
        - ntfsprogs
        - ntop
        - nwipe
+       - onesixtyone
        - openvas-client
        - openvas-scanner
        - ophcrack
