@@ -2,7 +2,7 @@
 
 **Is the Fedora Security Lab Test bench a Live CD?**
 No, it's a default Fedora installation which is configured with the help of
-[Ansible][http://ansible.cc/]. For setup a system like the Fedora Security Lab
+[Ansible](http://ansible.cc/]). For setup a system like the Fedora Security Lab
 Test bench some file modifications are needed. Live CDs don't allow to ship
 modified content or files.
 
@@ -14,7 +14,32 @@ items and the configuration are installed by Ansible out of their upstream
 sources.
 
 **Will the Fedora Security Lab Test bench become a Live CD one day?**
-I don't think so, but never say never.
+I don't think so, but never say never. We are customizing configuration files.
+Those configuration files are modified during the setup process to match the
+provided environment. The web interface is dynamically generated according
+your choises on the fly. This is not possible with a Spin.
+
+**Do you provide a VM or something similar?**
+No, because one big issue is trust. Providing a VM is like shipping a
+blackbox. You have to trust us about what's inside the VM. By using Ansible's
+playbooks you can see what steps are taken to setup the FSL Test bench. You
+are in control of every setup step, nothing is hidden and everything is
+transparent. The core components are installed out of the
+[Fedora Package Collection](https://apps.fedoraproject.org/packages/)
+on top of a minimal Fedora installation. This ensure that the operating
+system runs the latest packages and behave with integrity.
+
+**How should the network around the FSL Test bench looks like?**
+As mentioned on the [setup page](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup)
+a DNS/DHCP server is a requirement. For security purposes we suggest
+that you use a dedicated network for setup your FSL Test bench.
+
+**Is internet access needed for the Fedora Security Lab Test bench?**
+For the setup access to the internet of the system which will host the FSL
+Test bench is needed. When the setup is finished, you can shutdown
+the internet access.
+DO NOT expose the FSL Test bench to the internet. Bad things could
+happen. You have been warned.
 
 **Can I use the FSL Test bench repository to setup a Fedora Security Lab?**
 Yes, you can. Periodically the [fsl-packages.yml](https://git.fedorahosted.org/cgit/security-spin.git/log/ansible-playbooks/fsl-packages.yml) playbook get synced. This ways you don't need to clone the 
