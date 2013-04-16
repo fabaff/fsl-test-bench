@@ -68,16 +68,23 @@ At the moment the structure of the repository looks like this:
 
 ```bash
 .
-|-- FAQ.md
-
-├── files ----------- Template files
-├── handlers -------- Handlers for services
-├── README.md ------- This files
-├── tasks ----------- A collection of tasks
-├── all-in-one.yml -- Fedora Security Lab Test bench on a single machine 
-└── variables ------- Storage files for variables
+├── all-in-one.yml ------- Fedora Security Lab Test bench on a single machine 
+├── FAQ.md --------------- Frequently asked questions
+├── files ---------------- Template files
+│   └── kickstart -------- kickstart files for the installation
+├── fsl-packages-sync.py - Python script to sync with FSL package list
+├── fsl.yml -------------- Package list for setup a Fedora Security Lab
+├── handlers ------------- Handlers for services
+├── INSTALL.md ----------- Installation guide
+├── README.md ------------ This files
+├── tasks ---------------- A collection of tasks
+│   ├── apps ------------- Vulnerable web applications
+│   ├── helpers ---------- Helper tools
+│   ├── honeypots -------- Low-interaction honeypots
+│   └── shells ----------- PHP shells
+├── TESTING.md ----------- This document drescibe baisc testing
+└── variables ------------ Storage files for variables
 ```
-
 ## Warning
 The file *variables/sensitive-variables.yml* contains most application
 passwords. If you don't want to run with default password, edit this file
