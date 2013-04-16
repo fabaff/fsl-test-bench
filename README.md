@@ -59,7 +59,8 @@ The file */etc/ansible/hosts* shall contain all hosts to be setup up.
 - **fsl_hosts**: Host to install the Fedora Security Lab package set
 
 ### Variables
-After cloning this git repository the file [variables/sensitive-variables.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml) 
+After cloning this git repository, edit the [variables/sensitive-variables.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml) file if
+you don't want to use *password* as default password.
 
 ## Structure
 
