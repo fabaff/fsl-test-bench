@@ -27,12 +27,14 @@ More details can be found at the [Fedora Security Lab Test bench](https://fedora
 
 ## Prerequisites
 
-The setup of Ansible is explained in the on the [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. Here is only the setup of the managed nodes covered. For every system you want to 
+The setup of Ansible is explained on the [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. Here is only the setup of the managed nodes and special details for the management system covered. For every system you want to 
 manage, you need to have the client's SSH key in the *authorized_keys* file of
-the management system and Python.
+the managed system and Python.
 
+### Packages
 Make sure that [Python](http://www.python.org/) is installed. If not, install
-the Python package on the managed node(s).
+the Python package on the managed node(s). If you have performed a minimal
+Fedora installation Python is available.
 
 ```bash
 yum -y install python
@@ -42,11 +44,22 @@ The playbooks are using DNF as package management software instead of yum.
 ```bash
 yum -y install dnf
 ```
+
+### SSH key
 Add the SSH key to the *authorized_keys* file.
 
 ```bash
 ssh root@[IP address of your management system] 'cat ~/.ssh/id_rsa.pub' | cat - >> ~/.ssh/authorized_keys
 ```
+### /etc/ansible/hosts
+The file */etc/ansible/hosts* shall contain all hosts to be setup up.
+
+- **fsl-tb**: Default group name for machine which uses the all-in-one playbook
+- **fsl-tb-master**: Hosts for FSL Test bench guests when using virtualization
+- **fsl_hosts**: Host to install the Fedora Security Lab package set
+
+### Variables
+After cloning this git repository the file [variables/sensitive-variables.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml) 
 
 ## Structure
 
@@ -54,11 +67,13 @@ At the moment the structure of the repository looks like this:
 
 ```bash
 .
+|-- FAQ.md
+
 ├── files ----------- Template files
 ├── handlers -------- Handlers for services
 ├── README.md ------- This files
 ├── tasks ----------- A collection of tasks
-├── setup.yml ------- Collected tasks for a fresh installed system
+├── all-in-one.yml -- Fedora Security Lab Test bench on a single machine 
 └── variables ------- Storage files for variables
 ```
 
