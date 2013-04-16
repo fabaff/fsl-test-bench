@@ -1,4 +1,4 @@
-# Testing
+# Fedora Security Lab Test bench - Testing
 This document describe some basic steps to check if the Fedora Security Lab Test
 bench is properly setup and working.
 
