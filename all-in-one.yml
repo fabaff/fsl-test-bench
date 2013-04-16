@@ -19,23 +19,23 @@
     - include: tasks/preparation.yml
     - include: tasks/motd.yml
     - include: tasks/lighttpd.yml
+    - include: tasks/mysql.yml
 
 # FSL Test bench specific stuff
     - include: tasks/website.yml
-    - include: tasks/log-system.yml
-    - include: tasks/cgi.yml
-    - include: tasks/mysql.yml
-    - include: tasks/phpinfo.yml
-    - include: tasks/php-shell-detector.yml
-    - include: tasks/linfo.yml
-    - include: tasks/phpmyadmin.yml
+    - include: tasks/helpers/log-system.yml
+    - include: tasks/helpers/cgi.yml
+    - include: tasks/helpers/phpinfo.yml
+    - include: tasks/helpers/php-shell-detector.yml
+    - include: tasks/helpers/linfo.yml
+    - include: tasks/helpers/phpmyadmin.yml
 
 # Vulnerable Web Application
-    - include: tasks/sqlol.yml
-    - include: tasks/sqli.yml
-    - include: tasks/bwapp.yml
-    - include: tasks/dvwa.yml
-#    - include: tasks/wacko.yml
+    - include: tasks/apps/sqlol.yml
+    - include: tasks/apps/sqli.yml
+    - include: tasks/apps/bwapp.yml
+    - include: tasks/apps/dvwa.yml
+#    - include: tasks/apps/wacko.yml
 
 # Honeypot
     - include: tasks/honeyd.yml
@@ -43,12 +43,12 @@
 #    - include: tasks/kippo.yml
 
 # Shells
-#    - include: tasks/ani-shell.yml
-#    - include: tasks/wso.yml
-#    - include: tasks/escobar.yml
-    - include: tasks/b374k.yml
-    - include: tasks/dnashell.yml
-    - include: tasks/phpshell.yml
+#    - include: tasks/shells/ani-shell.yml
+#    - include: tasks/shells/wso.yml
+#    - include: tasks/shells/escobar.yml
+    - include: tasks/shells/b374k.yml
+    - include: tasks/shells/dnashell.yml
+    - include: tasks/shells/phpshell.yml
 
 # Common tasks
     - include: tasks/cleanup.yml
