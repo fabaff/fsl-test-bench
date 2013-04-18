@@ -10,7 +10,7 @@ text
 lang en_US.UTF-8
 
 # Kexboard setup
-keyboard --vckeymap=sg --xlayouts='ch (de_nodeadkeys)'
+keyboard sg-latin1
 #keyboard us
 
 # Networking
@@ -18,8 +18,8 @@ network --onboot yes --device eth0 --bootproto dhcp --ipv6 auto --hostname test-
 
 # Authentication
 auth --enableshadow --passalgo=sha512
-#rootpw {{ server_root_password }}
-rootpw testbench
+rootpw {{ server_root_password }}
+#rootpw testbench
 
 # Services, SELinux and firewall
 firewall --enabled --ssh
