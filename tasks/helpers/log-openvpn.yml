@@ -38,8 +38,8 @@
 - name: set selinux context
   command: chcon -R unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/lighttpd/log-openvpn/log
 
-- name: add a new entry to the index.html page
-  lineinfile: dest=/var/www/lighttpd/index.html
-              regexp='^<!--IN-->'
-              insertafter='        <!--IN-->'
-              line='        <a href="/log-system/" class="btn btn-inverse">Logs</a></br>'
+#- name: add a new entry to the index.html page
+#  lineinfile: dest=/var/www/lighttpd/index.html
+#              regexp='^<!--IN-->'
+#              insertafter='        <!--IN-->'
+#              line='        <a href="/log-system/" class="btn btn-inverse">Logs</a></br>'
