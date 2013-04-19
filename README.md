@@ -55,6 +55,7 @@ ssh root@[IP address of your management system] 'cat ~/.ssh/id_rsa.pub' | cat - 
 The file */etc/ansible/hosts* shall contain all hosts to be setup up.
 
 - **fsl-tb**: Default group name for machine which uses the all-in-one playbook
+- **fsl-tb-vpn**: Default group name for machine which acts as VPN servers
 - **fsl-tb-master**: Hosts for FSL Test bench guests when using virtualization
 - **fsl_hosts**: Host to install the Fedora Security Lab package set
 
