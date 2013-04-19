@@ -42,6 +42,9 @@
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=1194/tcp
 
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=1194/udp
+
 - name: reload firewall configuration
   command: firewall-cmd --reload
 
