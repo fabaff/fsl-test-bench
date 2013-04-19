@@ -1,0 +1,38 @@
+# This playbook install the AJAX/PHP Command Shell 
+# (http://sourceforge.net/projects/ajaxshell/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory
+  file: path=/var/www/lighttpd/ajaxshell
+        state=directory
+
+http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%20Shell%20v0.7/shell_v0_7_prefinal_.zip
+
+- name: download the source tarball
+  get_url: url=http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%20Shell%20v0.7/shell_v0_7_prefinal_.zip
+           dest=/var/www/lighttpd/shell_v0_7_prefinal_.zip
+           mode=0440
+
+- name: unpack the archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/shell_v0_7_prefinal_.zip -d /var/www/lighttpd/ajaxshell
+
+- name: delete the archive
+  file: path=/var/www/lighttpd/shell_v0_7_prefinal_.zip
+        state=absent
+
+- name: remove unneeded files
+  file: path=/var/www/lighttpd/ajaxshell/$item
+        state=absent
+  with_items:
+    - README.txt
+    - CHANGELOG.txt
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--SH-->'
+              insertafter='            <!--SH-->'
+              line='            <a href="/ajaxshell/Ani-Shell.php" class="btn btn-inverse">Ajax Shell</a></br>'
