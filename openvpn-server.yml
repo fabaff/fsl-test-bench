@@ -1,0 +1,32 @@
+# This playbook contains tasks to perform on a fresh Fedora installation to
+# create a Fedora Security Lab Test bench. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: ansible-playbook openvpn-server.yml -f 10
+# 
+---
+- hosts: fsl-tb-vpn
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive-variables.yml
+
+  tasks:
+    - include: tasks/preparation.yml
+    - include: tasks/motd.yml
+    - include: tasks/lighttpd.yml
+
+# Common tasks
+    - include: tasks/preparation.yml
+#    - include: tasks/openvpn.yml
+    - include: tasks/openvpn-static.yml
+
+# Common tasks
+    - include: tasks/cleanup.yml
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
