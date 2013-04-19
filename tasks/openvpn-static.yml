@@ -1,0 +1,49 @@
+# This playbook install an openvpn server (http://openvpn.net/) with a static
+# key.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - openvpn
+
+- name: load tun device
+  command: /usr/sbin/modprobe tun
+
+- name: generate a static key
+  command: /usr/sbin/openvpn --genkey --secret static.key
+
+- name: copy the key to the root of the webserver
+  command: /usr/bin/cp /root/static.key /var/www/lighttpd/static.key
+
+- name: reset the permissions of the key 
+  file: path=/var/www/lighttpd/static.key
+        mode=644
+
+- name: copy the server configuration file
+  template: src=files/openvpn/server-static.j2 
+            dest=/etc/openvpn/server.conf
+            mode=0644
+
+- name: copy the client configuration file
+  template: src=files/openvpn/client-static.j2 
+            dest=/var/www/lighttpd/client.conf
+            mode=0644
+
+#- name: start openvpn server
+#  service: name=openvpn@server
+#           state=running
+#          enabled=yes
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=1194/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+- include: website-vpn-static.yml
+- include: helpers/log-openvpn.yml
