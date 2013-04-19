@@ -23,7 +23,7 @@
            mode=0775
 
 - name: install the fsl test bench index.html file
-  template: src=files/index.j2
+  template: src=files/website/index.j2
             dest=/var/www/lighttpd/index.html 
             owner=root
             group=root
