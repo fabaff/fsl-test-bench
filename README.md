@@ -1,5 +1,4 @@
 # Fedora Security Lab Test bench
-
 The Fedora Security Lab Test bench provides a save environment for
 security auditing and testing and can be used for teaching security
 testing methodologies. At the moment the focus lies on web applications.
@@ -26,7 +25,6 @@ If you have just found Ansible or the Fedora Security Lab, you should start here
 More details can be found at the [Fedora Security Lab Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
 
 ## Prerequisites
-
 The setup of Ansible is explained on the [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. Here is only the setup of the managed nodes and special details for the management system covered. For every system you want to 
 manage, you need to have the client's SSH key in the *authorized_keys* file of
 the managed system and Python.
@@ -64,7 +62,6 @@ After cloning this git repository, edit the [variables/sensitive-variables.yml](
 you don't want to use *password* as default password.
 
 ## Structure
-
 At the moment the structure of the repository looks like this:
 
 ```bash
@@ -77,6 +74,7 @@ At the moment the structure of the repository looks like this:
 ├── fsl.yml -------------- Package list for setup a Fedora Security Lab
 ├── handlers ------------- Handlers for services
 ├── INSTALL.md ----------- Installation guide
+├── openvpn-server.yml --- Fedora Security Lab VPN server
 ├── README.md ------------ This files
 ├── tasks ---------------- A collection of tasks
 │   ├── apps ------------- Vulnerable web applications
