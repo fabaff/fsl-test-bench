@@ -23,7 +23,7 @@ ssh root@[IP address of your management system] 'cat ~/.ssh/id_rsa.pub' | cat - 
 ```
 From the management system:
 ```bash
-sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of your management system]
+sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of your managed note]
 ```
 Assuming that you already have an SSH key on your server.
 ```bash
