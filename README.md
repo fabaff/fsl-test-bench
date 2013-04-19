@@ -25,9 +25,12 @@ If you have just found Ansible or the Fedora Security Lab, you should start here
 More details can be found at the [Fedora Security Lab Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
 
 ## Prerequisites
-The setup of Ansible is explained on the [Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page. Here is only the setup of the managed nodes and special details for the management system covered. For every system you want to 
-manage, you need to have the client's SSH key in the *authorized_keys* file of
-the managed system and Python.
+The setup of Ansible is explained on the
+[Ansible Getting Started](http://ansible.cc/docs/gettingstarted.html) page.
+Here is only the setup of the managed nodes and special details for the
+management system covered. For every system you want to manage, you need to
+have the client's SSH key in the *authorized_keys* file of the managed system
+and Python.
 
 ### Packages
 Make sure that [Python](http://www.python.org/) is installed. If not, install
@@ -44,10 +47,11 @@ yum -y install dnf
 ```
 
 ### SSH key
-Add the SSH key to the *authorized_keys* file.
+Add the SSH key to the *authorized_keys* file. Assuming you are logged-in with
+SSH on your 
 
 ```bash
-ssh root@[IP address of your management system] 'cat ~/.ssh/id_rsa.pub' | cat - >> ~/.ssh/authorized_keys
+sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of your managed note]
 ```
 ### /etc/ansible/hosts
 The file */etc/ansible/hosts* shall contain all hosts to be setup up.
