@@ -1,4 +1,4 @@
-# This playbook install nginx (http://nginx.org).
+# This playbook install the nginx webserver (http://nginx.org).
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
