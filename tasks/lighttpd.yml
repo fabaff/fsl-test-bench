@@ -62,3 +62,11 @@
     - favicon.ico
     - light_button.png
     - poweredby.png
+
+# If you want your own index.html file
+#- name: install a default index.html file
+#  template: src=files/lighttpd.j2 
+#            dest=/var/www/lighttpd/index.html
+#            owner=lighttpd
+#            group=lighttpd
+#            mode=0644
