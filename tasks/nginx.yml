@@ -1,0 +1,50 @@
+# This playbook install nginx (http://nginx.org).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - nginx
+
+- name: run nginx on 8080
+  lineinfile: dest=/etc/nginx/nginx.conf
+              regexp='^        listen       80;'
+              insertafter='^        listen       80;'
+              line='        listen       8080;'
+              state=present
+
+- name: start webserver
+  service: name=nginx
+           state=running
+           enabled=yes 
+
+#- name: configure firewall, allow http traffic
+#  command: firewall-cmd --permanent --add-service=http
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8080/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+#- name: remove nginx default file
+#  file: path=/usr/share/nginx/html/$item
+#        state=absent
+#  with_items:
+#    - index.html
+#    - nginx-logo.png
+#    - poweredby.png
+#    - 404.html
+#    - 50x.html
+
+# If you want your own index.html file
+- name: install a default index.html file
+  template: src=files/website/new.j2 
+            dest=/usr/share/nginx/html/index.html
+            owner=lighttpd
+            group=lighttpd
+            mode=0644
