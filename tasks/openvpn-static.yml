@@ -6,6 +6,8 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
+- include: website-vpn-static.yml
+
 - name: install the needed packages
   command: /usr/bin/dnf -y install $item
   with_items:
@@ -15,14 +17,37 @@
   command: /usr/sbin/modprobe tun
 
 - name: generate a static key
-  command: /usr/sbin/openvpn --genkey --secret static.key
+  command: /usr/sbin/openvpn --genkey --secret /etc/openvpn/static.key
 
-- name: copy the key to the root of the webserver
-  command: /usr/bin/cp /root/static.key /var/www/lighttpd/static.key
+- name: create the log file
+  file: path=/var/log/openvpn.log
+        state=file
+        owner=root
+        group=root
+        mode=0600
 
-- name: reset the permissions of the key 
+# SELinux context wrong?
+#- name: create a symlink to the key file
+#  file: src=/etc/openvpn/static.key
+#        dest=/var/www/lighttpd/static.key
+#        owner=root
+#        group=root
+#        state=link
+
+#- name: set the permission of the key file
+#  file: path=/etc/openvpn/static.key
+#        state=file
+#        mode=0644
+
+- name: copy the static key to the webserver directory
+  command: /usr/bin/cp /etc/openvpn/static.key /var/www/lighttpd/static.key
+
+- name: set the permission of the key file
   file: path=/var/www/lighttpd/static.key
-        mode=644
+        state=file
+        owner=root
+        group=root
+        mode=0644
 
 - name: copy the server configuration file
   template: src=files/openvpn/server-static.j2 
@@ -34,10 +59,10 @@
             dest=/var/www/lighttpd/client.conf
             mode=0644
 
-#- name: start openvpn server
-#  service: name=openvpn@server
-#           state=running
-#          enabled=yes
+- name: start openvpn server
+  service: name=openvpn@server
+           state=running
+           enabled=yes
 
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=1194/tcp
@@ -48,5 +73,4 @@
 - name: reload firewall configuration
   command: firewall-cmd --reload
 
-- include: website-vpn-static.yml
 - include: helpers/log-openvpn.yml
