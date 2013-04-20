@@ -45,6 +45,6 @@
 - name: install a default index.html file
   template: src=files/website/new.j2 
             dest=/usr/share/nginx/html/index.html
-            owner=lighttpd
-            group=lighttpd
+            owner=root
+            group=root
             mode=0644
