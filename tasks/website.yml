@@ -27,25 +27,25 @@
             dest=/var/www/lighttpd/index.html 
             owner=root
             group=root
-            mode=0755
+            mode=0644
 
 - name: install the fsl test bench about.html file
   template: src=files/website/about.j2
             dest=/var/www/lighttpd/about.html 
             owner=root
             group=root
-            mode=0755
+            mode=0644
 
 - name: install the fsl test bench contact.html file
   template: src=files/website/contact.j2
             dest=/var/www/lighttpd/contact.html 
             owner=root
             group=root
-            mode=0755
+            mode=0644
 
 - name: copy the fsl banner
-  copy: src=./files/website/Spins-banner_security.png
+  copy: src=files/website/Spins-banner_security.png
         dest=/var/www/lighttpd/Spins-banner_security.png
         owner=root
         group=root
-        mode=0755
+        mode=0644
