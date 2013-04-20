@@ -1,6 +1,6 @@
 dev tun
 ifconfig 10.8.0.1 10.8.0.2
-secret /root/static.key
+secret /etc/openvpn/static.key
 port 1194
 proto udp
 user nobody
@@ -11,5 +11,5 @@ keepalive 10 60
 ping-timer-rem
 persist-tun
 persist-key
-log /var/log/openvpn.log
+log-append /var/log/openvpn.log
 verb 1
