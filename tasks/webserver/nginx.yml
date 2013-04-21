@@ -10,11 +10,11 @@
   with_items:
     - nginx
 
-- name: run nginx on 8080
+- name: run nginx on 8088
   lineinfile: dest=/etc/nginx/nginx.conf
               regexp='^        listen       80;'
               insertafter='^        listen       80;'
-              line='        listen       8080;'
+              line='        listen       8088;'
               state=present
 
 - name: start webserver
@@ -26,7 +26,7 @@
 #  command: firewall-cmd --permanent --add-service=http
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8080/tcp
+  command: firewall-cmd --permanent --add-port=8088/tcp
 
 - name: reload firewall configuration
   command: firewall-cmd --reload
