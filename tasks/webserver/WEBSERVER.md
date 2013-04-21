@@ -1,7 +1,8 @@
 # Webserver
 Nowadays there are a couple of webservers around for Linux. 'apache', 'nginx',
 and 'lighttpd' just to name the most popular. Every type of webserver has its
-purpose and its unique fingerprint.
+purpose and its unique fingerprint. The following webserver are available for 
+a Fedora Security Test bench setup:
 
 * [lighttpd](http://www.lighttpd.net/)
 * [apache](http://httpd.apache.org/) (not ready)
@@ -12,7 +13,7 @@ purpose and its unique fingerprint.
 * [pywebserve](http://gitorious.org/pywebserve) (not ready)
 
 # Ports assignment
-To run all webserver on one machine it's needed that the run on different ports.
+To run all webserver on one machine it's needed that they use different ports.
 Below you find a listing with the port the assigned webserver.
 
 | Port     | Server                   |
@@ -26,4 +27,7 @@ Below you find a listing with the port the assigned webserver.
 | **8808** | free |
 | **8888** | free |
 
-
+# Load balancing
+In high traffic environments it's common that webservers are placed behind a
+load balancer. This give a different impression of the infrastructure while 
+doing reconnaissance. This will be added soon...
