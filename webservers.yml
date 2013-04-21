@@ -1,0 +1,34 @@
+# This playbook contains tasks to perform on an installation of various web
+# server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+# 
+---
+- hosts: fsl-tb
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive-variables.yml
+
+  tasks:
+# Common tasks
+#    - include: tasks/preparation.yml
+#    - include: tasks/motd.yml
+
+# Web server tasks
+#    - include: tasks/webserver/lighttpd.yml
+#    - include: tasks/webserver/apache.yml
+#    - include: tasks/webserver/cherokee.yml
+#    - include: tasks/webserver/droopy.yml
+#    - include: tasks/webserver/nginx.yml
+#    - include: tasks/webserver/tomcat.yml
+#    - include: tasks/webserver/pywebserve.yml
+
+# Common tasks
+#    - include: tasks/cleanup.yml
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
