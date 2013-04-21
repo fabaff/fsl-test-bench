@@ -1,0 +1,40 @@
+# This playbook install the tomcat webserver (http://tomcat.apache.org/index.html).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - tomcat6
+    - tomcat6-webapps
+    - tomcat6-admin-webapps
+
+- name: setup of users
+  template: src=files/tomcat-users.j2 
+            dest=/etc/tomcat6/tomcat-users.xml
+            owner=root
+            group=root
+            mode=0644
+            backup=yes
+
+- name: start webserver
+  service: name=tomcat6
+           state=running
+           enabled=yes 
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8080/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+# If you want your own index.html file
+- name: install a default index.html file
+  template: src=files/website/new.j2 
+            dest=/var/lib/tomcat6/webapps/ROOT/index.html
+            owner=root
+            group=root
+            mode=0644
