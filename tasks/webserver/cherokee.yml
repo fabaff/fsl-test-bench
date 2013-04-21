@@ -10,11 +10,11 @@
   with_items:
     - cherokee
 
-- name: run cherokee on 8000
+- name: run cherokee on 8008
   lineinfile: dest=/etc/cherokee/cherokee.conf
               regexp='^server!bind!1!port = 80'
               insertafter='^server!bind!1!port = 80'
-              line='server!bind!1!port = 8000'
+              line='server!bind!1!port = 8008'
               state=present
 
 - name: start webserver
@@ -26,7 +26,7 @@
 #  command: firewall-cmd --permanent --add-service=http
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8000/tcp
+  command: firewall-cmd --permanent --add-port=8008/tcp
 
 - name: reload firewall configuration
   command: firewall-cmd --reload
