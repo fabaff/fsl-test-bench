@@ -1,0 +1,47 @@
+# This playbook install the apache webserver (http://httpd.apache.org/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - httpd
+
+- name: run apache on 8800
+  lineinfile: dest=/etc/httpd/conf/httpd.conf
+              regexp='^Listen 80'
+              insertafter='^Listen 80'
+              line='Listen 127.0.0.1:8800'
+              state=present
+
+- name: set server name
+  lineinfile: dest=/etc/httpd/conf/httpd.conf
+              regexp='^ServerName www.example.com:80'
+              insertafter='^#ServerName www.example.com:80'
+              line='ServerName $ansible_hostname:8800'
+              state=present
+
+- name: start webserver
+  service: name=httpd
+           state=running
+           enabled=yes 
+
+#- name: configure firewall, allow http traffic
+#  command: firewall-cmd --permanent --add-service=http
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8800/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+# If you want your own index.html file
+- name: install a default index.html file
+  template: src=files/website/new.j2 
+            dest=/var/www/html/index.html
+            owner=root
+            group=root
+            mode=0644
