@@ -23,10 +23,10 @@
            enabled=yes 
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8008/tcp
+  command: /usr/bin/firewall-cmd --permanent --add-port=8008/tcp
 
 - name: reload firewall configuration
-  command: firewall-cmd --reload
+  command: /usr/bin/firewall-cmd --reload
 
 - name: remove cherokee default file
   file: path=/var/www/cherokee/$item

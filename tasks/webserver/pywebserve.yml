@@ -18,10 +18,10 @@
         mode=0775
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8880/tcp
+  command: /usr/bin/firewall-cmd --permanent --add-port=8880/tcp
 
 - name: reload firewall configuration
-  command: firewall-cmd --reload
+  command: /usr/bin/firewall-cmd --reload
 
 - name: copy systemd service file
   template: src=files/pywebserve-service.j2 
@@ -31,7 +31,7 @@
             mode=0644
 
 - name: reload systemd
-  command: systemctl --system daemon-reload
+  command: /usr/bin/systemctl --system daemon-reload
 
 - name: start pywebserve
   service: name=pywebserve

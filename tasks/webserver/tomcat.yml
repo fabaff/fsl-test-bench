@@ -26,10 +26,10 @@
            enabled=yes 
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8080/tcp
+  command: /usr/bin/firewall-cmd --permanent --add-port=8080/tcp
 
 - name: reload firewall configuration
-  command: firewall-cmd --reload
+  command: /usr/bin/firewall-cmd --reload
 
 # If you want your own index.html file
 - name: install a default index.html file

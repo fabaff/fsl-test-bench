@@ -49,10 +49,10 @@
            enabled=yes 
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=80/tcp
+  command: /usr/bin/firewall-cmd --permanent --add-port=80/tcp
 
 - name: reload firewall configuration
-  command: firewall-cmd --reload
+  command: /usr/bin/firewall-cmd --reload
 
 - name: remove lighttpd default file (images)
   file: path=/var/www/lighttpd/$item
