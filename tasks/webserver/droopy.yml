@@ -43,7 +43,7 @@
 - name: reload systemd
   command: systemctl --system daemon-reload
 
-#- name: start webserver
-#  service: name=droopy
-#           state=running
-#           enabled=yes 
+- name: start droopy
+  service: name=droopy
+           state=running
+           enabled=yes 

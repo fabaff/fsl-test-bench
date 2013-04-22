@@ -17,17 +17,8 @@
         group=root
         mode=0775
 
-#- name: configure firewall, allow http traffic
-#  command: firewall-cmd --permanent --add-service=http
-
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=8880/tcp
-
-- name: reload firewall configuration
-  command: firewall-cmd --reload
-
-- name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-port=8000/tcp
 
 - name: reload firewall configuration
   command: firewall-cmd --reload
@@ -42,7 +33,7 @@
 - name: reload systemd
   command: systemctl --system daemon-reload
 
-- name: start webserver
+- name: start pywebserve
   service: name=pywebserve
            state=running
            enabled=yes 

@@ -17,13 +17,10 @@
               line='server!bind!1!port = 8008'
               state=present
 
-- name: start webserver
+- name: start cherokee
   service: name=cherokee
            state=running
            enabled=yes 
-
-#- name: configure firewall, allow http traffic
-#  command: firewall-cmd --permanent --add-service=http
 
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=8008/tcp

@@ -43,13 +43,13 @@
         owner=lighttpd
         group=lighttpd
 
-- name: start webserver
+- name: start lighttpd
   service: name=lighttpd
            state=running
            enabled=yes 
 
 - name: configure firewall, allow http traffic
-  command: firewall-cmd --permanent --add-service=http
+  command: firewall-cmd --permanent --add-port=80/tcp
 
 - name: reload firewall configuration
   command: firewall-cmd --reload

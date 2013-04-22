@@ -17,13 +17,10 @@
               line='        listen       8088;'
               state=present
 
-- name: start webserver
+- name: start nginx
   service: name=nginx
            state=running
            enabled=yes 
-
-#- name: configure firewall, allow http traffic
-#  command: firewall-cmd --permanent --add-service=http
 
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=8088/tcp

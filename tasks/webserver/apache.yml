@@ -24,13 +24,10 @@
               line='ServerName $ansible_hostname:8800'
               state=present
 
-- name: start webserver
+- name: start apache
   service: name=httpd
            state=running
            enabled=yes 
-
-#- name: configure firewall, allow http traffic
-#  command: firewall-cmd --permanent --add-service=http
 
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=8800/tcp
