@@ -1,0 +1,11 @@
+[Unit]
+Description=A mini Web server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python /var/www/droopy/droopy 
+
+[Install]
+WantedBy=multi-user.target
