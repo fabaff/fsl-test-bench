@@ -1,0 +1,48 @@
+# This playbook install the simple webserver 'pywebserve'.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory
+  file: path=/var/www/pywebserve
+        mode=0755
+        state=directory
+
+- name: copy the python script to the test bench
+  copy: src=files/pywebserve.py
+        dest=/var/www/pywebserve/pywebserve.py
+        owner=root
+        group=root
+        mode=0775
+
+#- name: configure firewall, allow http traffic
+#  command: firewall-cmd --permanent --add-service=http
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8880/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-port=8000/tcp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+- name: copy systemd service file
+  template: src=files/pywebserve-service.j2 
+            dest=/lib/systemd/system/pywebserve.service
+            owner=root
+            group=root
+            mode=0644
+
+- name: reload systemd
+  command: systemctl --system daemon-reload
+
+- name: start webserver
+  service: name=pywebserve
+           state=running
+           enabled=yes 
