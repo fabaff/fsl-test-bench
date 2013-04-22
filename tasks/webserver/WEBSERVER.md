@@ -30,4 +30,17 @@ Below you find a listing with the port the assigned webserver.
 # Load balancing
 In high traffic environments it's common that webservers are placed behind a
 load balancer. This give a different impression of the infrastructure while 
-doing reconnaissance. This will be added soon...
+doing reconnaissance.
+
+```bash
+                             +----------------+
+                         +-->| Webserver 1    |
+    +-----------------+  |   |                |
+    | Loadbalancer    |--+   +----------------+
+ -->|                 |--+
+    +-----------------+  |   +----------------+
+                         |   | Webserver 2    |
+                         +-->|                |
+                             +----------------+
+```
+This will be added soon...
