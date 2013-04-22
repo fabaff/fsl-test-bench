@@ -1,0 +1,11 @@
+[Unit]
+Description=A simple python Web server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python /var/www/pywebserve/pywebserve.py 
+
+[Install]
+WantedBy=multi-user.target
