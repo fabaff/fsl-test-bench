@@ -6,20 +6,44 @@
 #
 ---
 - name: create the directory
-  file: path=/var/www/lighttpd/droppy
+  file: path=/var/www/droopy
+        mode=0755
         state=directory
 
 - name: create the directory
-  file: path=/var/www/lighttpd/droppy/uploads
+  file: path=/var/www/droopy/uploads
+        mode=0755
         state=directory
 
 - name: download the source
   get_url: url=http://gitorious.org/droopy/droopy/blobs/raw/master/droopy
-           dest=/var/www/lighttpd/droppy/droopy
+           dest=/var/www/droopy/droopy
            mode=0777
+
+- name: copy configuration file
+  template: src=files/droopy-config.j2 
+            dest=/root/.droopy
+            owner=root
+            group=root
+            mode=0644
 
 - name: configure firewall, allow http traffic
   command: firewall-cmd --permanent --add-port=8000/tcp
 
 - name: reload firewall configuration
   command: firewall-cmd --reload
+
+- name: copy systemd service file
+  template: src=files/droopy-service.j2 
+            dest=/lib/systemd/system/droopy.service
+            owner=root
+            group=root
+            mode=0644
+
+- name: reload systemd
+  command: systemctl --system daemon-reload
+
+#- name: start webserver
+#  service: name=droopy
+#           state=running
+#           enabled=yes 
