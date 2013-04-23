@@ -1,0 +1,22 @@
+# This playbook install the vsftp server (https://security.appspot.com/vsftpd.html).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - vsftpd
+
+- name: start vsftpd
+  service: name=vsftpd
+           state=running
+           enabled=yes 
+
+- name: configure firewall, allow http traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=21/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
