@@ -1,0 +1,34 @@
+# This playbook setup nfs (http://nfs.sourceforge.net/) capability.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item 
+  with_items:
+    - nfs-utils
+
+# Not editing /etc/idmapd.conf
+# Exports /etc/exports
+
+- name: start rpcbind
+  service: name=rpcbind
+           state=running
+           enabled=yes
+
+- name: start nfs-server
+  service: name=nfs-server
+           state=running
+           enabled=yes
+
+- name: start nfs-idmap
+  service: name=nfs-idmap
+           state=running
+           enabled=yes
+
+- name: start nfs-lock
+  service: name=nfs-lock
+           state=running
+           enabled=yes
