@@ -1,0 +1,25 @@
+# This playbook install a tftp server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install needed packages
+  command: /usr/bin/dnf -y install $item 
+  with_items:
+    - tftp-server
+
+- name: enable tftp in xinetd
+  command: sed -i 's|\sdisable\s\{3,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/tftp
+
+- name: configure firewall, allow http traffic
+  command: firewall-cmd --permanent --add-service=tftp
+
+- name: reload firewall configuration
+  command: firewall-cmd --reload
+
+- name: start and enable xinetd service
+  service: name=xinetd
+           state=running
+           enabled=yes
