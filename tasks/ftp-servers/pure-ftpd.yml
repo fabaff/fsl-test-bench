@@ -1,0 +1,29 @@
+# This playbook install the pure-ftpd server (http://www.pureftpd.org).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - pure-ftpd
+
+- name: run proftpd on port 2021
+  lineinfile: dest=/etc/pure-ftpd/pure-ftpd.conf
+              regexp='^Bind                      127.0.0.1,21'
+              insertafter='^# Bind                      127.0.0.1,21'
+              line='Bind                      127.0.0.1,2021'
+              state=present
+
+- name: start pure-ftpd
+  service: name=pure-ftpd
+           state=running
+           enabled=yes 
+
+- name: configure firewall, allow ftp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=2021/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
