@@ -1,0 +1,16 @@
+# This playbook install XSSeducation (https://github.com/aj00200/xssed).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: checkout from the git repo
+  git: repo=git://github.com/aj00200/xssed.git
+       dest=/var/www/lighttpd/xssed
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--VA-->'
+              insertafter='        <!--VA-->'
+              line='        <a href="/xssed" class="btn btn-inverse">xssed</a></br>'
