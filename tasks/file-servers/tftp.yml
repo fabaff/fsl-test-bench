@@ -13,7 +13,7 @@
 - name: enable tftp in xinetd
   command: sed -i 's|\sdisable\s\{3,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/tftp
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow tftp traffic
   command: firewall-cmd --permanent --add-service=tftp
 
 - name: reload firewall configuration
@@ -23,3 +23,8 @@
   service: name=xinetd
            state=running
            enabled=yes
+
+- name: put a configuration fragement for default part in place
+  template: src=files/default.j2
+            dest=/var/lib/tftpboot/info.txt
+            mode=0644
