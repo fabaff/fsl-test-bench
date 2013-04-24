@@ -1,7 +1,8 @@
-# Webserver
-Nowadays there are a couple of webservers around for Linux. 'apache', 'nginx',
-and 'lighttpd' just to name the most popular. Every type of webserver has its
-purpose and its unique fingerprint. The following webserver are available for 
+# Web servers
+
+Nowadays there are a couple of web servers around for Linux. 'apache', 'nginx',
+and 'lighttpd' just to name the most popular. Every type of web server has its
+purpose and its unique fingerprint. The following web server are available for 
 a Fedora Security Test bench setup:
 
 * [lighttpd](http://www.lighttpd.net/)
@@ -9,12 +10,12 @@ a Fedora Security Test bench setup:
 * [cherokee](http://cherokee-project.com/) (not ready)
 * [nginx](http://nginx.org/)
 * [tomcat](http://tomcat.apache.org/index.html)
-* [droopy](http://gitorious.org/droopy) (not ready)
-* [pywebserve](http://gitorious.org/pywebserve) (not ready)
+* [droopy](http://gitorious.org/droopy)
+* [pywebserve](http://gitorious.org/pywebserve)
 
 # Ports assignment
 To run all webserver on one machine it's needed that they use different ports.
-Below you find a listing with the port the assigned webserver.
+Below you find a listing with the port the assigned web server.
 
 | Port     | Server                   |
 |:--------:|:-------------------------|
@@ -24,7 +25,7 @@ Below you find a listing with the port the assigned webserver.
 | **8080** | tomcat |
 | **8800** | apache |
 | **8088** | nginx |
-| **8808** | free |
+| **8808** | pywebserve |
 | **8888** | free |
 
 # Load balancing
