@@ -1,11 +1,11 @@
 # FTP servers
-Nowadays there are a couple of webservers around for Linux. 'apache', 'nginx',
-and 'lighttpd' just to name the most popular. Every type of webserver has its
-purpose and its unique fingerprint. The following webserver are available for 
-a Fedora Security Test bench setup:
+File Transfer Protocol (FTP) is an importent protocol for transferring files
+from host to host. All FTP connections are unencrypted to make it possible to
+sniff the control and data connections between the client and the server.
+For the Fedora Security Lab Test bench the listed ftp servers are available:
 
 * [vsftpd](http://vsftpd.beasts.org)
-* [proftpd](http://www.proftpd.org/)
+* [proftpd](http://www.proftpd.org/) (not ready)
 * [pure-ftpd](http://www.pureftpd.org)
 
 # Ports assignment
