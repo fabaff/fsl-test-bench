@@ -10,7 +10,7 @@
   with_items:
     - telnet-server
 
-- name: enable tftp in xinetd
+- name: enable telnet in xinetd
   command: sed -i 's|\sdisable\s\{1,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/telnet
 
 - name: configure firewall, allow tftp traffic
