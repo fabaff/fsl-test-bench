@@ -10,8 +10,6 @@
   file: path=/var/www/lighttpd/ajaxshell
         state=directory
 
-http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%20Shell%20v0.7/shell_v0_7_prefinal_.zip
-
 - name: download the source tarball
   get_url: url=http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%20Shell%20v0.7/shell_v0_7_prefinal_.zip
            dest=/var/www/lighttpd/shell_v0_7_prefinal_.zip
@@ -24,6 +22,9 @@ http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%
   file: path=/var/www/lighttpd/shell_v0_7_prefinal_.zip
         state=absent
 
+- name: rename the php file
+  command: /usr/bin/mv /var/www/lighttpd/ajaxshell/Shell_v0_7.php /var/www/lighttpd/ajaxshell/ajax-shell.php
+
 - name: remove unneeded files
   file: path=/var/www/lighttpd/ajaxshell/$item
         state=absent
@@ -35,4 +36,4 @@ http://downloads.sourceforge.net/project/ajaxshell/ajaxshell/AJAX_PHP%20Command%
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
-              line='            <a href="/ajaxshell/Ani-Shell.php" class="btn btn-inverse">Ajax Shell</a></br>'
+              line='            <a href="/ajaxshell/ajax-shell.php" class="btn btn-inverse">Ajax Shell</a></br>'
