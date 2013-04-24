@@ -35,3 +35,6 @@ jquery_version: 1.9.1
 
 # kippo - http://code.google.com/p/kippo
 kippo_version: 0.5
+
+# hackadamemic - https://code.google.com/p/owasp-hackademic-challenges/
+hackadamemic_version: 0.1.1
