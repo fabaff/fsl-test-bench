@@ -1,0 +1,32 @@
+# This playbook install a cups server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install needed packages
+  command: /usr/bin/dnf -y install $item 
+  with_items:
+    - cups
+
+- name: default cups configuration file
+  template: src=files/cups.j2 
+            dest=/etc/cups/cupsd.conf
+            owner=root
+            group=root
+            mode=0644
+
+- name: configure firewall, allow ipp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-service=ipp
+
+- name: configure firewall, allow ipp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-service=ipp-client
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start cups
+  service: name=cups
+           state=running
+           enabled=yes
