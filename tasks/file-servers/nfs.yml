@@ -10,8 +10,27 @@
   with_items:
     - nfs-utils
 
-# Not editing /etc/idmapd.conf
-# Exports /etc/exports
+- name: create a directory to share
+  file: path=/opt/nfs/
+        mode=0755
+        state=directory
+
+- name: put a dummy in the share
+  template: src=files/default.j2
+            dest=/opt/nfs/info.txt
+            mode=0644
+
+- name: add an export
+  lineinfile: dest=/etc/exports
+              regexp=''
+              insertafter=EOF
+              line='/opt/nfs/ ${ansible_eth0.ipv4.network}/24(rw,sync)'
+
+- name: configure firewall, allow nfs traffic
+  command: /usr/bin/firewall-cmd --permanent --add-service=nfs
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
 
 - name: start rpcbind
   service: name=rpcbind
