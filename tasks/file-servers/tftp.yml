@@ -24,7 +24,7 @@
            state=running
            enabled=yes
 
-- name: put a configuration fragement for default part in place
+- name: put a dummy file in tftp folder
   template: src=files/default.j2
             dest=/var/lib/tftpboot/info.txt
             mode=0644
