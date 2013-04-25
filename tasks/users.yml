@@ -1,0 +1,30 @@
+# This playbook adds some users to the Test bench.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Details:
+# https://github.com/ansible/ansible/blob/devel/examples/playbooks/user_commands.yml
+# python -c 'import crypt; print crypt.crypt("password", "$1$TestBench$")'
+---
+- name: add user 'bob'
+  user: name=bob
+        password=$1$TestBenc$xgKVyHGZ3pUAkBuM09KDf.
+        comment=TestBenchUser
+        group=users
+        createhome=yes
+
+- name: add user 'alice'
+  user: name=alice
+        password=$1$TestBenc$8SIf9GViaxrqkgBl1upQ50
+        comment=TestBenchUser
+        group=users
+        createhome=yes
+
+- name: add user 'testbench'
+  user: name=testbench
+        comment=TestBenchUser
+        group=users
+        createhome=no
+        shell=/sbin/nologin
