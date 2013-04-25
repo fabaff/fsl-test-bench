@@ -1,4 +1,4 @@
-# This playbook install the tomcat webserver (http://tomcat.apache.org/index.html).
+# This playbook install a tomcat webserver (http://tomcat.apache.org/index.html).
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -32,9 +32,9 @@
   command: /usr/bin/firewall-cmd --reload
 
 # If you want your own index.html file
-- name: install a default index.html file
-  template: src=files/website/default.j2 
-            dest=/var/lib/tomcat6/webapps/ROOT/index.html
-            owner=root
-            group=root
-            mode=0644
+#- name: install a default index.html file
+#  template: src=files/website/default.j2 
+#            dest=/var/lib/tomcat6/webapps/ROOT/index.html
+#            owner=root
+#            group=root
+#            mode=0644
