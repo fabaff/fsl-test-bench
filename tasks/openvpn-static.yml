@@ -6,8 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- include: website-vpn-static.yml
-
 - name: install the needed packages
   command: /usr/bin/dnf -y install $item
   with_items:
@@ -20,11 +18,7 @@
   command: /usr/sbin/openvpn --genkey --secret /etc/openvpn/static.key
 
 - name: create the log file
-  file: path=/var/log/openvpn.log
-        state=file
-        owner=root
-        group=root
-        mode=0600
+  command: touch /var/log/openvpn.log
 
 # SELinux context wrong?
 #- name: create a symlink to the key file
@@ -72,5 +66,3 @@
 
 - name: reload firewall configuration
   command: firewall-cmd --reload
-
-- include: helpers/log-openvpn.yml
