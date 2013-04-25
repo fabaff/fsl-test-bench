@@ -5,23 +5,17 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: add user 'bob'
-  user: name=bob
-        password=$bob_password
-        comment=Test bench user Bob
+- name: add user default users
+  user: name=$item
+        password={{ item }}_password
+        comment=Test bench user $item
         group=users
         createhome=yes
         generate_ssh_key=yes
         ssh_key_bits=2048
-
-- name: add user 'alice'
-  user: name=alice
-        password=$alice_password
-        comment=Test bench user Alice
-        group=users
-        createhome=yes
-        generate_ssh_key=yes
-        ssh_key_bits=2048
+  with_items:
+    - bob
+    - alice
 
 - name: add user 'tb'
   user: name=tb
