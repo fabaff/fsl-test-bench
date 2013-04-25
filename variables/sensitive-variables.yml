@@ -5,14 +5,22 @@
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
-# For the Ansible examples:
-# python -c 'import crypt; print crypt.crypt("Password", "$1$SomeSalt$")'
+# Details:
+# https://github.com/ansible/ansible/blob/devel/examples/playbooks/user_commands.yml
+# python -c 'import crypt; print crypt.crypt("password", "$1$TestBench$")'
+#
 ---
 # Server root password
-server_root_password: password
+server_root_password: testbench
 
-# Client root password
-client_root_password: password
+# User 'bob'  with password 'bob'
+bob_password: $1$TestBenc$xgKVyHGZ3pUAkBuM09KDf.
+
+# User 'alice' with password 'alice'
+alice_password: $1$TestBenc$8SIf9GViaxrqkgBl1upQ50
+
+# User 'tb' with password '12345'
+tb_password=$1$TestBenc$t0GB3P5CxxZqOVXOjNHUX0
 
 # Default user password
 default_user_password: password

@@ -4,27 +4,35 @@
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
-# Details:
-# https://github.com/ansible/ansible/blob/devel/examples/playbooks/user_commands.yml
-# python -c 'import crypt; print crypt.crypt("password", "$1$TestBench$")'
 ---
 - name: add user 'bob'
   user: name=bob
-        password=$1$TestBenc$xgKVyHGZ3pUAkBuM09KDf.
-        comment=TestBenchUser
+        password=$bob_password
+        comment=Test bench user Bob
         group=users
         createhome=yes
+        generate_ssh_key=yes
+        ssh_key_bits=2048
 
 - name: add user 'alice'
   user: name=alice
-        password=$1$TestBenc$8SIf9GViaxrqkgBl1upQ50
-        comment=TestBenchUser
+        password=$alice_password
+        comment=Test bench user Alice
+        group=users
+        createhome=yes
+        generate_ssh_key=yes
+        ssh_key_bits=2048
+
+- name: add user 'tb'
+  user: name=tb
+        comment=Test bench user
+        password=$tb_password
         group=users
         createhome=yes
 
 - name: add user 'testbench'
   user: name=testbench
-        comment=TestBenchUser
+        comment=Test bench user
         group=users
         createhome=no
         shell=/sbin/nologin
