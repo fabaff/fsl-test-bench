@@ -21,8 +21,14 @@
 
 # Common tasks
     - include: tasks/preparation.yml
+
+# OpenVPN server with PKI
 #    - include: tasks/openvpn.yml
+
+# OpenVPN server with a static key
+    - include: task/website-vpn-static.yml
     - include: tasks/openvpn-static.yml
+    - include: tasks/helpers/log-openvpn.yml
 
 # Common tasks
     - include: tasks/cleanup.yml
