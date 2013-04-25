@@ -24,10 +24,10 @@
             mode=0644
 
 - name: set selinux boolean
-  command: /usr/bin/setsebool -P allow_smbd_anon_write=1
+  command: /usr/sbin/setsebool -P allow_smbd_anon_write=1
 
 - name: allow full access (r/w)
-  command: /usr/bin/setsebool -P samba_export_all_rw on
+  command: /usr/sbin/setsebool -P samba_export_all_rw on
 
 - name: set selinux context
   command: /usr/bin/chcon -t samba_share_t /opt/samba/
