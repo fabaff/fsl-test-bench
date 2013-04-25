@@ -1,0 +1,29 @@
+# This playbook install a postfix (http://www.postfix.org/) server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install needed packages
+  command: /usr/bin/dnf -y install $item 
+  with_items:
+    - postfix
+
+- name: default postfix configuration file
+  template: src=files/postfix-config.j2
+            dest=/etc/postfix/main.cf
+            owner=root
+            group=root
+            mode=0644
+
+- name: configure firewall, allow smtp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=25/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start postfix
+  service: name=postfix
+           state=running
+           enabled=yes
