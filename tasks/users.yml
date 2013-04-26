@@ -7,8 +7,8 @@
 ---
 - name: add user default users
   user: name=$item
-        password={{ item }}_password
-        comment=Test bench user $item
+        password=${{ item }}_password
+        comment='Test bench user $item'
         group=users
         createhome=yes
         generate_ssh_key=yes
@@ -19,14 +19,14 @@
 
 - name: add user 'tb'
   user: name=tb
-        comment=Test bench user
+        comment='Test bench user'
         password=$tb_password
         group=users
         createhome=yes
 
 - name: add user 'testbench'
   user: name=testbench
-        comment=Test bench user
+        comment='Test bench user'
         group=users
         createhome=no
         shell=/sbin/nologin
