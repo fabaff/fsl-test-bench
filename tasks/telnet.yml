@@ -11,7 +11,7 @@
     - telnet-server
 
 - name: enable telnet in xinetd
-  command: sed -i 's|\sdisable\s\{1,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/telnet
+  command: /usr/bin/sed -i 's|\sdisable\s\{1,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/telnet
 
 - name: configure firewall, allow tftp traffic
   command: /usr/bin/firewall-cmd --permanent --add-service=telnet
