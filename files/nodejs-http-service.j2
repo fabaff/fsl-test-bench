@@ -1,0 +1,15 @@
+[Unit]
+Description=A simple node.js Web server
+After=network.target
+
+[Service]
+Type=simple
+User=nobody
+Group=nobody
+Restart=always
+ExecStart=/usr/bin/http-server /var/www/nodejs -p 8888 -s
+StandardOutput=syslog
+SyslogIdentifier=nodejs-http
+
+[Install]
+WantedBy=multi-user.target

@@ -12,6 +12,7 @@ a Fedora Security Test bench setup:
 * [tomcat](http://tomcat.apache.org/index.html)
 * [droopy](http://gitorious.org/droopy)
 * [pywebserve](http://gitorious.org/pywebserve)
+* [node.js](http://nodejs.org/)
 
 # Ports assignment
 To run all webserver on one machine it's needed that they use different ports.
@@ -25,8 +26,8 @@ Below you find a listing with the port the assigned web server.
 | **8080** | tomcat |
 | **8800** | apache |
 | **8088** | nginx |
-| **8808** | pywebserve |
-| **8888** | free |
+| **8880** | pywebserve |
+| **8888** | node.js |
 
 # Load balancing
 In high traffic environments it's common that webservers are placed behind a

@@ -1,0 +1,51 @@
+# This playbook install the node.js webserver (http://nodejs.org/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install the needed packages
+  command: /usr/bin/dnf -y install $item
+  with_items:
+    - nodejs
+    - npm
+
+- name: install additional items
+  command: /usr/bin/npm install $item -g
+  with_items:
+    - http-server
+
+- name: create the directory
+  file: path=/var/www/nodejs
+        mode=0755
+        state=directory
+
+- name: copy systemd service file
+  template: src=files/nodejs-http-service.j2 
+            dest=/lib/systemd/system/nodejs-http.service
+            owner=root
+            group=root
+            mode=0644
+
+- name: reload systemd
+  command: /usr/bin/systemctl --system daemon-reload
+
+- name: start nodejs-http
+  service: name=nodejs-http
+           state=running
+           enabled=yes 
+
+- name: configure firewall, allow http traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=8888/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+# If you want your own index.html file
+- name: install a default index.html file
+  template: src=files/website/default.j2 
+            dest=/var/www/nodejs/index.html
+            owner=root
+            group=root
+            mode=0644
