@@ -11,7 +11,7 @@
     - tftp-server
 
 - name: enable tftp in xinetd
-  command: sed -i 's|\sdisable\s\{3,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/tftp
+  command: /usr/bin/sed -i 's|\sdisable\s\{3,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/tftp
 
 - name: configure firewall, allow tftp traffic
   command: /usr/bin/firewall-cmd --permanent --add-service=tftp
