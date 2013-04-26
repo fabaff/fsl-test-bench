@@ -11,8 +11,15 @@
   with_items:
     - dropbear
 
-- name: configure firewall, allow ipp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=ssh
+- name: enable switch to port 222
+  template: src=files/dropbear-config.j2 
+            dest=/etc/sysconfig/dropbear
+            owner=root
+            group=root
+            mode=0644
+
+- name: configure firewall, allow ssh traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=222/tcp
 
 - name: reload firewall configuration
   command: /usr/bin/firewall-cmd --reload
