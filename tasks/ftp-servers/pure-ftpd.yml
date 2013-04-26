@@ -10,11 +10,11 @@
   with_items:
     - pure-ftpd
 
-- name: run proftpd on port 2021
+- name: run pure-ftpd on port 2021
   lineinfile: dest=/etc/pure-ftpd/pure-ftpd.conf
               regexp='^Bind                      127.0.0.1,21'
               insertafter='^# Bind                      127.0.0.1,21'
-              line='Bind                      127.0.0.1,2021'
+              line='Bind                      127.0.0.1,2121'
               state=present
 
 - name: start pure-ftpd
@@ -24,6 +24,9 @@
 
 - name: configure firewall, allow ftp traffic
   command: /usr/bin/firewall-cmd --permanent --add-port=2021/tcp
+
+- name: configure firewall, allow ftp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=2020/tcp
 
 - name: reload firewall configuration
   command: /usr/bin/firewall-cmd --reload
