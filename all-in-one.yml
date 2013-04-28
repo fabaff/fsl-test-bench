@@ -17,8 +17,8 @@
   tasks:
 # Common tasks
     - include: tasks/preparation.yml
-    - include: tasks/motd-hhs.yml
-    - include: tasks/hosts-hhs.yml
+    - include: tasks/motd.yml
+    - include: tasks/hosts.yml
     - include: tasks/users.yml
 
 # Services
@@ -40,7 +40,7 @@
     - include: tasks/mail-servers/dovecot.yml
 
 # HHS Test bench specific stuff
-    - include: tasks/website-hhs.yml
+    - include: tasks/website.yml
 
 # Helpers
     - include: tasks/helpers/log-system.yml
