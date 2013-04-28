@@ -6,4 +6,4 @@
 #
 ---
 - name: copy the ssh key to the test-bench
-  command: /usr/bin/ssh-copy-id -i /root/.ssh/id_rsa.pub root@10.1.1.5
+  command: /usr/bin/ssh-copy-id -i /root/.ssh/id_rsa.pub root@$ip
