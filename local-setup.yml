@@ -30,6 +30,7 @@
     - range_end: 10.1.1.50
     - mac: '52:52:00:00:00:01'
     - mirror: http://mirror.switch.ch/ftp/mirror/fedora/linux/releases/18/Fedora/x86_64/os/
+    - wait_time: 8 # Time in minutes to wait for the virtual machine 
 ################################################################################
   tasks:
 # Virtual machine setup tasks

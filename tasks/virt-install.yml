@@ -30,8 +30,7 @@
   command: /usr/bin/bash /tmp/fsl-virt-install
 
 - name: wait till the virtual machine is ready
-  wait_for: port=8000
-            delay=360
+  pause: minutes=$wait_time
 
 - name: delete temp files
   file: path=/tmp/$item
