@@ -45,6 +45,9 @@
       virt: name=$virtname
             state=running
 
+    - name: wait till the virtual machine is launched
+      pause: minutes=1
+
 # Setup Test bench connection
     - include: tasks/auth-key.yml
 
