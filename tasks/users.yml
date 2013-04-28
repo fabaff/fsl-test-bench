@@ -7,7 +7,7 @@
 ---
 - name: add user default users
   user: name=$item
-        password=${{ item }}_password
+        password=${item}_password
         comment='Test bench user $item'
         group=users
         createhome=yes
