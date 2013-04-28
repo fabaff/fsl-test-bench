@@ -9,8 +9,8 @@
   yum: pkg=dnf
        state=installed
 
-#- name: update all packages
-#  command: /usr/bin/dnf -y upgrade
+- name: update all packages
+  command: /usr/bin/dnf -y upgrade
 
 - name: install the unzip package
   command: /usr/bin/dnf -y install unzip
