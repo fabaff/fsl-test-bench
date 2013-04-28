@@ -36,7 +36,7 @@
 # Virtual machine setup tasks
 #    - include: tasks/mc.yml # Just a playbook to test the local connection
     - include: tasks/libvirt.yml
-#    - include: tasks/virt-install.yml
+    - include: tasks/virt-install.yml
 
 #- name: wait till the virtual machine is ready
 #  wait_for: timeout=300
@@ -48,6 +48,57 @@
 # Setup Test bench
     - include: tasks/auth-key.yml
 
+# Common tasks
+    - include: tasks/preparation.yml
+    - include: tasks/motd.yml
+    - include: tasks/hosts.yml
+    - include: tasks/users.yml
+
+# Services
+    - include: tasks/web-servers/lighttpd.yml
+    - include: tasks/web-servers/nginx.yml
+    - include: tasks/web-servers/tomcat.yml
+    - include: tasks/web-servers/pywebserve.yml
+    - include: tasks/web-servers/nodejs.yml
+    - include: tasks/db-servers/mysql.yml
+    - include: tasks/ftp-servers/vsftpd.yml
+    - include: tasks/misc-servers/dropbear.yml
+    - include: tasks/file-servers/tftp.yml
+    - include: tasks/misc-servers/telnet.yml
+    - include: tasks/misc-servers/cups.yml
+    - include: tasks/file-servers/samba.yml
+    - include: tasks/file-servers/nfs.yml
+    - include: tasks/misc-servers/openvpn-static.yml
+    - include: tasks/mail-servers/postfix.yml
+    - include: tasks/mail-servers/dovecot.yml
+
+# FSL Test bench specific stuff
+    - include: tasks/website.yml
+
+# Helpers
+    - include: tasks/helpers/log-system.yml
+    - include: tasks/helpers/cgi.yml
+    - include: tasks/helpers/phpinfo.yml
+    - include: tasks/helpers/php-shell-detector.yml
+    - include: tasks/helpers/linfo.yml
+    - include: tasks/helpers/phpmyadmin.yml
+
+# Vulnerable Web Application
+    - include: tasks/apps/sqlol.yml
+    - include: tasks/apps/sqli.yml
+    - include: tasks/apps/bwapp.yml
+    - include: tasks/apps/dvwa.yml
+    - include: tasks/apps/hackademic.yml
+    - include: tasks/apps/xssed.yml
+
+# Honeypots
+    - include: tasks/honeypots/honeyd.yml
+
+# Shells
+    - include: tasks/shells/b374k.yml
+    - include: tasks/shells/dnashell.yml
+    - include: tasks/shells/phpshell.yml
+    - include: tasks/shells/ajaxshell.yml
 
   handlers:
    - include: handlers/system.yml
