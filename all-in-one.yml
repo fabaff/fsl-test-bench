@@ -39,7 +39,7 @@
     - include: tasks/mail-servers/postfix.yml
     - include: tasks/mail-servers/dovecot.yml
 
-# HHS Test bench specific stuff
+# FSL Test bench specific stuff
     - include: tasks/website.yml
 
 # Helpers
