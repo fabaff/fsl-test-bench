@@ -34,7 +34,7 @@
 ################################################################################
   tasks:
 # Virtual machine setup tasks
-    - include: tasks/mc.yml # Just a playbook to test the local connection
+#    - include: tasks/mc.yml # Just a playbook to test the local connection
     - include: tasks/libvirt.yml
     - include: tasks/virt-install.yml
 
