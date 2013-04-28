@@ -29,6 +29,10 @@
 - name: run customized fsl-virt-install 
   command: /usr/bin/bash /tmp/fsl-virt-install
 
+- name: wait till the 
+  wait_for: port=8000
+            delay=360
+
 - name: delete temp files
   file: path=/tmp/$item
         state=absent
