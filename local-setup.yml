@@ -63,7 +63,7 @@
     - include: tasks/db-servers/mysql.yml
     - include: tasks/ftp-servers/vsftpd.yml
     - include: tasks/misc-servers/dropbear.yml
-    - include: tasks/file-servers/tftp.yml
+    - include: tasks/misc-servers/tftp.yml
     - include: tasks/misc-servers/telnet.yml
     - include: tasks/misc-servers/cups.yml
     - include: tasks/file-servers/samba.yml
