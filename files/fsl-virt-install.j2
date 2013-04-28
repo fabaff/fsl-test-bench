@@ -10,10 +10,10 @@ virt-install \
     --os-variant fedora18 \
     --ram {{ ram }} \
     --disk /var/lib/libvirt/images/{{ virtname }}.img,size={{ size }} \
-    --location http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/18/Fedora/x86_64/os/ \
+    --location {{ mirror }} \
     --initrd-inject /tmp/fsl-testbench.ks \
-    --extra-args "ks=file:/tmp/fsl-testbench.ks" \
+    --extra-args "ks=file:fsl-testbench.ks" \
     --noautoconsole \
     --vnc \
-    --network=bridge:{{ bridge }} \
+    --network={{ network }} \
     --mac={{ mac }}

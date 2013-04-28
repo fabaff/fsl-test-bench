@@ -35,6 +35,3 @@
   with_items:
     - fsl-testbench.ks
     - fsl-virt-install
-
-- name: wait till the virtual machine is ready
-  wait_for: timeout=300

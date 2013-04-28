@@ -1,4 +1,4 @@
-# Minimal Kickstart file for the Fedora Security Lab test bench
+# Minimal Kickstart file for the Fedora Security Lab test bench.
 # Installation, not an upgrade
 install
 
@@ -7,11 +7,10 @@ skipx
 text
 
 # Language
-lang en_US.UTF-8
+lang {{ language }}
 
 # Kexboard setup
-keyboard sg-latin1
-#keyboard us
+keyboard {{ keyboard }}
 
 # Networking
 network --onboot yes --device eth0 --bootproto dhcp --ipv6 auto --hostname test-bench
@@ -19,7 +18,6 @@ network --onboot yes --device eth0 --bootproto dhcp --ipv6 auto --hostname test-
 # Authentication
 auth --enableshadow --passalgo=sha512
 rootpw {{ server_root_password }}
-#rootpw testbench
 
 # Services, SELinux and firewall
 firewall --enabled --ssh
@@ -29,7 +27,7 @@ selinux --enforcing
 logging --level=info
 
 # Time zone
-timezone Europe/Zurich
+timezone {{ timezone }}
 
 # Disk setup
 zerombr
@@ -43,6 +41,7 @@ poweroff
 %packages
 @core
 chrony
-dnf
 bash-completion
+tar
+unzip
 %end

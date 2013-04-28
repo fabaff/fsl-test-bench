@@ -14,10 +14,15 @@
 - name: remove git
   command: /usr/bin/dnf -y erase git
 
-- name: restart lighttpd
-  service: name=lighttpd 
-           state=restarted
+- name: cleaning task for yum
+  command: /usr/bin/yum clean all
 
-- name: start mysql
-  service: name=mysqld
-           state=started
+- name: cleaning task for dnf
+  command: /usr/bin/dnf clean all
+
+- name: delete caches files
+  file: path=/var/cache/$item
+        state=absent
+  with_items:
+    - yum
+    - dnf
