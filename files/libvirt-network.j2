@@ -1,0 +1,12 @@
+<network>
+  <name>testbench</name>
+  <forward mode='nat'/>
+  <bridge name='virbr1' stp='on' delay='0' />
+  <mac address='52:52:11:22:33:44'/>
+  <ip address='10.1.1.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='10.1.1.5' end='10.1.1.100' />
+      <host mac='{{ mac }}' name='test-bench' ip='10.1.1.5' />
+    </dhcp>
+  </ip>
+</network>

@@ -1,0 +1,19 @@
+#!/bin/bash
+# This playbook install a virtual machine for libvirt.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+virt-install \
+    --name {{ virtname }} \
+    --os-variant fedora18 \
+    --ram {{ ram }} \
+    --disk /var/lib/libvirt/images/{{ virtname }}.img,size={{ size }} \
+    --location http://ftp.halifax.rwth-aachen.de/fedora/linux/releases/18/Fedora/x86_64/os/ \
+    --initrd-inject /tmp/fsl-testbench.ks \
+    --extra-args "ks=file:/tmp/fsl-testbench.ks" \
+    --noautoconsole \
+    --vnc \
+    --network=bridge:{{ bridge }} \
+    --mac={{ mac }}

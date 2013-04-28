@@ -1,0 +1,49 @@
+# This playbook contains all tasks to perform on a fresh Fedora installation to
+# create a Hacker Highschool Test bench.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: sudo ansible-playbook fsl-test-bench/local-setup.yml --connection=local
+---
+- hosts: 127.0.0.1
+  connection: local
+  gather_facts: no
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive-variables.yml
+
+# Those vars are for the virtual machine
+  vars:
+    - virtname: FSL-Test-bench
+    - ram: 1024
+    - size: 5
+    - bridge: networt:nat
+    - mac: '52:52:00:00:00:01'
+
+  tasks:
+# Common tasks
+#    - include: tasks/mc.yml # Just a playbook to test the local connection
+#    - include: tasks/libvirt.yml
+    - include: tasks/virt-install.yml
+#    - include: tasks/libvirt.yml
+#    - include: tasks/libvirt.yml
+
+
+############################
+
+
+#- name: wait till the virtual machine is ready
+#  wait_for: timeout=300
+
+#- name: start the virtual machine
+#  virt: name=$virtname
+#        state=running
+
+####################################
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
