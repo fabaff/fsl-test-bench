@@ -51,11 +51,12 @@
 # Setup Test bench connection
     - include: tasks/auth-key.yml
 
-    - name: setup host file
-      lineinfile: dest=/etc/ansible/hosts
-              regexp='^'
-              insertafter='127.0.0.1'
-              line='127.0.0.1\n\n[fsl-tb]\n$ip'
+# Runtime changes aren't detected
+#    - name: setup ansible host file
+#      lineinfile: dest=/etc/ansible/hosts
+#              regexp='^'
+#              insertafter='127.0.0.1'
+#              line='127.0.0.1\n\n[fsl-tb]\n$ip'
 
   handlers:
    - include: handlers/system.yml
