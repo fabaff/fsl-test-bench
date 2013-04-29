@@ -33,22 +33,22 @@
 - name: reload firewall configuration
   command: /usr/bin/firewall-cmd --reload
 
-- name: start rpcbind
-  service: name=rpcbind
-           state=running
-           enabled=yes
+#- name: start rpcbind
+#  service: name=rpcbind
+#           state=running
+#           enabled=yes
 
-- name: start nfs-server
-  service: name=nfs-server
-           state=running
-           enabled=yes
+#- name: start nfs-server
+#  service: name=nfs-server
+#           state=running
+#           enabled=yes
 
-- name: start nfs-idmap
-  service: name=nfs-idmap
-           state=running
-           enabled=yes
+#- name: start nfs-idmap
+#  service: name=nfs-idmap
+#           state=running
+#           enabled=yes
 
-- name: start nfs-lock
-  service: name=nfs-lock
-           state=running
-           enabled=yes
+#- name: start nfs-lock
+#  service: name=nfs-lock
+#           state=running
+#           enabled=yes
