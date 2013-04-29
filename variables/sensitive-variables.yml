@@ -9,6 +9,9 @@
 # https://github.com/ansible/ansible/blob/devel/examples/playbooks/user_commands.yml
 # python -c 'import crypt; print crypt.crypt("password", "$1$TestBench$")'
 ---
+# Host name
+server_hostname: test-bench
+
 # Server root password
 server_root_password: testbench
 
