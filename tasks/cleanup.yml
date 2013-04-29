@@ -5,24 +5,19 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: remove the unzip package
-  command: /usr/bin/dnf -y erase unzip
-
-- name: remove the tar package
-  command: /usr/bin/dnf -y erase tar
-
-- name: remove git
-  command: /usr/bin/dnf -y erase git
+- name: remove additional packages
+  yum: pkg=$item
+       state=absent
+  with_items:
+    - unzip
+    - tar
+    - git
 
 - name: cleaning task for yum
   command: /usr/bin/yum clean all
 
-- name: cleaning task for dnf
-  command: /usr/bin/dnf clean all
-
-- name: delete caches files
+- name: delete cache files
   file: path=/var/cache/$item
         state=absent
   with_items:
     - yum
-    - dnf

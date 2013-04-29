@@ -7,7 +7,10 @@
 #
 ---
 - name: install honeyd packages
-  command: /usr/bin/dnf -y install honeyd
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - honeyd
 
 - name: configuration file for the honeypots
   template: src=files/honeyd.j2 

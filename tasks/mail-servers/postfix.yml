@@ -5,8 +5,9 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: install needed packages
-  command: /usr/bin/dnf -y install $item 
+- name: install postfix packages
+  yum: pkg=$item
+       state=present 
   with_items:
     - postfix
 

@@ -5,8 +5,9 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: install the needed packages
-  command: /usr/bin/dnf -y install $item 
+- name: install samba and related packages
+  yum: pkg=$item
+       state=present 
   with_items:
     - cups-libs
     - samba
@@ -18,7 +19,7 @@
         mode=0755
         state=directory
 
-- name: put a dummy in the share
+- name: put a dummy file in the share
   template: src=files/default.j2
             dest=/opt/samba/info.txt
             mode=0644
