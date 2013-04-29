@@ -44,8 +44,8 @@
             mode=0644
 
 - name: copy the fsl banner
-  copy: src=files/website/Spins-banner_security.png
-        dest=/var/www/lighttpd/Spins-banner_security.png
+  copy: src=files/website/banner.png
+        dest=/var/www/lighttpd/banner.png
         owner=root
         group=root
         mode=0644
