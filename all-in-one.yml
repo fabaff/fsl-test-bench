@@ -34,6 +34,7 @@
     - include: tasks/misc-servers/telnet.yml
     - include: tasks/misc-servers/cups.yml
     - include: tasks/file-servers/samba.yml
+# Needs manual start
     - include: tasks/file-servers/nfs.yml
     - include: tasks/misc-servers/openvpn-static.yml
     - include: tasks/mail-servers/postfix.yml
@@ -46,7 +47,8 @@
     - include: tasks/helpers/log-system.yml
     - include: tasks/helpers/cgi.yml
     - include: tasks/helpers/phpinfo.yml
-    - include: tasks/helpers/php-shell-detector.yml
+# Shell Detector is not able to handle the present amount of files. Memory?
+#    - include: tasks/helpers/php-shell-detector.yml
     - include: tasks/helpers/linfo.yml
     - include: tasks/helpers/phpmyadmin.yml
 
