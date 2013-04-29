@@ -1,4 +1,4 @@
-remote {{ ansible_eth0.ipv4.address }}
+remote {{ ansible_all_ipv4_addresses[0] }}
 dev tun
 ifconfig 10.8.0.2 10.8.0.1
 comp-lzo
