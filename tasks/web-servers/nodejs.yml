@@ -11,6 +11,10 @@
   with_items:
     - nodejs
     - npm
+
+- name: install additional items
+  command: /usr/bin/npm install $item -g
+  with_items:
     - http-server
 
 - name: create the directory
