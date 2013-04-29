@@ -35,13 +35,13 @@
 #- name: remove the default network
 #  command: /usr/bin/virsh net-undefine default
 
-- name: create test-bench network
+- name: create 'testbench' network
   command: /usr/bin/virsh net-define /usr/share/libvirt/networks/testbench.xml
 
-- name: make test-bench network autostart
+- name: make 'testbench' network autostart
   command: /usr/bin/virsh net-autostart testbench
 
-- name: start test-bench network
+- name: start 'testbench' network
   command: /usr/bin/virsh net-start testbench
 
 # Check if the testbench network is ready
