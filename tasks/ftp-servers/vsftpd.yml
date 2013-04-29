@@ -11,11 +11,11 @@
   with_items:
     - vsftpd
 
-- name: enable ssl
-  lineinfile: dest=/etc/vsftpd/vsftpd.conf
-              regexp='^'
-              insertafter=EOF
-              line='tcp_wrapper=YES\nrsa_cert_file=/etc/vsftpd/cert.key\nssl_enable=YES\nforce_local_data_ssl=YES\nforce_local_logins_ssl=YES\nrequire_ssl_reuse=NO\n'
+#- name: enable ssl
+#  lineinfile: dest=/etc/vsftpd/vsftpd.conf
+#              regexp='^'
+#              insertafter=EOF
+#              line='tcp_wrapper=YES\nrsa_cert_file=/etc/vsftpd/cert.key\nssl_enable=YES\nforce_local_data_ssl=YES\nforce_local_logins_ssl=YES\nrequire_ssl_reuse=NO\n'
 
 #- name: copy the server configuration file
 #  template: src=files/vsftpd-users.j2 
