@@ -15,7 +15,7 @@
         mode=0755
         state=directory
 
-- name: put a dummy in the share
+- name: put a dummy filw in the share
   template: src=files/default.j2
             dest=/opt/nfs/info.txt
             mode=0644
