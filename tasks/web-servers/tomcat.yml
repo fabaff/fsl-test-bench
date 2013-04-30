@@ -9,9 +9,9 @@
   yum: pkg=$item
        state=present 
   with_items:
-    - tomcat6
-    - tomcat6-webapps
-    - tomcat6-admin-webapps
+    - tomcat
+    - tomcat-webapps
+    - tomcat-admin-webapps
 
 - name: setup of users
   template: src=files/tomcat-users.j2 
@@ -22,7 +22,7 @@
             backup=yes
 
 - name: start webserver
-  service: name=tomcat6
+  service: name=tomcat
            state=running
            enabled=yes 
 
