@@ -33,10 +33,10 @@
         state=link
 
 - name: set selinux context
-  command: chcon -h unconfined_u:object_r:httpd_log_t:s0 /var/log/messages
+  command: /usr/bin/chcon -h unconfined_u:object_r:httpd_log_t:s0 /var/log/messages
 
 - name: set selinux context
-  command: chcon -R unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/lighttpd/log-system/log
+  command: /usr/bin/chcon -R unconfined_u:object_r:httpd_sys_content_t:s0 /var/www/lighttpd/log-system/log
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
