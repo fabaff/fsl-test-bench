@@ -15,14 +15,14 @@
     - php-cli
     - net-tools
 
-- name: enable fastcgi support in modules.conf
+- name: enable cgi support in modules.conf
   lineinfile: dest=/etc/lighttpd/modules.conf
               regexp='^include "conf.d/cgi.conf"'
               insertafter='^#include "conf.d/cgi.conf"'
               line='include "conf.d/cgi.conf"'
               state=present
 
-- name: enable cgi support in modules.conf
+- name: enable fastcgi support in modules.conf
   lineinfile: dest=/etc/lighttpd/modules.conf
               regexp='^include "conf.d/fastcgi.conf"'
               insertafter='^#include "conf.d/fastcgi.conf"'
