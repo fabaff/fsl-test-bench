@@ -21,6 +21,7 @@
     - keyboard: sg-latin1
     - timezone: Europe/Zurich
     - virtname: FSL-Test-bench
+    - bridge: virbr1
     - ram: 1024 # Memory of the virtual machine
     - size: 5 # Size of the disk image in GB for the virtual machine
     - mac: '52:52:00:00:00:01'

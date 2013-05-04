@@ -1,7 +1,7 @@
 <network>
   <name>testbench</name>
   <forward mode='nat'/>
-  <bridge name='virbr1' stp='on' delay='0' />
+  <bridge name='{{ bridge }}' stp='on' delay='0' />
   <mac address='52:52:11:22:33:44'/>
   <ip address='{{ gw }}' netmask='255.255.255.0'>
     <dhcp>
