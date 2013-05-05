@@ -11,8 +11,11 @@ language: en_US.UTF-8
 keyboard: sg-latin1
 timezone: Europe/Zurich
 
-# name of the virtual machine
+# Name of the virtual machine
 virtname: FSL-Test-bench
+
+# Name of the disk image
+img_name: fsl01
 
 # Name of the bridge
 bridge: virbr1
@@ -21,7 +24,7 @@ bridge: virbr1
 ram: 1024
 
 # Size of the disk image in GB for the virtual machine
-size: 5
+size: 6
 
 # MAC address of the virtual machine
 mac: '52:52:00:00:00:01'
