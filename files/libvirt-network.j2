@@ -7,6 +7,11 @@
     <dhcp>
       <range start='{{ range_start }}' end='{{ range_end }}' />
       <host mac='{{ mac }}' name='{{ server_hostname }}' ip='{{ ip }}' />
+{% if containers %}
+    {% for con_name, con_mac, con_ip in containers %}
+      <host mac='{{ con_mac }}' name='{{ con_name }}' ip='{{ con_ip }}' />
+    {% endfor %}
+{% endif %}
     </dhcp>
   </ip>
 </network>
