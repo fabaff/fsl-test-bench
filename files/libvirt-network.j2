@@ -6,7 +6,7 @@
   <ip address='{{ gw }}' netmask='255.255.255.0'>
     <dhcp>
       <range start='{{ range_start }}' end='{{ range_end }}' />
-      <host mac='{{ mac }}' name='test-bench' ip='{{ ip }}' />
+      <host mac='{{ mac }}' name='{{ server_hostname }}' ip='{{ ip }}' />
     </dhcp>
   </ip>
 </network>
