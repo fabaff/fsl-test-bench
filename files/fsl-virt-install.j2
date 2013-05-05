@@ -1,15 +1,14 @@
-#!/bin/bash
 # This playbook install a virtual machine for libvirt.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 virt-install \
     --name {{ virtname }} \
     --os-variant fedora18 \
     --ram {{ ram }} \
-    --disk /var/lib/libvirt/images/{{ virtname }}.img,size={{ size }} \
+    --disk /var/lib/libvirt/images/{{ img_name }}.img,size={{ size }} \
     --location {{ mirror }} \
     --initrd-inject /tmp/fsl-testbench.ks \
     --extra-args "ks=file:fsl-testbench.ks" \
