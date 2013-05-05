@@ -1,0 +1,52 @@
+# This variables file contains the default values for the setup of a local
+# virtual machine.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+# User settings
+language: en_US.UTF-8
+keyboard: sg-latin1
+timezone: Europe/Zurich
+
+# name of the virtual machine
+virtname: FSL-Test-bench
+
+# Name of the bridge
+bridge: virbr1
+
+# Memory of the virtual machine
+ram: 1024
+
+# Size of the disk image in GB for the virtual machine
+size: 5
+
+# MAC address of the virtual machine
+mac: '52:52:00:00:00:01'
+
+# Mirror to use.
+mirror: http://mirror.switch.ch/ftp/mirror/fedora/linux/releases/18/Fedora/x86_64/os/
+
+# Time in minutes to wait for the virtual machine
+wait_time: 10
+
+# Be careful when changing network setting and don't forget to change the 
+# templates. Those setting are fine as long as there is no conflict with your
+# local network settings (e.g. IP range, etc.)
+
+# See libvirt docs for details
+network: 'network:testbench'
+
+# IP address of the Test bench
+ip: 10.1.1.5
+
+# Gateway
+gw: 10.1.1.1
+
+# Start of the DHCP range
+range_start: 10.1.1.5
+
+# End of the DHCP range
+range_end: 10.1.1.50

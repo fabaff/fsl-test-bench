@@ -14,28 +14,8 @@
   vars_files:
     - variables/application-versions.yml
     - variables/sensitive-variables.yml
-  vars:
-################################################################################
-# Those vars are for the virtual machine.
-    - language: en_US.UTF-8
-    - keyboard: sg-latin1
-    - timezone: Europe/Zurich
-    - virtname: FSL-Test-bench
-    - bridge: virbr1
-    - ram: 1024 # Memory of the virtual machine
-    - size: 5 # Size of the disk image in GB for the virtual machine
-    - mac: '52:52:00:00:00:01'
-    - mirror: http://mirror.switch.ch/ftp/mirror/fedora/linux/releases/18/Fedora/x86_64/os/
-    - wait_time: 10 # Time in minutes to wait for the virtual machine 
-# Be careful when changing network setting and don't forget to change the 
-# templates. Those setting are fine as long as there is no conflict with your
-# local network settings. IP range conflict, etc.
-    - network: 'network:testbench' # See libvirt docs for details
-    - ip: 10.1.1.5 # IP address of the Test bench
-    - gw: 10.1.1.1 
-    - range_start: 10.1.1.5 # Start of the DHCP range
-    - range_end: 10.1.1.50 # End of the DHCP range
-################################################################################
+    - variables/local.yml
+
   tasks:
 # Virtual machine setup tasks
 # - include: tasks/mc.yml # Just a playbook to test the local connection
