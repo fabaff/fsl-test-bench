@@ -8,9 +8,9 @@
 ---
 - hosts: fsl-tb
   user: root
-  vars_files:
+  vars_files:	
     - variables/application-versions.yml
-    - variables/sensitive-variables.yml
+    - variables/sensitive.yml
 
   tasks:
 # Common tasks

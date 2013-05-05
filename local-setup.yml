@@ -13,7 +13,7 @@
   user: root
   vars_files:
     - variables/application-versions.yml
-    - variables/sensitive-variables.yml
+    - variables/sensitive.yml
     - variables/local.yml
 
   tasks:
