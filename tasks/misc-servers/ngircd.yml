@@ -1,0 +1,30 @@
+# This playbook install the ngIRCd (http://ngircd.barton.de/) irc server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install ngircd package
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - ngircd
+
+- name: default ngircd configuration file
+  template: src=files/ngircd.j2
+            dest=/etc/ngircd.conf
+            owner=root
+            group=root
+            mode=0644
+
+- name: configure firewall, allow traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=6667/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start ngircd
+  service: name=ngircd
+           state=running
+           enabled=yes
