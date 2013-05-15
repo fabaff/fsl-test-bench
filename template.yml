@@ -1,0 +1,22 @@
+# This playbook is just a template. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# Usage: ansible-playbook template.yml -f 10
+# 
+---
+- hosts: fsl-tb
+  user: root
+  vars_files:
+    - variables/application-versions.yml
+    - variables/sensitive.yml
+
+  tasks:
+# Common tasks
+#    - include: tasks/preparation.yml
+
+  handlers:
+   - include: handlers/system.yml
+   - include: handlers/services.yml
