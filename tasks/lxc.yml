@@ -1,0 +1,22 @@
+# This playbook install a Linux Container aka LXC (http://lxc.sourceforge.net/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install libvirt and other needed packages
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - libvirt
+    - libvirt-client
+    - libvirt-daemon-qemu
+    - libvirt-daemon-kvm
+
+- name: start libvirtd
+  service: name=libvirtd
+           state=running
+           enabled=yes
+
+
