@@ -42,9 +42,6 @@ yum -y install python
 ```
 The playbooks are using DNF as package management software instead of yum.
 
-```bash
-yum -y install dnf
-```
 
 ### SSH key
 Add the SSH key to the *authorized_keys* file. Assuming you are logged-in with
@@ -65,19 +62,23 @@ The file */etc/ansible/hosts* shall contain all hosts to be setup up.
 After cloning this git repository, edit the [variables/sensitive-variables.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml) file if
 you don't want to use *password* as default password.
 
+## Documentation
+The documentation is [here](http://fsl-test-bench.affolter-engineering.ch/) available.
+
 ## Structure
 At the moment the structure of the repository looks like this:
 
 ```bash
 .
 ├── all-in-one.yml ------- Fedora Security Lab Test bench on a single machine 
-├── FAQ.md --------------- Frequently asked questions
+├── docs ----------------- Documentation
 ├── files ---------------- Template files
 │   └── kickstart -------- kickstart files for the installation
 ├── fsl-packages-sync.py - Python script to sync with FSL package list
 ├── fsl.yml -------------- Package list for setup a Fedora Security Lab
 ├── handlers ------------- Handlers for services
 ├── INSTALL.md ----------- Installation guide
+├── local-setup.yml ------ Local Fedora Security Test bench
 ├── openvpn-server.yml --- Fedora Security Lab VPN server
 ├── README.md ------------ This files
 ├── tasks ---------------- A collection of tasks
@@ -85,7 +86,6 @@ At the moment the structure of the repository looks like this:
 │   ├── helpers ---------- Helper tools
 │   ├── honeypots -------- Low-interaction honeypots
 │   └── shells ----------- PHP shells
-├── TESTING.md ----------- This document drescibe baisc testing
 └── variables ------------ Storage files for variables
 ```
 ## Warning
