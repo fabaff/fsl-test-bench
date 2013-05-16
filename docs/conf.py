@@ -19,12 +19,12 @@
 # $ sudo easy_install sphinxcontrib-blockdiag
 # $ sudo easy_install sphinxcontrib-nwdiag
 
-# Read the Docs support
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
 import sys
 import os
 import time
+
+# Read the Docs support
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 if not on_rtd:
     import sphinx_bootstrap_theme
