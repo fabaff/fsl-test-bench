@@ -19,10 +19,15 @@
 # $ sudo easy_install sphinxcontrib-blockdiag
 # $ sudo easy_install sphinxcontrib-nwdiag
 
+# Read the Docs support
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+
 import sys
 import os
 import time
-import sphinx_bootstrap_theme
+
+if not on_rtd:
+    import sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -113,7 +118,6 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'default'
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 if on_rtd:
     html_theme = 'default'
 else:
