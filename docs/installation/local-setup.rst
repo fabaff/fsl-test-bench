@@ -9,7 +9,7 @@
 Setup on a local machine
 ========================
 
-The setup of the Fedora Security Lab test bench as virtual machine on a local
+The setup of the Fedora Security Lab Test bench as virtual machine on a local
 system is useful if you want to carry your Test bench around on your laptop
 and use it only for yourself. Another good reasons to use the Test bench as
 local machine are when you don't want to expose a system like this in your
