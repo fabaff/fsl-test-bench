@@ -1,6 +1,6 @@
 .. -*- mode: rst -*-
 
-.. _services-other:
+.. _services-others:
 
 .. _Fedora: https://fedoraproject.org/
 .. _OpenVPN: http://openvpn.net
@@ -39,5 +39,4 @@ The tftp server is serving a simple text file. ::
     tftp> quit
     [fab@laptop011 hhs-tb]$ ls
     info.txt
-
 
