@@ -12,5 +12,6 @@ Miscellaneous
 .. toctree::
    :maxdepth: 2
 
+   security-lab
    faq
    testing
