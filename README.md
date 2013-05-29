@@ -56,11 +56,10 @@ The file */etc/ansible/hosts* shall contain all hosts to be setup up.
 - **fsl-tb**: Default group name for machine which uses the all-in-one playbook
 - **fsl-tb-vpn**: Default group name for machine which acts as VPN servers
 - **fsl-tb-master**: Hosts for FSL Test bench guests when using virtualization
-- **fsl_hosts**: Host to install the Fedora Security Lab package set
+- **fsl_hosts**: Hosts to install the Fedora Security Lab package set
 
 ### Variables
-After cloning this git repository, edit the [variables/sensitive-variables.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml) file if
-you don't want to use *password* as default password.
+After cloning this git repository, edit the [variables/sensitive.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive.yml) file if you don't want to use *password* as default password.
 
 ## Documentation
 The documentation is [here](http://fsl-test-bench.affolter-engineering.ch/) available.
@@ -91,7 +90,7 @@ At the moment the structure of the repository looks like this:
 ## Warning
 The file *variables/sensitive.yml* contains most application passwords. If you
 don't want to run with default password, edit this file according your needs
-and keep it save. 
+and keep it save outside the repository. 
 
 ## Licensing
 All playbook content is assumed to be Creative Commons 3.0 Attribution licensed. 
