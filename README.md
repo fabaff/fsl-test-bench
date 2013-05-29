@@ -89,9 +89,9 @@ At the moment the structure of the repository looks like this:
 └── variables ------------ Storage files for variables
 ```
 ## Warning
-The file *variables/sensitive-variables.yml* contains most application
-passwords. If you don't want to run with default password, edit this file
-according your needs and keep it save. 
+The file *variables/sensitive.yml* contains most application passwords. If you
+don't want to run with default password, edit this file according your needs
+and keep it save. 
 
 ## Licensing
 All playbook content is assumed to be Creative Commons 3.0 Attribution licensed. 
