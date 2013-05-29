@@ -73,7 +73,7 @@ At the moment the structure of the repository looks like this:
 ├── all-in-one.yml ------- Fedora Security Lab Test bench on a single machine 
 ├── docs ----------------- Documentation
 ├── files ---------------- Template files
-│   └── kickstart -------- kickstart files for the installation
+│   └── kickstart -------- Kickstart files for the installation
 ├── fsl-packages-sync.py - Python script to sync with FSL package list
 ├── fsl.yml -------------- Package list for setup a Fedora Security Lab
 ├── handlers ------------- Handlers for services
