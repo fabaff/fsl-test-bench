@@ -17,12 +17,12 @@
   with_items:
     - http-server
 
-- name: create the directory
+- name: create a directory for nodejs
   file: path=/var/www/nodejs
         mode=0755
         state=directory
 
-- name: copy systemd service file
+- name: copy nodejs systemd service file
   template: src=files/nodejs-http-service.j2 
             dest=/lib/systemd/system/nodejs-http.service
             owner=root
