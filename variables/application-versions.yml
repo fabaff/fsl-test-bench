@@ -7,7 +7,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-# Fedora - http://fedoraporject.org
+# Fedora - http://fedoraproject.org
 fedora_previous: 17
 fedora_current: 18
 fedora_next: 19
@@ -22,7 +22,7 @@ phpshell_version: 2.4
 dvwa_version: 1.0.7
 
 # phpMyAdmin- http://www.phpmyadmin.net/
-phpmyadmin_version: 3.5.7
+phpmyadmin_version: 4.0.2
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
 bwapp_version: 1.3
