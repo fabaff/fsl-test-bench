@@ -11,6 +11,7 @@
 .. _droopy: http://gitorious.org/droopy
 .. _pywebserve: http://gitorious.org/pywebserve
 .. _http-server: https://github.com/nodeapps/http-server
+.. _mongoose: http://code.google.com/p/mongoose/
 
 Web servers
 ===========
@@ -28,6 +29,7 @@ bannergrabbing. The following web server are available.
 * `droopy`_
 * `pywebserve`_
 * `http-server`_ node.js
+* `mongoose`_
 
 To run all web servers on one machine it's needed that they use different
 ports. Table below shows the ports and the assigned web server.
@@ -50,6 +52,8 @@ ports. Table below shows the ports and the assigned web server.
 | 8880       | pywebserve     |
 +------------+----------------+
 | 8888       | http-server    |
++------------+----------------+
+| 8889       | mongoose       |
 +------------+----------------+
 
 At the moment the most web servers doesn't support https. This is a task for
