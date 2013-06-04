@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2013-05-17
+# Synced at 2013-06-04
 #
 ---
 - hosts: fsl_hosts
@@ -68,6 +68,7 @@
        - lbd
        - lynis
        - macchanger
+       - mausezahn
        - mc
        - mcabber
        - medusa
