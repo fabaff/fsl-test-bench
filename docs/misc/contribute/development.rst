@@ -81,9 +81,17 @@ documentation ::
         ├── handlers ------------- Handlers for services
         ├── tasks ---------------- A collection of tasks
         │   ├── apps ------------- Vulnerable web applications
+        │   ├── cgi -------------- Common Gateway Interface (CGI)
+        │   ├── db-servers-------- Databases (DBMS)
+        │   ├── directory-servers- Directory servers
+        │   ├── file-servers ----- File servers
+        │   ├── ftp-servers ------ FTP servers
         │   ├── helpers ---------- Helper tools
         │   ├── honeypots -------- Low-interaction honeypots
-        │   └── shells ----------- PHP shells
+        │   ├── mail-servers ----- Mail server (SMTP, IMAP, POP)
+        │   ├── misc-servers------ Various servers (SSH, VPN, etc.)
+        │   ├── shells ----------- PHP shells
+        │   └── web-servers------- Web servers
         └── variables ------------ Storage files for variables
 
 
