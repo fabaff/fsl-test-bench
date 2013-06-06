@@ -62,7 +62,7 @@ The file */etc/ansible/hosts* shall contain all hosts to be setup up.
 After cloning this git repository, edit the [variables/sensitive.yml](https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive.yml) file if you don't want to use *password* as default password.
 
 ## Documentation
-The documentation is [here](http://fsl-test-bench.affolter-engineering.ch/) available.
+The documentation is available at [Read the Docs](https://fedora-security-lab-test-bench.readthedocs.org/en/latest/).
 
 ## Structure
 At the moment the structure of the repository looks like this:
