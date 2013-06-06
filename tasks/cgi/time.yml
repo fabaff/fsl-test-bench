@@ -1,0 +1,21 @@
+# This playbook install a cgi which displays the system time.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# SELinux (to check!!!)  /usr/bin/bash
+# chcon -t httpd_sys_content_t /var/www/cgi-bin/file
+---
+- name: install the time cgi file
+  copy: src=files/cgi/time/time.cgi
+        dest=/var/www/lighttpd/cgi-bin/time.cgi
+        owner=root
+        group=root
+        mode=0777
+
+- name: add a new entry for time.cgi to the index.html page
+  lineinfile: dest=/var/www/lighttpd/cgi-bin.html
+              regexp='^<!--IN-->'
+              insertafter='        <!--IN-->'
+              line='        <a href="/cgi-bin/time.cgi" class="btn btn-inverse">Date/Time (C)</a></br>'
