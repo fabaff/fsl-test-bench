@@ -1,0 +1,26 @@
+# This playbook install the web interface to use cgi-bin.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the cgi-bin directory
+  file: path=/var/www/lighttpd/cgi-bin
+        state=directory
+        owner=root
+        group=root
+        mode=0775
+
+- name: install the fsl test bench cgi-bin.html file
+  template: src=files/website/cgi-bin.j2
+            dest=/var/www/lighttpd/cgi-bin.html
+            owner=root
+            group=root
+            mode=0755
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--IN-->'
+              insertafter='            <!--IN-->'
+              line='            <a href="cgi-bin.html" class="btn btn-inverse">CGI</a></br>'

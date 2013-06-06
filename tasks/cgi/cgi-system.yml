@@ -1,0 +1,21 @@
+# This playbook install a cgi which displays system details.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+# SELinux (to check!!!)
+# chcon -t httpd_sys_content_t /var/www/cgi-bin/file
+---
+- name: install the system cgi file
+  template: src=files/website/system-cgi.j2 
+            dest=/var/www/lighttpd/cgi-bin/system.cgi
+            owner=root
+            group=root
+            mode=0777
+
+- name: add a new entry for system.cgi to the index.html page
+  lineinfile: dest=/var/www/lighttpd/cgi-bin.html
+              regexp='^<!--IN-->'
+              insertafter='        <!--IN-->'
+              line='        <a href="/cgi-bin/system.cgi" class="btn btn-inverse">System information</a></br>'
