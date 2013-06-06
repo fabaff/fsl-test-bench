@@ -1,0 +1,47 @@
+#!/usr/bin/perl
+#
+# time.pl - A simple CGI in Perl which displays the date and the time.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved.
+# 
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc.,
+# 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+#
+
+use strict;
+use warnings;
+use Time::Piece;
+use CGI;
+
+my $date = Time::Piece->new->mdy("/");
+my $time = Time::Piece->new->hms;
+my $q = new CGI;
+
+print $q->header;
+
+print $q->start_html(
+    -title => 'Information delivered by Perl (CGI)');
+
+print $q->h1('Date and Time');
+
+print $q->p('Date: ' . $date);
+print $q->p('Time: ' . $time);
+
+print $q->center($q->small(' <a href="https://fedorahosted.org/security-spin/">Fedora Security Lab</a> 2013 - Page generated on ' . $date));
+
+print $q->end_html;
+exit 0;

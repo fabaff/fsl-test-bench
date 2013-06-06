@@ -1,0 +1,27 @@
+# This playbook install a cgi which displays the date and the time.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install additional packages
+  yum: pkg=$item
+       state=present
+  with_items:
+    - perl
+    - perl-CGI
+    - perl-Time-Piece
+
+- name: install the time perl file
+  template: src=files/cgi/time-pl.j2 
+            dest=/var/www/lighttpd/cgi-bin/time.pl
+            owner=root
+            group=root
+            mode=0777
+
+- name: add a new entry for perl cgi to the cgi-bin index.html page
+  lineinfile: dest=/var/www/lighttpd/cgi-bin.html
+              regexp='^<!--IN-->'
+              insertafter='        <!--IN-->'
+              line='        <a href="/cgi-bin/time.pl" class="btn btn-inverse">Date/Time (Perl)</a></br>'
