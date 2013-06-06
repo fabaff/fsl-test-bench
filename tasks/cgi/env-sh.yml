@@ -8,14 +8,14 @@
 # chcon -t httpd_sys_content_t /var/www/cgi-bin/file
 ---
 - name: install the env cgi file
-  template: src=files/website/env-cgi.j2 
-            dest=/var/www/lighttpd/cgi-bin/env.cgi
+  template: src=files/cgi/env-sh.j2 
+            dest=/var/www/lighttpd/cgi-bin/env.sh
             owner=root
             group=root
             mode=0777
 
-- name: add a new entry for env.cgi to the index.html page
+- name: add a new entry for env.cgi to the cgi-bin index.html page
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/env.cgi" class="btn btn-inverse">Environment variables</a></br>'
+              line='        <a href="/cgi-bin/env.sh" class="btn btn-inverse">Environment variables (Bash)</a></br>'

@@ -8,14 +8,14 @@
 # chcon -t httpd_sys_content_t /var/www/cgi-bin/file
 ---
 - name: install the system cgi file
-  template: src=files/website/system-cgi.j2 
-            dest=/var/www/lighttpd/cgi-bin/system.cgi
+  template: src=files/cgi/system-sh.j2 
+            dest=/var/www/lighttpd/cgi-bin/system.sh
             owner=root
             group=root
             mode=0777
 
-- name: add a new entry for system.cgi to the index.html page
+- name: add a new entry for system.cgi to the cgi-bin index.html page
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/system.cgi" class="btn btn-inverse">System information</a></br>'
+              line='        <a href="/cgi-bin/system.sh" class="btn btn-inverse">System information (Bash)</a></br>'
