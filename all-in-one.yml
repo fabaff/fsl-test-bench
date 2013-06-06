@@ -45,12 +45,17 @@
 
 # Helpers
     - include: tasks/helpers/log-system.yml
-    - include: tasks/helpers/cgi.yml
     - include: tasks/helpers/phpinfo.yml
 # Shell Detector is not able to handle the present amount of files. Memory?
 #    - include: tasks/helpers/php-shell-detector.yml
     - include: tasks/helpers/linfo.yml
     - include: tasks/helpers/phpmyadmin.yml
+
+# Common Gateway Interface (CGI)
+    - include: tasks/cgi/cgi.yml
+    - include: tasks/cgi/cgi-env.yml
+    - include: tasks/cgi/cgi-system.yml
+
 
 # Vulnerable Web Application
     - include: tasks/apps/sqlol.yml
