@@ -29,6 +29,9 @@ Fedora `Installation Guide`_.
 comps Package group
 -------------------
 
+ .. warning::
+    This work only on Fedora 19 and beyond.
+
 You have a default Fedora installation and want all Fedora Security Lab
 packages installed, you can use the groupinstall feature of yum. ::
 
