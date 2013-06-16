@@ -12,6 +12,7 @@
 .. _pywebserve: http://gitorious.org/pywebserve
 .. _http-server: https://github.com/nodeapps/http-server
 .. _mongoose: http://code.google.com/p/mongoose/
+.. _darkhttpd: http://unix4lyfe.org/darkhttpd/
 
 Web servers
 ===========
@@ -30,6 +31,7 @@ bannergrabbing. The following web server are available.
 * `pywebserve`_
 * `http-server`_ node.js
 * `mongoose`_
+* `darkhttpd`_
 
 To run all web servers on one machine it's needed that they use different
 ports. Table below shows the ports and the assigned web server.
@@ -54,6 +56,8 @@ ports. Table below shows the ports and the assigned web server.
 | 8888       | http-server    |
 +------------+----------------+
 | 8889       | mongoose       |
++------------+----------------+
+| 8887       | darkhttpd      |
 +------------+----------------+
 
 At the moment the most web servers doesn't support https. This is a task for
