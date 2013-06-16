@@ -16,34 +16,45 @@
 
   tasks:
 # Common tasks
+################################################################################
     - include: tasks/preparation.yml
     - include: tasks/motd.yml
     - include: tasks/hosts.yml
     - include: tasks/users.yml
 
-# Services
+# FSL Test bench specific stuff
+################################################################################
     - include: tasks/web-servers/lighttpd.yml
+    - include: tasks/website.yml
+
+# Services
+################################################################################
+## Web servers
     - include: tasks/web-servers/nginx.yml
     - include: tasks/web-servers/tomcat.yml
     - include: tasks/web-servers/pywebserve.yml
     - include: tasks/web-servers/nodejs.yml
+    - include: tasks/web-servers/mongoose.yml
+    - include: tasks/web-servers/darkhttpd.yml
+## Database server
     - include: tasks/db-servers/mysql.yml
+## FTP server
     - include: tasks/ftp-servers/vsftpd.yml
+## Misc servers
     - include: tasks/misc-servers/dropbear.yml
     - include: tasks/misc-servers/tftp.yml
     - include: tasks/misc-servers/telnet.yml
     - include: tasks/misc-servers/cups.yml
-    - include: tasks/file-servers/samba.yml
-# Needs manual start
-    - include: tasks/file-servers/nfs.yml
     - include: tasks/misc-servers/openvpn-static.yml
+## File servers
+    - include: tasks/file-servers/samba.yml
+    - include: tasks/file-servers/nfs.yml  # Needs manual start
+## Mail server
     - include: tasks/mail-servers/postfix.yml
     - include: tasks/mail-servers/dovecot.yml
 
-# FSL Test bench specific stuff
-    - include: tasks/website.yml
-
 # Helpers
+################################################################################
     - include: tasks/helpers/log-system.yml
     - include: tasks/helpers/phpinfo.yml
 # Shell Detector is not able to handle the present amount of files. Memory?
@@ -52,12 +63,20 @@
     - include: tasks/helpers/phpmyadmin.yml
 
 # Common Gateway Interface (CGI)
+################################################################################
     - include: tasks/cgi/cgi.yml
-    - include: tasks/cgi/cgi-env.yml
-    - include: tasks/cgi/cgi-system.yml
-
+## C (default)
+    - include: tasks/cgi/time.yml
+## Python
+    - include: tasks/cgi/time-py.yml
+## Bash
+    - include: tasks/cgi/env-sh.yml
+    - include: tasks/cgi/system-sh.yml
+## Perl
+    - include: tasks/cgi/time-pl.yml
 
 # Vulnerable Web Application
+################################################################################
     - include: tasks/apps/sqlol.yml
     - include: tasks/apps/sqli.yml
     - include: tasks/apps/bwapp.yml
@@ -66,15 +85,18 @@
     - include: tasks/apps/xssed.yml
 
 # Honeypots
+################################################################################
     - include: tasks/honeypots/honeyd.yml
 
 # Shells
+################################################################################
     - include: tasks/shells/b374k.yml
     - include: tasks/shells/dnashell.yml
     - include: tasks/shells/phpshell.yml
     - include: tasks/shells/ajaxshell.yml
 
 # Common tasks
+################################################################################
     - include: tasks/cleanup.yml
 
   handlers:
