@@ -26,7 +26,6 @@ a static key is included.
 * `dropbear`_ (Port 222) is a lightweight SSH server
 * telnet (xinetd) supports  bidirectional interactive text-oriented communication 
 * `tftp`_ (xinetd) is a single port Trivial File Transfer Protocol server
-Transfer Protocol
 * `OpenVPN`_ server with a static key
 * `cups`_ is a standards-based printing system
 * `ngircd`_ is a lightweight Internet Relay Chat server
