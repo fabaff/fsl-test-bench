@@ -32,10 +32,19 @@ a static key is included.
 
 The tftp server is serving a simple text file. ::
 
-    [fab@laptop011 hhs-tb]$ ls
-    [fab@laptop011 hhs-tb]$ tftp 10.0.0.64
+    $ ls
+    $ tftp 10.0.0.64
     tftp> get info.txt
     tftp> quit
-    [fab@laptop011 hhs-tb]$ ls
+    $ ls
     info.txt
 
+User should be able to connect to a telnet server. ::
+
+    $ telnet 10.0.0.65
+    Trying 10.0.0.65...
+    Connected to 10.0.0.65.
+    Escape character is '^]'.
+    Fedora release 18 (Spherical Cow)
+    Kernel 3.9.4-200.fc18.x86_64 on an x86_64 (1)
+    test-bench login:
