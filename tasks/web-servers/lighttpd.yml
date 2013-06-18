@@ -22,6 +22,13 @@
               line='include "conf.d/cgi.conf"'
               state=present
 
+- name: enable additional cgi support
+  template: src=files/lighttpd-cgi.j2 
+            dest=/etc/lighttpd/conf.d/cgi.conf
+            owner=lighttpd
+            group=lighttpd
+            mode=0644
+
 - name: enable fastcgi support in modules.conf
   lineinfile: dest=/etc/lighttpd/modules.conf
               regexp='^include "conf.d/fastcgi.conf"'
@@ -30,7 +37,7 @@
               state=present
 
 - name: enable fastcgi support
-  template: src=files/fastcgi.j2 
+  template: src=files/lighttpd-fastcgi.j2 
             dest=/etc/lighttpd/conf.d/fastcgi.conf
             owner=lighttpd
             group=lighttpd
