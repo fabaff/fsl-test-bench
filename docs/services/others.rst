@@ -9,6 +9,8 @@
 .. _dropbear: https://matt.ucc.asn.au/dropbear/dropbear.html
 .. _openssh: http://www.openssh.org/
 .. _tftp: http://sourceforge.net/projects/tftp-server/
+.. _xrdp: http://www.xrdp.org/
+.. _ntp: http://www.ntp.org/
 
 Other servers
 =============
@@ -29,6 +31,8 @@ a static key is included.
 * `OpenVPN`_ server with a static key
 * `cups`_ is a standards-based printing system
 * `ngircd`_ is a lightweight Internet Relay Chat server
+* `xrdp`_ is an remote desktop protocol (RDP) server
+* `ntp`_ is Network Time Protocol server
 
 The tftp server is serving a simple text file. ::
 
