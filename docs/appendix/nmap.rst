@@ -4,7 +4,7 @@
 
 nmap
 ====
-The nmap output below shows the view of the Test bench from the network side.::
+The nmap output below shows the view of the Test bench from the network side. ::
 
     $ sudo nmap -sVT 10.0.0.64
 
