@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2013-06-16
+# Synced at 2013-06-27
 #
 ---
 - hosts: fsl_hosts
@@ -142,6 +142,7 @@
        - sshscan
        - ssldump
        - sslscan
+       - sslsplit
        - sslstrip
        - sucrack
        - swaks
