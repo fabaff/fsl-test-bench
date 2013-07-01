@@ -40,8 +40,9 @@ Fedora installation Python is available.
 ```bash
 yum -y install python
 ```
-The playbooks are using DNF as package management software instead of yum.
-
+The playbooks will use DNF as package management software instead of yum as
+soon as DNF is the default Package management tool in Fedora. But for now, 
+everything is done with yum.
 
 ### SSH key
 Add the SSH key to the *authorized_keys* file. Assuming you are logged-in with
