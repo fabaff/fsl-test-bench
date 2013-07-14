@@ -9,5 +9,8 @@
 #    - include: handlers/system.yml
 # 
 ---
-- name: reboot system
+- name: reboot the system
   command: /usr/sbin/reboot
+
+- name: shutdown the system
+  command: /usr/sbin/poweroff
