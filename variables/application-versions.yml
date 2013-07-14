@@ -8,9 +8,9 @@
 #
 ---
 # Fedora - http://fedoraproject.org
-fedora_previous: 17
-fedora_current: 18
-fedora_next: 19
+fedora_previous: 18
+fedora_current: 19
+fedora_next: 20
 
 # linfo - http://linfo.sourceforge.net/
 linfo_version: 1.8.1
