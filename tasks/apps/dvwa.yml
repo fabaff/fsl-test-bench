@@ -7,7 +7,7 @@
 #
 ---
 - name: download the archive
-  get_url: url=http://dvwa.googlecode.com/files/DVWA-$dvwa_version.zip
+  get_url: url=https://github.com/RandomStorm/DVWA/archive/v$dvwa_version.zip
            dest=/var/www/lighttpd/dvwa-$dvwa_version.zip
            mode=0440
 
