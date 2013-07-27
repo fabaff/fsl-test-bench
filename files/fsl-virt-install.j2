@@ -6,7 +6,7 @@
 #
 virt-install \
     --name {{ virtname }} \
-    --os-variant fedora18 \
+    --os-variant fedora19 \
     --ram {{ ram }} \
     --disk /var/lib/libvirt/images/{{ img_name }}.img,size={{ size }} \
     --location {{ mirror }} \
