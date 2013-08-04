@@ -36,10 +36,10 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow http traffic on port 8088
   command: /usr/bin/firewall-cmd --permanent --add-port=8088/tcp
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow http traffic on port 443
   command: /usr/bin/firewall-cmd --permanent --add-port=443/tcp
 
 - name: reload firewall configuration
