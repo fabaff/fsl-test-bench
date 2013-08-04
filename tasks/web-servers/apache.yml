@@ -10,12 +10,13 @@
        state=present 
   with_items:
     - httpd
+    - policycoreutils-python
 
 - name: run apache on 8800
   lineinfile: dest=/etc/httpd/conf/httpd.conf
               regexp='^Listen 80'
               insertafter='^Listen 80'
-              line='Listen 127.0.0.1:8800'
+              line='Listen ${ansible_eth0.ipv4.address}:8800'
               state=present
 
 - name: set server name
@@ -24,6 +25,9 @@
               insertafter='^#ServerName www.example.com:80'
               line='ServerName $ansible_hostname:8800'
               state=present
+
+- name: set selinux
+  command: /usr/sbin/semanage port -a -t http_port_t -p tcp 8800
 
 - name: start apache
   service: name=httpd
@@ -38,7 +42,7 @@
 
 # If you want your own index.html file
 - name: install a default index.html file
-  template: src=files/website/new.j2 
+  template: src=files/website/default.j2 
             dest=/var/www/html/index.html
             owner=root
             group=root
