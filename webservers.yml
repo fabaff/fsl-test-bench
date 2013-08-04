@@ -8,26 +8,29 @@
 ---
 - hosts: fsl-tb
   user: root
-  vars_files:	
+  vars_files:
     - variables/application-versions.yml
     - variables/sensitive.yml
 
   tasks:
 # Common tasks
-#    - include: tasks/preparation.yml
-#    - include: tasks/motd.yml
+    - include: tasks/preparation.yml
+    - include: tasks/motd.yml
 
 # Web server tasks
-#    - include: tasks/webserver/lighttpd.yml
+    - include: tasks/webserver/lighttpd.yml
 #    - include: tasks/webserver/apache.yml
 #    - include: tasks/webserver/cherokee.yml
-#    - include: tasks/webserver/droopy.yml
-#    - include: tasks/webserver/nginx.yml
-#    - include: tasks/webserver/tomcat.yml
-#    - include: tasks/webserver/pywebserve.yml
+    - include: tasks/webserver/droopy.yml
+    - include: tasks/webserver/nginx.yml
+    - include: tasks/webserver/tomcat.yml
+    - include: tasks/webserver/pywebserve.yml
+    - include: tasks/webserver/mongoose.yml
+    - include: tasks/webserver/nodejs.yml
+    - include: tasks/webserver/darkhttpd.yml
 
 # Common tasks
-#    - include: tasks/cleanup.yml
+    - include: tasks/cleanup.yml
 
   handlers:
    - include: handlers/system.yml
