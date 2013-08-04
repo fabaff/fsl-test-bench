@@ -27,7 +27,7 @@
             group=root
             mode=0644
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow http traffic on port 8000
   command: /usr/bin/firewall-cmd --permanent --add-port=8000/tcp
 
 - name: reload firewall configuration
