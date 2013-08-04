@@ -23,7 +23,7 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow http traffic on port 8008
   command: /usr/bin/firewall-cmd --permanent --add-port=8008/tcp
 
 - name: reload firewall configuration
