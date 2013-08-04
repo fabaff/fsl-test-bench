@@ -53,9 +53,8 @@ IP address of System 1
 
 ```
 
-The file *variables/sensitive-variables.yml* contains all passwords.
-If you don't want to run with default password, edit this file according your
-needs.
+The file *variables/sensitive.yml* contains all passwords. If you don't want
+to run with default password, edit this file according your needs.
 
 Now let Ansible do the work. Below the command is shown to setup the Fedora
 Security Lab Test bench on a single machine.
