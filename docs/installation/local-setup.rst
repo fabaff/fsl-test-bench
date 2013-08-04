@@ -87,8 +87,8 @@ Clone the FSL Test bench `git repository`_. ::
 
     $ git clone git://github.com/fabaff/fsl-test-bench.git
 
-The file ``fsl-test-bench/local-setup.yml`` contains variables section for the
-virtual machine and the used virtal network. Modify the variables as you need.
+The file ``variables/local.yml`` contains variables for the virtual machine
+and the used virtal network. Modify the variables as you need.
 Especially when you detect a collision of the IP range with your local setup.
 If you have a host system with a lot of memory, increasing the amount of RAM
 assigned to the virtual machine is a good idea.
