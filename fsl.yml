@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2013-06-27
+# Synced at 2013-08-14
 #
 ---
 - hosts: fsl_hosts
@@ -13,7 +13,7 @@
   - name: install $item
     action: yum pkg=$item state=installed
     with_items:
-       - ArpOn
+       - ArpON
        - afftools
        - aide
        - aircrack-ng
@@ -24,6 +24,7 @@
        - binwalk
        - bkhive
        - bonesi
+       - bro
        - chkrootkit
        - cmospwd
        - cowpatty
@@ -46,6 +47,7 @@
        - firstaidkit-plugin-all
        - flawfinder
        - foremost
+       - fping
        - gparted
        - halberd
        - hexedit
@@ -96,6 +98,7 @@
        - ntop
        - nwipe
        - onesixtyone
+       - openssh
        - openvas-client
        - openvas-scanner
        - ophcrack
@@ -112,6 +115,7 @@
        - prewikka
        - proxychains
        - pscan
+       - pwgen
        - pyrit
        - raddump
        - ratproxy
@@ -146,6 +150,7 @@
        - sslstrip
        - sucrack
        - swaks
+       - tcpcopy
        - tcpdump
        - tcpflow
        - tcpick
