@@ -6,19 +6,19 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: download the archive
+- name: download the hackademic archive
   get_url: url=https://owasp-hackademic-challenges.googlecode.com/files/OWASP_Hackademic_Challenges_en_v0.1.1.zip
            dest=/var/www/lighttpd/hackademic-$hackadamemic_version.zip
            mode=0440
 
-- name: unpack the archive
+- name: unpack the hackademic archive
   command: /usr/bin/unzip -o /var/www/lighttpd/hackademic-$hackadamemic_version.zip -d /var/www/lighttpd/
 
-- name: delete the archive
+- name: delete the hackademic archive
   file: path=/var/www/lighttpd/hackademic-$hackadamemic_version.zip
         state=absent
 
-- name: rename the dorectory
+- name: rename the hackademic directory
   command: /usr/bin/mv /var/www/lighttpd/Hackademic_Challenges[EN]/Hackademic_Challenges /var/www/lighttpd/hackademic
 
 - name: delete the unpacked archive elements
