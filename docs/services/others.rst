@@ -11,6 +11,8 @@
 .. _tftp: http://sourceforge.net/projects/tftp-server/
 .. _xrdp: http://www.xrdp.org/
 .. _ntp: http://www.ntp.org/
+.. _MQTT: http://mqtt.org/
+.. _mosquitto: http://mosquitto.org/
 
 Other servers
 =============
@@ -33,6 +35,7 @@ a static key is included.
 * `ngircd`_ is a lightweight Internet Relay Chat server
 * `xrdp`_ is an remote desktop protocol (RDP) server
 * `ntp`_ is Network Time Protocol server
+* `mosquitto`_ is a `MQTT`_ message broker
 
 The tftp server is serving a simple text file. ::
 
@@ -52,3 +55,22 @@ User should be able to connect to a telnet server. ::
     Fedora release 18 (Spherical Cow)
     Kernel 3.9.4-200.fc18.x86_64 on an x86_64 (1)
     test-bench login:
+
+Suscribing to a topic of the `MQTT`_ broker from your local machine::
+
+    $ mosquitto_sub -h 10.0.0.65 -d -t hello/testbench
+    Client mosqsub/2233-laptop011 sending CONNECT
+    Client mosqsub/2233-laptop011 received CONNACK
+    Client mosqsub/2233-laptop011 sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
+    Client mosqsub/2233-laptop011 received SUBACK
+    Subscribed (mid: 1): 0
+
+Publishing messages on your FSL Test bench::
+
+    $ mosquitto_pub -d -t hello/testbench -m "This is a message from your FSL Test bench"
+    Client mosqpub/15469-test-benc sending CONNECT
+    Client mosqpub/15469-test-benc received CONNACK
+    Client mosqpub/15469-test-benc sending PUBLISH (d0, q0, r0, m1, 'hello/testbench', ... (42 bytes))
+    Client mosqpub/15469-test-benc sending DISCONNECT
+
+You should now get the message from the FSL Test Bench.
