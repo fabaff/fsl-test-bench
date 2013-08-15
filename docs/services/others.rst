@@ -80,6 +80,7 @@ Publishing messages on your FSL Test bench::
     Client mosqpub/20531-test-benc sending DISCONNECT
 
 You should now get the message from the FSL Test Bench. ::
+
     Client mosqsub/24366-laptop011 received PUBLISH (d0, q0, r0, m0, 'fsl/testbench', ... (42 bytes))
     This is a message from your FSL Test bench
 
