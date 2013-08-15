@@ -37,6 +37,9 @@ a static key is included.
 * `ntp`_ is Network Time Protocol server
 * `mosquitto`_ is a `MQTT`_ message broker
 
+telnet
+------
+
 The tftp server is serving a simple text file. ::
 
     $ ls
@@ -56,21 +59,27 @@ User should be able to connect to a telnet server. ::
     Kernel 3.9.4-200.fc18.x86_64 on an x86_64 (1)
     test-bench login:
 
+mosquitto
+---------
+
 Suscribing to a topic of the `MQTT`_ broker from your local machine::
 
-    $ mosquitto_sub -h 10.0.0.65 -d -t hello/testbench
-    Client mosqsub/2233-laptop011 sending CONNECT
-    Client mosqsub/2233-laptop011 received CONNACK
-    Client mosqsub/2233-laptop011 sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
-    Client mosqsub/2233-laptop011 received SUBACK
+    $ $ mosquitto_sub -h 10.0.0.65 -d -t fsl/testbench
+    Client mosqsub/24366-laptop011 sending CONNECT
+    Client mosqsub/24366-laptop011 received CONNACK
+    Client mosqsub/24366-laptop011 sending SUBSCRIBE (Mid: 1, Topic: fsl/testbench, QoS: 0)
+    Client mosqsub/24366-laptop011 received SUBACK
     Subscribed (mid: 1): 0
 
 Publishing messages on your FSL Test bench::
 
-    $ mosquitto_pub -d -t hello/testbench -m "This is a message from your FSL Test bench"
-    Client mosqpub/15469-test-benc sending CONNECT
-    Client mosqpub/15469-test-benc received CONNACK
-    Client mosqpub/15469-test-benc sending PUBLISH (d0, q0, r0, m1, 'hello/testbench', ... (42 bytes))
-    Client mosqpub/15469-test-benc sending DISCONNECT
+    $ mosquitto_pub -d -t fsl/testbench -m "This is a message from your FSL Test bench"
+    Client mosqpub/20531-test-benc sending CONNECT
+    Client mosqpub/20531-test-benc received CONNACK
+    Client mosqpub/20531-test-benc sending PUBLISH (d0, q0, r0, m1, 'fsl/testbench', ... (42 bytes))
+    Client mosqpub/20531-test-benc sending DISCONNECT
 
-You should now get the message from the FSL Test Bench.
+You should now get the message from the FSL Test Bench. ::
+    Client mosqsub/24366-laptop011 received PUBLISH (d0, q0, r0, m0, 'fsl/testbench', ... (42 bytes))
+    This is a message from your FSL Test bench
+
