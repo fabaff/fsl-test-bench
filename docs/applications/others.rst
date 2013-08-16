@@ -23,3 +23,6 @@ services and the system itself.
 * CGIs which details about this system.
 * `PHP shell detector`_ is a php script that helps you find and identify
   php/cgi(perl)/asp/aspx shells.
+
+.. note:: PHP shell detector is not inclued by default. This tool is not able
+          to work with the present amount of files.
