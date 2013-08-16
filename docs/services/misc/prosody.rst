@@ -52,7 +52,7 @@ with the user you would like to add.::
     /authorization allow admin@10.0.0.65
 
 .. _mcabber-fig:
-.. figure:: ../../images/macabber.png
+.. figure:: ../../images/mcabber.png
     :width: 600px
     :align: center
     
