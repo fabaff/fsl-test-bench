@@ -16,7 +16,7 @@ The FSL Test bench is licensed under GPLv2.
     <meta name="author" content="Joerg Simon, Fabian Affolter">
 
     <!-- Le styles -->
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -33,7 +33,7 @@ The FSL Test bench is licensed under GPLv2.
         margin: 5px;
       }
     </style>
-    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -51,15 +51,19 @@ The FSL Test bench is licensed under GPLv2.
   <body>
     <div class="container">
       <div class="hero-unit">
-        <img src="banner.png" class="img-rounded">
+        <img src="../banner.png" class="img-rounded">
           <p style="margin-left: 10px; margin-right: 10px;">
           </p>
         <ul class="nav nav-tabs">
-          <li class="active">
-            <a href="index.php">Configuration</a>
+          <li class="">
+            <a href="../index.html"><- Go back</a>
           </li>
           <li class="">
-            <a href="log-openvpn/index.html">OpenVPN log</a>
+          <li class="active">
+            <a href="config.php">Configuration</a>
+          </li>
+          <li class="">
+            <a href="openvpn-log.html">OpenVPN log</a>
         </ul>
         <div>
           <p style="margin-left: 10px; margin-right: 10px;">
@@ -68,8 +72,8 @@ The FSL Test bench is licensed under GPLv2.
             <h3 style="margin-left: 10px; margin-right: 10px;">Client configuration</h3>
           <p style="margin-left: 10px; margin-right: 10px;">Below you find the configuration which is needed to connect to this server. Please copy the configuration file to your system...<p>
             <pre>
-<?php echo file_get_contents("client.conf");?></pre>
-            <p>...or <a href="client.conf">download</a> a copy. Please modify the path to your key when you are placing it at another location. To start the connection, use the command mentioned below.</p>
+<?php echo file_get_contents("../client.conf");?></pre>
+            <p>...or <a href="../client.conf">download</a> a copy. Please modify the path to your key when you are placing it at another location. To start the connection, use the command mentioned below.</p>
 <p style="margin-left: 10px; margin-right: 10px;"></p>
 <pre>$ sudo /usr/sbin/openvpn --config client.conf</pre>
 
@@ -78,8 +82,8 @@ The FSL Test bench is licensed under GPLv2.
             <h3 style="margin-left: 10px; margin-right: 10px;">Key</h3>
             <p style="margin-left: 10px; margin-right: 10px;">Copy the key your your system...<p>
                 <pre>
-<?php echo file_get_contents("static.key");?></pre>
-            <p>...or <a href="static.key">download</a> the key.</p>
+<?php echo file_get_contents("../cd lo  static.key");?></pre>
+            <p>...or <a href="../static.key">download</a> the key.</p>
         </div>
         </div>
       </div>
