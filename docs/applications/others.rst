@@ -7,15 +7,14 @@
 .. _phpMyAdmin: http://www.phpmyadmin.net
 .. _PHP shell detector: https://github.com/emposha/PHP-Shell-Detector
 
-Other servers
-=============
+Other web applications
+======================
 
 Beside the vulnerable web applications, the services, and the PHP shells some
 additional web applications and tools are included. They facilitate the
 maintenance of the Test bench and are providing details about the various
 services and the system itself.  
 
-* openssh (Port 22)
 * `linfo`_ is a small PHP application that displays hardware details and real
   time health of your Test bench system.
 * `phpMyAdmin`_ is a web appplication to handle the administration of MySQL
