@@ -1,0 +1,30 @@
+# This playbook install an ntp server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install ntp package
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - ntp
+
+- name: copy configuration ntp file
+  template: src=files/ntp-conf.j2 
+            dest=/etc/ntp.conf
+            owner=root
+            group=root
+            mode=0644
+
+- name: configure firewall, allow ntp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=123/udp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start ntpd
+  service: name=ntpd
+           state=running
+           enabled=yes
