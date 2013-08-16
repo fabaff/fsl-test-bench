@@ -18,7 +18,7 @@ secret key, or username/password. The FSL Test Bench only provides an OpenVPN
 server with a static key configuration.
 
 .. _openvpn-fig:
-.. figure:: ../images/openvpn.png
+.. figure:: ../../images/openvpn.png
     :width: 600px
     :align: center
     
