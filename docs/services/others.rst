@@ -62,7 +62,7 @@ User should be able to connect to a telnet server. ::
 mosquitto
 ---------
 
-Suscribing to a topic of the `MQTT`_ broker from your local machine::
+Subscribing to the topic **fsl/testbench** of the `MQTT`_ broker from your local machine::
 
     $ $ mosquitto_sub -h 10.0.0.65 -d -t fsl/testbench
     Client mosqsub/24366-laptop011 sending CONNECT
