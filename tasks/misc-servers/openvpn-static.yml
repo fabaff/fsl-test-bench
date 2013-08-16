@@ -59,10 +59,10 @@
            state=running
            enabled=yes
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow traffic on port 1194
   command: firewall-cmd --permanent --add-port=1194/tcp
 
-- name: configure firewall, allow http traffic
+- name: configure firewall, allow traffic on port 1194
   command: firewall-cmd --permanent --add-port=1194/udp
 
 - name: reload firewall configuration
