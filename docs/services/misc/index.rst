@@ -3,13 +3,6 @@
 .. _services-others:
 
 .. _Fedora: https://fedoraproject.org/
-.. _OpenVPN: http://openvpn.net
-.. _cups: http://www.cups.org
-.. _ngircd: http://ngircd.barton.de/
-.. _dropbear: https://matt.ucc.asn.au/dropbear/dropbear.html
-
-.. _xrdp: http://www.xrdp.org/
-
 
 Other servers/services
 ======================
@@ -17,27 +10,22 @@ Other servers/services
 The Fedora Security Lab Test bench is hosting some services which are usualy
 not found on public accessible systems. ``telnet`` was replaced with more secure
 systems. Nowadays ``tftp`` is mainly used for provisioning VoIP installations.
-Print servers like cups are used in office environments.
+Print servers like ``cups`` are used in office environments.
 
 To give the students the possibility to work with VPN, an OpenVPN setup with
 a static key is included.   
 
-
-* `dropbear`_ (Port 222) is a lightweight SSH server
-* `OpenVPN`_ server with a static key
-* `cups`_ is a standards-based printing system
-* `ngircd`_ is a lightweight Internet Relay Chat server
-* `xrdp`_ is an remote desktop protocol (RDP) server
-
 .. toctree::
    :maxdepth: 2
 
+   tftp
+   telnet
+   openvpn
    openssh
    dropbear
    cups
    ngircd
    xrdp
    ntp
-   tftp
-   telnet
    mosquitto
+   prosody
