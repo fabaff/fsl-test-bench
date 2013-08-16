@@ -19,4 +19,4 @@ provides.
    file
    ftp
    web
-   others
+   misc/index
