@@ -1,0 +1,59 @@
+# This playbook install the prosody (http://prosody.im) xmpp server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install prosody package
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - prosody
+
+- name: default prosody configuration file
+  template: src=files/prosody-config.j2
+            dest=/etc/prosody/prosody.cfg.lua
+            owner=root
+            group=root
+            mode=0644
+
+- name: download additional prosody modules
+  get_url: url=http://prosody.im/files/{{ item }}.lua
+           dest=/usr/lib64/prosody/modules/{{ item }}.lua
+           mode=0775
+  with_items:
+    - mod_listusers
+
+#- name: download additional prosody modules
+#  get_url: url=http://prosody-modules.googlecode.com/hg/{{ item }}/{{ item }}.lua
+#           dest=/usr/lib64/prosody/modules/{{ item }}.lua
+#           mode=0775          
+#  with_items:
+#    - mod_broadcast
+#    - mod_block_registrations
+
+#- name: add xmpp users
+#  command: /usr/bin/prosodyctl register $item@10.0.0.65 mypassword
+#  with_items:
+#    - admin
+#    - bob
+#    - alice
+#    - testbench
+
+- name: configure firewall, allow traffic to port 5222
+  command: /usr/bin/firewall-cmd --permanent --add-port=5222/tcp
+
+- name: configure firewall, allow traffic to port 5269
+  command: /usr/bin/firewall-cmd --permanent --add-port=5269/tcp
+
+- name: configure firewall, allow traffic to port 5582
+  command: /usr/bin/firewall-cmd --permanent --add-port=5582/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start prosody
+  service: name=prosody
+           state=running
+           enabled=yes
