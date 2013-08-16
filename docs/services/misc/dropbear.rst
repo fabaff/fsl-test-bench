@@ -8,7 +8,7 @@
 dropbear
 ========
 
-* `dropbear`_ which is running on port 222 is a lightweight SSH server.
+`dropbear`_ which is running on port 222 is a lightweight SSH server.
 
 To retrieve the version with `nmap`_, use the command mentioned below::
 
@@ -20,7 +20,7 @@ To retrieve the version with `nmap`_, use the command mentioned below::
     |_banner: SSH-2.0-dropbear_2012.55
     Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-Banner grabbing with `netcat` will give you the version back.::
+Banner grabbing with ``netcat`` will give you the version back.::
 
     $ nc -v 10.0.0.65 222
     Ncat: Version 6.25 ( http://nmap.org/ncat )
