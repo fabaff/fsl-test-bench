@@ -32,7 +32,7 @@ switch to user **bob**::
 
     # su - bob
 
-Create the ``.mcabberrc`` configuration file for **bob**:
+Create the ``.mcabberrc`` configuration file for **bob**::
 
     set jid = bob@10.0.0.65
     set password = bob
