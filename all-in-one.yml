@@ -46,6 +46,8 @@
     - include: tasks/misc-servers/telnet.yml
     - include: tasks/misc-servers/cups.yml
     - include: tasks/misc-servers/openvpn-static.yml
+    - include: tasks/misc-servers/xrdp.yml
+    - include: tasks/misc-servers/mosquitto.yml
 ## File servers
     - include: tasks/file-servers/samba.yml
     - include: tasks/file-servers/nfs.yml  # Needs manual start
