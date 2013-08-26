@@ -21,7 +21,7 @@
 - name: configure firewall, allow ipp traffic
   command: /usr/bin/firewall-cmd --permanent --add-service=ipp
 
-- name: configure firewall, allow ipp traffic
+- name: configure firewall, allow ipp-client traffic
   command: /usr/bin/firewall-cmd --permanent --add-service=ipp-client
 
 - name: reload firewall configuration
