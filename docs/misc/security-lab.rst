@@ -4,8 +4,8 @@
 
 .. _playbook: https://github.com/fabaff/fsl-test-bench/blob/master/fsl.yml
 .. _Fedora Security Lab: https://fedorahosted.org/security-spin/
-.. _Fedora 18 x86_64: http://download.fedoraproject.org/pub/alt/releases/18/Spins/x86_64/Fedora-18-x86_64-Live-Security.iso
-.. _Fedora 18 i686: http://download.fedoraproject.org/pub/alt/releases/18/Spins/i386/Fedora-18-i686-Live-Security.iso
+.. _Fedora 19 x86_64: http://mirror.karneval.cz/pub/linux/fedora-alt/releases/19/Spins/x86_64/Fedora-Live-Security-x86_64-19-1.iso
+.. _Fedora 19 i686: http://mirror.karneval.cz/pub/linux/fedora-alt/releases/19/Spins/i386/Fedora-Live-Security-i686-19-1.iso
 .. _Making Media: http://docs.fedoraproject.org/en-US/Fedora/18/html/Installation_Guide/sn-making-media.html
 .. _Installation Guide: http://docs.fedoraproject.org/en-US/Fedora/18/html/Installation_Guide/index.html
 
@@ -20,8 +20,8 @@ Live media
 There are two different Live images available of the Fedora Security Lab. Those
 images can be used to create physical CDs or Live USB key.
 
-* Download the 64-bit PC Edition: `Fedora 18 x86_64`_ Live Security
-* Download the 32-bit PC Edition: `Fedora 18 i686`_ Live Security
+* Download the 64-bit PC Edition: `Fedora 19 x86_64`_ Live Security
+* Download the 32-bit PC Edition: `Fedora 19 i686`_ Live Security
 
 For further information please check the `Making Media`_ section in the 
 Fedora `Installation Guide`_.
