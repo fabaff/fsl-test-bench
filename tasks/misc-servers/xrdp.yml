@@ -1,0 +1,23 @@
+# This playbook install the xrdp (http://www.xrdp.org/) RDP server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install xrdp package
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - xrdp
+
+- name: configure firewall, allow RDP traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=3389/tcp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start xrdp
+  service: name=xrdp
+           state=running
+           enabled=yes
