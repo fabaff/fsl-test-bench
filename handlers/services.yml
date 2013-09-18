@@ -11,30 +11,39 @@
 ---
 # Control handlers for sshd 
 - name: start sshd
-  service: name=sshd state=started
+  service: name=sshd
+           state=started
 
 - name: stop sshd
-  service: name=sshd state=stopped
+  service: name=sshd
+           state=stopped
 
 - name: restart sshd
-  service: name=sshd state=restarted
+  service: name=sshd
+           state=restarted
 
 # Control handlers for lighttpd 
 - name: start lighttpd
-  service: name=lighttpd state=started
+  service: name=lighttpd
+           state=started
 
 - name: stop lighttpd
-  service: name=lighttpd state=stopped
+  service: name=lighttpd
+           state=stopped
 
 - name: restart lighttpd
-  service: name=lighttpd state=restarted
+  service: name=lighttpd
+           state=restarted
 
 # Control handlers for mysql 
 - name: start mysql
-  service: name=mysqld state=started
+  service: name=mysqld
+           state=started
 
 - name: stop mysql
-  service: name=mysqld state=stopped
+  service: name=mysqld
+           state=stopped
 
 - name: restart mysql
-  service: name=mysqld state=restarted
+  service: name=mysqld
+           state=restarted
