@@ -1,0 +1,19 @@
+# This playbook install mongoDB (http://www.mongodb.org/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install mongodb and related packages
+  yum: pkg=$item
+       state=present
+  with_items:
+    - mongodb
+    - python-pymongo
+
+- name: set the mongodb root password and create db
+  mongodb_user: database=testbench
+                user=root
+                password=$mysql_root_password
+                state=present
