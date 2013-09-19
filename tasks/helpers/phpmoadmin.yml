@@ -1,0 +1,39 @@
+# This playbook install phpMoAdmin (http://www.phpmoadmin.com/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install additional packages
+  yum: pkg=$item
+       state=present
+  with_items:
+    - php-pecl-mongo
+
+- name: create the phpmoadmin directory
+  file: path=/var/www/lighttpd/phpmoadmin
+        mode=0755
+        state=directory
+
+- name: download the phpmoadmin source tarball
+  get_url: url=http://www.phpmoadmin.com/file/phpmoadmin.zip
+           dest=/var/www/lighttpd/phpmoadmin.zip
+           mode=0440
+
+- name: unpack the archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/phpmoadmin.zip -d /var/www/lighttpd/phpmoadmin
+
+- name: delete the archive
+  file: path=/var/www/lighttpd/phpmoadmin.zip
+        state=absent
+
+- name: delete the archive
+  file: path=/var/www/lighttpd/phpmoadmin.zip
+        state=absent
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--IN-->'
+              insertafter='        <!--IN-->'
+              line='        <a href="/phpmoadmin/moadmin.php" class="btn btn-default">phpMoAdmin</a></br>'
