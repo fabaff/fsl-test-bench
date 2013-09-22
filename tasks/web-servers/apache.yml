@@ -40,7 +40,6 @@
 - name: reload firewall configuration
   command: /usr/bin/firewall-cmd --reload
 
-# If you want your own index.html file
 - name: install a default index.html file
   template: src=files/website/default.j2 
             dest=/var/www/html/index.html
