@@ -24,7 +24,7 @@ This setup option (`local-setup.yml`_) creates a local virtual machine with
 are fed to various files, a kickstart file, the ``virt-install`` script, 
 and the network configuration shown later in this section.
 
-The default setting in `local.yml`_ are very generic. ::
+The default settings in `local.yml`_ are very generic. ::
 
     ---
     # User settings
