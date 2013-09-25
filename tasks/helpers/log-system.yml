@@ -18,7 +18,7 @@
            mode=0775
 
 - name: install the log.html file
-  template: src=files/website/log-system.j2
+  template: src=files/web-interface/log-system.j2
             dest=/var/www/lighttpd/log-system/index.html 
             owner=lighttpd
             group=lighttpd
