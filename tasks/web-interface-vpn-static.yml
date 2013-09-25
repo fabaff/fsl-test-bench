@@ -24,14 +24,14 @@
            mode=0775
 
 - name: install the fsl test bench vpn index.html file
-  template: src=files/website/openvpn-static-index.j2
+  template: src=files/web-interface/openvpn-static-index.j2
             dest=/var/www/lighttpd/index.php 
             owner=root
             group=root
             mode=0644
 
 - name: copy the fsl banner
-  copy: src=./files/website/Spins-banner_security.png
+  copy: src=./files/web-interface/Spins-banner_security.png
         dest=/var/www/lighttpd/Spins-banner_security.png
         owner=root
         group=root

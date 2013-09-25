@@ -26,7 +26,7 @@
 #    - include: tasks/openvpn.yml
 
 # OpenVPN server with a static key
-    - include: task/website-vpn-static.yml
+    - include: task/web-interface-vpn-static.yml
     - include: tasks/openvpn-static.yml
     - include: tasks/helpers/log-openvpn.yml
 

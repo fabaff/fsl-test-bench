@@ -78,7 +78,7 @@ The FSL Test bench is licensed under GPLv2.
 <pre>$ sudo /usr/sbin/openvpn --config client.conf</pre>
 
 <p style="margin-left: 10px; margin-right: 10px;">If you prefer to work without the configuration file, establish the connection to the server with the command shown below.</p>
-<pre>$ sudo /usr/sbin/openvpn --remote {{ ansible_eth0.ipv4.address }} --dev tun --ifconfig 10.8.0.2 10.8.0.1 --comp-lzo --secret static.key</pre>
+<pre>$ sudo /usr/sbin/openvpn --remote {{ ansible_br0.ipv4.address }} --dev tun --ifconfig 10.8.0.2 10.8.0.1 --comp-lzo --secret static.key</pre>
             <h3 style="margin-left: 10px; margin-right: 10px;">Key</h3>
             <p style="margin-left: 10px; margin-right: 10px;">Copy the key your your system...<p>
                 <pre>
