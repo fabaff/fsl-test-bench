@@ -19,4 +19,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
-              line='            <a href="/escobar/esc0b4r.php" class="btn btn-inverse">Esc0b4r</a></br>'
+              line='            <a href="/escobar/esc0b4r.php" class="btn btn-default">Esc0b4r</a></br>'

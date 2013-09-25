@@ -35,4 +35,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
-              line='            <a href="/ani-shell/Ani-Shell.php" class="btn btn-inverse">Ani-Shell</a></br>'
+              line='            <a href="/ani-shell/Ani-Shell.php" class="btn btn-default">Ani-Shell</a></br>'

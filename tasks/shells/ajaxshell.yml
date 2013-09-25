@@ -36,4 +36,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--SH-->'
               insertafter='            <!--SH-->'
-              line='            <a href="/ajaxshell/ajax-shell.php" class="btn btn-inverse">Ajax Shell</a></br>'
+              line='            <a href="/ajaxshell/ajax-shell.php" class="btn btn-default">Ajax Shell</a></br>'
