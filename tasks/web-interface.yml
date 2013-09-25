@@ -6,7 +6,7 @@
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=https://github.com/twbs/bootstrap/archive/v$boostrap_version.zip
+  get_url: url=https://github.com/twbs/bootstrap/archive/v$bootstrap_version.zip
            dest=/var/www/lighttpd/bootstrap.zip
            mode=0440
 
