@@ -33,4 +33,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/phpmyadmin" class="btn btn-inverse">phpMyAdmin</a></br>'
+              line='        <a href="/phpmyadmin" class="btn btn-default">phpMyAdmin</a></br>'

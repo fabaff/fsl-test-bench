@@ -49,4 +49,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/log-openvpn/config.php" class="btn btn-inverse">OpenVPN</a></br>'
+              line='        <a href="/log-openvpn/config.php" class="btn btn-default">OpenVPN</a></br>'

@@ -42,4 +42,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/log-system/" class="btn btn-inverse">Logs</a></br>'
+              line='        <a href="/log-system/" class="btn btn-default">Logs</a></br>'
