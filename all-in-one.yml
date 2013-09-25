@@ -25,7 +25,7 @@
 # FSL Test bench specific stuff
 ################################################################################
     - include: tasks/web-servers/lighttpd.yml
-    - include: tasks/website.yml
+    - include: tasks/web-interface.yml
 
 # Services
 ################################################################################
