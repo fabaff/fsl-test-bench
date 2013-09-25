@@ -1,4 +1,4 @@
-# This playbook install the default html files incl. bootstrap. 
+# This playbook install the default web interface (html files incl. bootstrap). 
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -6,7 +6,7 @@
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
+  get_url: url=https://github.com/twbs/bootstrap/archive/v$boostrap_version.zip
            dest=/var/www/lighttpd/bootstrap.zip
            mode=0440
 
