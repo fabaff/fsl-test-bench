@@ -13,7 +13,7 @@
         mode=0775
 
 - name: install the fsl test bench cgi-bin.html file
-  template: src=files/website/cgi-bin.j2
+  template: src=files/web-interface/cgi-bin.j2
             dest=/var/www/lighttpd/cgi-bin.html
             owner=root
             group=root
