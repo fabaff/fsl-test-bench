@@ -13,7 +13,7 @@ fedora_current: 19
 fedora_next: 20
 
 # Bootstrap - http://getbootstrap.com/
-boot_version: 3.0.0
+bootstrap_version: 3.0.0
 
 # linfo - http://linfo.sourceforge.net/
 linfo_version: 1.9
