@@ -24,4 +24,4 @@
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/time.pl" class="btn btn-inverse">Date/Time (Perl)</a></br>'
+              line='        <a href="/cgi-bin/time.pl" class="btn btn-default">Date/Time (Perl)</a></br>'

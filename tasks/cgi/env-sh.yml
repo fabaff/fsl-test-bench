@@ -18,4 +18,4 @@
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/env.sh" class="btn btn-inverse">Environment variables (Bash)</a></br>'
+              line='        <a href="/cgi-bin/env.sh" class="btn btn-default">Environment variables (Bash)</a></br>'

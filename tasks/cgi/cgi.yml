@@ -23,4 +23,4 @@
   lineinfile: dest=/var/www/lighttpd/index.html
               regexp='^<!--IN-->'
               insertafter='            <!--IN-->'
-              line='            <a href="cgi-bin.html" class="btn btn-inverse">CGI</a></br>'
+              line='            <a href="cgi-bin.html" class="btn btn-default">CGI</a></br>'

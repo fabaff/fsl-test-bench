@@ -18,4 +18,4 @@
   lineinfile: dest=/var/www/lighttpd/cgi-bin.html
               regexp='^<!--IN-->'
               insertafter='        <!--IN-->'
-              line='        <a href="/cgi-bin/env.py" class="btn btn-inverse">Environment variables (Python)</a></br>'
+              line='        <a href="/cgi-bin/env.py" class="btn btn-default">Environment variables (Python)</a></br>'
