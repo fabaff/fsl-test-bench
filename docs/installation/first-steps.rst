@@ -26,7 +26,7 @@ setup. ::
     4 packets transmitted, 4 received, 0% packet loss, time 3000ms
     rtt min/avg/max/mdev = 0.248/0.342/0.408/0.071 ms
 
-If you want to login diretly in your virtual machine, launch
+If you want to login directly in your virtual machine, launch
 `Virtual Machine Manager`_ (``virt-manager``) and connect to the virtual
 machine **FSL-Test-bench**.
 
