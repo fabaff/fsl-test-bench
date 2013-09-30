@@ -41,6 +41,7 @@
 ## FTP server
     - include: tasks/ftp-servers/vsftpd.yml
 ## Misc servers
+    - include: tasks/misc-servers/openssh.yml
     - include: tasks/misc-servers/dropbear.yml
     - include: tasks/misc-servers/tftp.yml
     - include: tasks/misc-servers/telnet.yml
