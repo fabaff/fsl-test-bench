@@ -29,5 +29,4 @@ available features are shown.
 
    vul-applications
    shells
-   honeypots
    others
