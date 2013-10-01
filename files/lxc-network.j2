@@ -3,7 +3,7 @@
   <uuid>c98fbbfe-cded-405e-879d-db591fd070a2</uuid>
   <forward mode='route'/>
   <bridge name='{{ con_bridge }}' stp='on' delay='0' />
-<mac address='52:52:11:11:11:11'/>
+<mac address='{{ con_br_mac }}'/>
   <domain name='network1'/>
   <ip address='{{ con_gw }}' netmask='255.255.255.0'>
     <dhcp>
