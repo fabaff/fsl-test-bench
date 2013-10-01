@@ -1,0 +1,29 @@
+<domain type='lxc'>
+  <name>{{ con_name1 }}</name>
+  <uuid>9c871c02-0c94-a80a-57c7-24e9918aece3</uuid>
+  <memory unit='KiB'>524288</memory>
+  <currentMemory unit='KiB'>524288</currentMemory>
+  <vcpu placement='static'>1</vcpu>
+  <os>
+    <type arch='x86_64'>exe</type>
+    <init>/sbin/init</init>
+  </os>
+  <clock offset='utc'/>
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>restart</on_crash>
+  <devices>
+    <emulator>/usr/libexec/libvirt_lxc</emulator>
+    <filesystem type='mount' accessmode='passthrough'>
+      <source dir='/var/lib/libvirt/lxc/{{ con_name1 }}'/>
+      <target dir='/'/>
+    </filesystem>
+    <interface type='network'>
+      <mac address='{{ con_mac1 }}'/>
+      <source network='network1'/>
+    </interface>
+    <console type='pty'>
+      <target type='lxc' port='0'/>
+    </console>
+  </devices>
+</domain>
