@@ -1,0 +1,18 @@
+<network>
+  <name>network1</name>
+  <uuid>c98fbbfe-cded-405e-879d-db591fd070a2</uuid>
+  <forward mode='route'/>
+  <bridge name='{{ con_bridge }}' stp='on' delay='0' />
+<mac address='52:52:11:11:11:11'/>
+  <domain name='network1'/>
+  <ip address='{{ con_gw }}' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='{{ con_range_start }}' end='{{ con_range_end }}' />
+{% if containers %}
+    {% for con_name, con_mac, con_ip in containers %}
+      <host mac='{{ con_mac }}' name='{{ con_name }}' ip='{{ con_ip }}' />
+    {% endfor %}
+{% endif %}
+    </dhcp>
+  </ip>
+</network>
