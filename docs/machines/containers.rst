@@ -34,6 +34,8 @@ hosts on the physical network do not know that there exists a subnet. ::
 
     $ sudo route add -net 10.10.1.0 netmask 255.255.255.0 gw [IP address of your FSL Test Bench] dev [Interface]
 
+After adding the route, check if the containers are responding.
+
 Available systems
 -----------------
 
