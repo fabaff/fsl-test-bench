@@ -23,6 +23,7 @@ Contents:
    installation/index
    services/index
    applications/index
+   machines/index
    misc/index
    appendix/index
 
