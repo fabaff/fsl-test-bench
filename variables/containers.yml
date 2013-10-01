@@ -1,24 +1,37 @@
-# This variables file contains the parameters for the Linux container.
+# This variables file contains the parameters for the Linux containers.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-# This entry is needed for the libvirt network template and the local setup.
+# This entry is needed for the libvirt network template.
 containers: [
-                [test-bench1, '52:52:00:00:00:02', 10.1.1.60],
-                [test-bench2, '52:52:00:00:00:03', 10.1.1.61]
+                [web01, '52:52:22:22:22:22', 10.10.1.10],
+                [web02, '52:52:33:33:33:33', 10.10.1.11]
             ]
 
 # Common variables
-con_bridge: br0
+con_bridge: virbr1
+
+# See libvirt docs for details
+con_network: 'network:network1'
+
+# Gateway
+con_gw: 10.10.1.1
+
+# Start of the DHCP range
+con_range_start: 10.10.1.50
+
+# End of the DHCP range
+con_range_end: 10.10.1.60
+
 
 # Variables for every single containers
-con_name1: test-bench1
-con_mac1: '52:52:00:00:00:02'
-con_ip1: 10.1.1.60
+con_name1: web01
+con_mac1: '52:22:22:22:22:22'
+con_ip1: 10.10.1.10
 
-con_name2: test-bench2
-con_mac2: '52:52:00:00:00:03'
-con_ip2: 10.1.1.61
+con_name2: web02
+con_mac2: '52:52:33:33:33:33'
+con_ip2: 10.10.1.11

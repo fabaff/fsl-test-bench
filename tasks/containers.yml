@@ -1,0 +1,70 @@
+# This playbook creates LXC containers.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the network template 
+  template: src=files/lxc-network.j2
+            dest=/var/lib/libvirt/network/network1.xml
+            mode=0644
+
+- name: create 'network1' network
+  command: /usr/bin/virsh net-define /var/lib/libvirt/network/network1.xml
+
+- name: make 'network1' network autostart
+  command: /usr/bin/virsh net-autostart network1
+
+- name: start 'network1' network
+  command: /usr/bin/virsh net-start network1
+
+- name: create the script to bootstrap fedora
+  template: src=files/lxc-virt-install.j2 
+            dest=/tmp/lxc-virt-install
+            mode=0755
+
+- name: create container
+  command: /usr/bin/bash /tmp/lxc-virt-install {{ item }}
+  with_items:
+    - web01
+    - web02
+
+## Every container need its own definition, ansible is not able to evalute
+## the var inside the lookup.
+- name: define container in libvirt
+  virt: name=web01
+        command=define
+        xml="{{ lookup('template', 'web01.xml.j2') }}"
+        uri=lxc:///
+
+- name: define container in libvirt
+  virt: name=web02
+        command=define
+        xml="{{ lookup('template', 'web02.xml.j2') }}"
+        uri=lxc:///
+##########
+
+- name: start container
+  virt: name={{ item }}
+        state=running
+        uri=lxc:///
+  with_items:
+    - web01
+    - web02
+
+- name: make container autostart
+  command: /usr/bin/virsh autostart {{ item }}
+  with_items:
+    - web01
+    - web02
+
+- name: delete temp files
+  file: path=/tmp/{{ item }}
+        state=absent
+  with_items:
+    - lxc-virt-install
+    - fedora-release-{{ fedora_current }}-2.noarch.rpm
+
+# Container tests
+# virsh --connect lxc:/// start [container name]
