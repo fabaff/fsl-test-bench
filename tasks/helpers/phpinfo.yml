@@ -13,25 +13,12 @@
         mode=0775
         state=directory
 
-- name: create a new index.php file
-  lineinfile: dest=/var/www/lighttpd/phpinfo/index.php
-              regexp='^'
-              line=''
-              state=present
-              create=True
-
-- name: set permission for index.php file
-  file: path=/var/www/lighttpd/phpinfo/index.php
-        owner=root
-        group=root
-        mode=0775
-        state=file
-
-- name: add page content
-  lineinfile: dest=/var/www/lighttpd/phpinfo/index.php
-              regexp='^'
-              line='<?php\nphpinfo();\n?>'
-              state=present
+- name: install the index.php file
+  template: src=files/web-interface/phpinfo.j2
+            dest=/var/www/lighttpd/phpinfo/index.php
+            owner=lighttpd
+            group=lighttpd
+            mode=0644
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
