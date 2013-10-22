@@ -5,12 +5,12 @@
 Host system
 ===========
 
-The host system was a machine running Fedora 17. CPU is an Intel(R) Core(TM)2
+The host system was a machine running Fedora 19. CPU is an Intel(R) Core(TM)2
 Quad CPU Q6600 @ 2.40 GHz with 8 GB of memory. The hypervisor was KVM and
-libvirt 0.9.11.9. ::
+libvirt 1.0.5.6. ::
 
     $ cat /etc/fedora-release
-    Fedora release 17 (Beefy Miracle)
+    Fedora release 19 (Schrödinger’s Cat)
 
 With one of the latest kernel. ::
 
