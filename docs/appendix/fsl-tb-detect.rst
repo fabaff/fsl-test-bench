@@ -13,7 +13,7 @@ The ``fsl-tb-detect`` script makes it possible to check your network for Fedora
 Security Lab Test Bench Web interfaces which leads to the conclusion that the 
 Fedora Security Lab Test bench is available on those systems. The script is 
 pretty simple: It is looking for the string "Fedora Security Lab Test Bench"
-in the meta data of any html files provided by a web server.
+in the meta data of any html files provided by a web server.::
 
     local http = require "http"
     local shortport = require "shortport"
@@ -55,7 +55,7 @@ in the meta data of any html files provided by a web server.
         return title
     end
 
-Run the script against your network.
+Run the script against your network.::
 
     $ sudo nmap --script=./fsl-tb-detect.nse 10.0.0.0/24
 
