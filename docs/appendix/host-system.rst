@@ -15,8 +15,8 @@ libvirt 1.0.5.6. ::
 With one of the latest kernel. ::
 
     $ uname -a
-    Linux host01.home.network 3.6.11-5.fc17.x86_64
-    #1 SMP Tue Jan 8 21:40:51 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+    Linux host01.home.network 3.11.2-201.fc19.x86_64
+    #1 SMP Fri Sep 27 19:20:55 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
 
 The network configuration looked like this: ::
 
