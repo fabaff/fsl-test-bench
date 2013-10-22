@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<!-- 
-This file is just a dummy and distributed with Ansible.
+<!--
+This file is part of the Fedora Security Lab Test bench and distributed with
+Ansible.
 
 Copyright (c) 2013 Fabian Affolter <fab@fedoraproject.org>
 
@@ -9,15 +10,16 @@ The FSL Test bench is licensed under GPLv2.
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Webshop Pencil AG | Webserver is up and running...</title>
+    <title>Fedora Security Lab Test bench | Webserver is up and running...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Webshop for pencils">
-    <meta name="author" content="Fabian Affolter">
+    <meta name="description" content="Penetration testing system">
+    <meta name="author" content="Joerg Simon, Fabian Affolter">
 </head>
 <body>
     <center>
-    <p>This server is not hosting any content at the moment.</p>
-    <center><small>&copy; <a href="#">Pencil AG</a></small></center>
+    <h3>The webserver is running on {{ ansible_distribution }} {{ ansible_distribution_version }}.</h3><br />
+    <p>This server is not hosting any content. It's just here to give you a target for reconnaissance tasks.</p>
+    <center><small>&copy; <a href="https://fedorahosted.org/security-spin/">Fedora Security Lab</a> Test Bench 2013</small></center>
     </center>
 </body>
 </html>
