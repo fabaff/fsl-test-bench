@@ -86,6 +86,7 @@
     - include: tasks/apps/dvwa.yml
     - include: tasks/apps/hackademic.yml
     - include: tasks/apps/xssed.yml
+    - include: tasks/apps/bricks.yml
 
 # Honeypots
 ################################################################################
