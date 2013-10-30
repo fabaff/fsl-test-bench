@@ -1,0 +1,35 @@
+# This playbook install Bricks (http://sechow.com/brick).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: download the latest bricks archive
+  get_url: url=http://downloads.sourceforge.net/project/owaspbricks/Dakatua%20-%202.0/OWASP%20Bricks%20-%20Dakatua.zip
+           dest=/var/www/lighttpd/bricks.zip
+           mode=0440
+
+- name: unpack the bricks archive
+  command: /usr/bin/unzip -o /var/www/lighttpd/bricks.zip -d /var/www/lighttpd/
+
+- name: delete the bricks archive
+  file: path=/var/www/lighttpd/bricks.zip
+        state=absent
+
+- name: install a default configuration file
+  template: src=files/bricks.j2
+            dest=/var/www/lighttpd/bricks/LocalSettings.php
+            owner=root
+            group=root
+            mode=0755
+
+- name: create database for bricks
+  mysql_db: name=bricks
+            state=present 
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--VA-->'
+              insertafter='        <!--VA-->'
+              line='        <a href="/bricks" class="btn btn-default">Bricks</a></br>'
