@@ -9,6 +9,7 @@
 .. _SQLol: https://github.com/SpiderLabs/SQLol
 .. _OWASP Hackademic Challenges Project: https://code.google.com/p/owasp-hackademic-challenges/
 .. _XSSeducation: https://github.com/aj00200/xssed
+.. _Bricks: http://sechow.com/brick
 
 Vulnerable web applications
 ===========================
@@ -24,6 +25,7 @@ high impact.
 * `SQLol`_
 * `OWASP Hackademic Challenges Project`_
 * `XSSeducation`_
+* `Bricks`_
 
 DVWA
 ----
@@ -60,3 +62,11 @@ XSSeducation
 ------------
 XSSeducation is a set of Cross Site Scripting vulnerable PHP pages for learning
 about XSS Vulnerabilities.
+
+Bricks
+------
+Bricks is built on PHP and MySQ and serves as a web application security
+learning platform. It has strong focuses on variations of commonly seen
+application security issues. All 'Bricks' has some sort of security issue and
+those can be leveraged.
+
