@@ -40,7 +40,7 @@ def sendMessage(topic, message):
 def main():
     while client.loop() == 0:
         # Wait for a random number of seconds
-        r_int = random.randint(1, 10)
+        r_int = random.randint(1, 30)
         time.sleep(r_int)
         # Get a timestamp
         timestamp = datetime.datetime.now()
