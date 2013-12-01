@@ -29,3 +29,4 @@ a static key is included.
    ntp
    mosquitto
    prosody
+   snmp

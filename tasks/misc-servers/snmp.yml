@@ -1,0 +1,24 @@
+# This playbook install an snmp server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install snmp package
+  yum: pkg=$item
+       state=present 
+  with_items:
+    - net-snmp
+    - net-snmp-utils
+
+- name: configure firewall, allow ntp traffic
+  command: /usr/bin/firewall-cmd --permanent --add-port=161/udp
+
+- name: reload firewall configuration
+  command: /usr/bin/firewall-cmd --reload
+
+- name: start snmpd
+  service: name=snmpd
+           state=running
+           enabled=yes
