@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2013-11-03
+# Synced at 2013-12-04
 #
 ---
 - hosts: fsl_hosts
@@ -48,6 +48,7 @@
        - flawfinder
        - foremost
        - fping
+       - goaccess
        - gparted
        - halberd
        - hexedit
@@ -71,6 +72,7 @@
        - kismon
        - labrea
        - lbd
+       - lnav
        - lynis
        - macchanger
        - mausezahn
@@ -86,6 +88,7 @@
        - ncrack
        - nebula
        - net-snmp
+       - net-snmp-utils
        - nethogs
        - netsed
        - netsniff-ng
@@ -150,6 +153,7 @@
        - sslscan
        - sslsplit
        - sslstrip
+       - subnetcalc
        - sucrack
        - swaks
        - tcpcopy
