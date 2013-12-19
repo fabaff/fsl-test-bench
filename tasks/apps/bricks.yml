@@ -6,7 +6,7 @@
 #
 ---
 - name: download the latest bricks archive
-  get_url: url=http://downloads.sourceforge.net/project/owaspbricks/Dakatua%20-%202.0/OWASP%20Bricks%20-%20Dakatua.zip
+  get_url: url=http://sourceforge.net/projects/owaspbricks/files/Tuivai%20-%202.2/OWASP%20Bricks%20-%20Tuivai.zip
            dest=/var/www/lighttpd/bricks.zip
            mode=0440
 
