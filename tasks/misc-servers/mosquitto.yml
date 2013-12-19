@@ -1,5 +1,4 @@
 # This playbook install the mosquitto broker (http://mosquitto.org).
-# (http://erdgeist.org/arts/software/opentracker/).
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
