@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-01-06
+# Synced at 2014-01-14
 #
 ---
 - hosts: fsl_hosts
@@ -185,3 +185,4 @@
        - xprobe2
        - yersinia
        - yum-utils
+       - zmap
