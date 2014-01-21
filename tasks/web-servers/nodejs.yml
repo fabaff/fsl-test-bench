@@ -13,7 +13,7 @@
     - npm
 
 - name: install additional items
-  command: /usr/bin/npm install $item -g
+  command: /usr/bin/npm install {{ item }} -g
   with_items:
     - http-server
 
