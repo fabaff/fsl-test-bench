@@ -19,11 +19,10 @@
             group=root
             mode=0644
 
-- name: configure firewall, allow ssh traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=222/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 222
+  firewalld: port=222/tcp
+             permanent=true
+             state=enabled
 
 - name: start dropbear
   service: name=dropbear
