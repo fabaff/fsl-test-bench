@@ -29,11 +29,10 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow http traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=8887/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 8887
+  firewalld: port=8887/tcp
+             permanent=true
+             state=enabled
 
 - name: install a default index.html file
   template: src=files/website/default.j2 
