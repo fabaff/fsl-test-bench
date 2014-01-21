@@ -34,24 +34,21 @@
 #    - mod_block_registrations
 
 #- name: add xmpp users
-#  command: /usr/bin/prosodyctl register $item@10.0.0.65 mypassword
+#  command: /usr/bin/prosodyctl register {{ item }}@10.0.0.65 mypassword
 #  with_items:
 #    - admin
 #    - bob
 #    - alice
 #    - testbench
 
-- name: configure firewall, allow traffic to port 5222
-  command: /usr/bin/firewall-cmd --permanent --add-port=5222/tcp
-
-- name: configure firewall, allow traffic to port 5269
-  command: /usr/bin/firewall-cmd --permanent --add-port=5269/tcp
-
-- name: configure firewall, allow traffic to port 5582
-  command: /usr/bin/firewall-cmd --permanent --add-port=5582/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to different ports
+  firewalld: port={{ item }}/tcp
+             permanent=true
+             state=enabled
+  with_items:
+     - 5222
+     - 5269
+     - 5582
 
 - name: start prosody
   service: name=prosody
