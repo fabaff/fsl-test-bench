@@ -15,10 +15,9 @@
   command: /usr/bin/sed -i 's|\sdisable\s\{3,\}= yes|\tdisable \t\t= no|g' /etc/xinetd.d/tftp
 
 - name: configure firewall, allow tftp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=tftp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+  firewalld: service=tftp
+             permanent=true
+             state=enabled
 
 - name: start and enable xinetd service
   service: name=xinetd
