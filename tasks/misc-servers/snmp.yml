@@ -12,11 +12,10 @@
     - net-snmp
     - net-snmp-utils
 
-- name: configure firewall, allow ntp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=161/udp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 161
+  firewalld: port=161/udp
+             permanent=true
+             state=enabled
 
 - name: start snmpd
   service: name=snmpd
