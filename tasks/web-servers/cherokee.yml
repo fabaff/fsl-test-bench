@@ -23,11 +23,10 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow http traffic on port 8008
-  command: /usr/bin/firewall-cmd --permanent --add-port=8008/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 8008
+  firewalld: port=8008/tcp
+             permanent=true
+             state=enabled
 
 - name: remove cherokee default file
   file: path=/var/www/cherokee/{{ item }}
