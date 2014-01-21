@@ -15,10 +15,9 @@
   command: /usr/bin/sed -i 's|\sdisable\s\{1,\}= yes|\tdisable \t= no|g' /etc/xinetd.d/telnet
 
 - name: configure firewall, allow telnet traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=telnet
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+  firewalld: service=telnet
+             permanent=true
+             state=enabled
 
 - name: start and enable xinetd service
   service: name=xinetd
