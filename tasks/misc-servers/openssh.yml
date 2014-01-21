@@ -12,11 +12,10 @@
     - openssh-server
     - xorg-x11-xauth
 
-- name: configure firewall, allow ssh traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=22/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 22
+  firewalld: port=22/tcp
+             permanent=true
+             state=enabled
 
 - name: start openssh
   service: name=ssh
