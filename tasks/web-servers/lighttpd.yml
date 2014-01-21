@@ -55,11 +55,10 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow http traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=80/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 80
+  firewalld: port=80/tcp
+             permanent=true
+             state=enabled
 
 - name: remove lighttpd default file (images)
   file: path=/var/www/lighttpd/{{ item }}
