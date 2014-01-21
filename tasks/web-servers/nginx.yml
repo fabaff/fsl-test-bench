@@ -47,7 +47,7 @@
              state=enabled
 
 #- name: remove nginx default file
-#  file: path=/usr/share/nginx/html/$item
+#  file: path=/usr/share/nginx/html/{{ item }}
 #        state=absent
 #  with_items:
 #    - index.html
