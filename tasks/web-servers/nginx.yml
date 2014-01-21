@@ -1,12 +1,12 @@
 # This playbook install the nginx webserver (http://nginx.org).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install nginx package
-  yum: pkg=$item
+  yum: pkg={{ item }}
        state=present 
   with_items:
     - nginx
@@ -19,10 +19,10 @@
 #              state=present
 
 - name: create the certs
-  command: /usr/bin/openssl req -new -x509 -subj "/C=$cert_country/ST=$cert_province/L=$cert_city/O=$cert_org/CN=$cert_cn/Email=$cert_email" -days 3650 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.pem -nodes
+  command: /usr/bin/openssl req -new -x509 -subj "/C={{ cert_country }}/ST={{ cert_province }}/L={{ cert_city }}/O={{ cert_org }}/CN={{ cert_cn }}/Email={{ cert_email }}" -days 3650 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.pem -nodes
 
 - name: create signing request
-  command: /usr/bin/openssl req -new -subj "/C=$cert_country/ST=$cert_province/L=$cert_city/O=$cert_org/CN=$cert_cn/Email=$cert_email" -days 3650 -keyout /etc/nginx/tb.key -out /etc/nginx/tb.csr -nodes
+  command: /usr/bin/openssl req -new -subj "/C={{ cert_country }}/ST={{ cert_province }}/L={{ cert_city }}/O={{ cert_org }}/CN={{ cert_cn }}/Email={{ cert_email }}" -days 3650 -keyout /etc/nginx/tb.key -out /etc/nginx/tb.csr -nodes
 
 - name: copy configuration file
   template: src=files/nginx-conf.j2 
