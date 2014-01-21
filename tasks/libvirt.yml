@@ -1,12 +1,12 @@
 # This playbook install and setup libvirt (http://libvirt.org/) for local use.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved. Licensed under CC BY 3.0
 #
 ---
 - name: install libvirt and other needed packages
-  yum: pkg=$item
+  yum: pkg={{ item }}
        state=present 
   with_items:
     - libvirt
