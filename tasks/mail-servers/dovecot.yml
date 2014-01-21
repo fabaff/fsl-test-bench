@@ -25,20 +25,15 @@
               line='mail_location = maildir:~/Maildir'
               state=present
 
-- name: configure firewall, allow pop traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=110/tcp
-
-- name: configure firewall, allow imap traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=143/tcp
-
-- name: configure firewall, allow pop3s traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=pop3s
-
-- name: configure firewall, allow imaps traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=imaps
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic
+  firewalld: service={{ item }}
+             permanent=true
+             state=enabled
+  with_items:
+     - pop
+     - imap
+     - pops
+     - imap3
 
 - name: start dovecot
   service: name=dovecot
