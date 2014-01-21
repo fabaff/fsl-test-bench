@@ -39,14 +39,13 @@
               insertafter=EOF
               line='[samba]\n\tpath = /opt/samba/\n\tread only = no\n;\tbrowseable = yes\n'
 
-- name: configure firewall, allow samba traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=samba
-
-- name: configure firewall, allow samba traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=samba-client
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic
+  firewalld: service={{ item }}
+             permanent=true
+             state=enabled
+  with_items:
+     - samba
+     - samba-client
 
 - name: start samba
   service: name=smb
