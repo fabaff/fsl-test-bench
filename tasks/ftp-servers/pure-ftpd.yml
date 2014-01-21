@@ -23,11 +23,12 @@
            state=running
            enabled=yes 
 
-- name: configure firewall, allow ftp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=2021/tcp
+- name: configure firewall, allow traffic to port 2021
+  firewalld: port=6667/tcp
+             permanent=true
+             state=enabled
 
-- name: configure firewall, allow ftp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=2020/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 2020
+  firewalld: port=6667/tcp
+             permanent=true
+             state=enabled
