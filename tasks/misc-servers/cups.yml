@@ -1,6 +1,6 @@
 # This playbook install a cups server.
 #
-# Copyright (c) 2013-2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -19,13 +19,14 @@
             mode=0644
 
 - name: configure firewall, allow ipp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=ipp
+  firewalld: service=ipp
+             permanent=true
+             state=enabled
 
 - name: configure firewall, allow ipp-client traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=ipp-client
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+  firewalld: service=ipp-client
+             permanent=true
+             state=enabled
 
 - name: start cups
   service: name=cups
