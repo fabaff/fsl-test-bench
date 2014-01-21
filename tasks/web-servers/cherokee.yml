@@ -1,12 +1,12 @@
 # This playbook install the cherokee webserver (http://cherokee-project.com/).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install cherokee package
-  yum: pkg=$item
+  yum: pkg={{ item }}
        state=present 
   with_items:
     - cherokee
@@ -30,7 +30,7 @@
   command: /usr/bin/firewall-cmd --reload
 
 - name: remove cherokee default file
-  file: path=/var/www/cherokee/$item
+  file: path=/var/www/cherokee/{{ item }}
         state=absent
   with_items:
     - index.html
