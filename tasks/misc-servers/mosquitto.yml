@@ -12,11 +12,10 @@
     - mosquitto
     - mosquitto-python
 
-- name: configure firewall, allow traffic on port 1883
-  command: /usr/bin/firewall-cmd --permanent --add-port=1883/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 1883
+  firewalld: port=1883/tcp
+             permanent=true
+             state=enabled
 
 - name: start mosquitto
   service: name=mosquitto
