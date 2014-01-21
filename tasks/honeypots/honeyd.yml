@@ -72,15 +72,7 @@
            dest=/usr/share/honeyd/scripts/qpop.sh
            mode=0775
 
-- name: enable honeyd on boot
-  command: systemctl enable honeyd.service
-
 - name: start honeyd
   service: name=honeyd
            state=started
-
-# Not working at the moment
-#- name: start the honeyd and enable it
-#  service: name=honeyd
-#           state=started
-#           enabled=yes
+           enabled=yes
