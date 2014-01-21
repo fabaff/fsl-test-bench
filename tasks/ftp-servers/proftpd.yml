@@ -17,7 +17,6 @@
            enabled=yes 
 
 - name: configure firewall, allow ftp traffic
-  command: /usr/bin/firewall-cmd --permanent --add-service=ftp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+  firewalld: service=ftp
+             permanent=true
+             state=enabled
