@@ -1,6 +1,6 @@
 # This playbook install the simple webserver 'pywebserve'.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -17,11 +17,10 @@
         group=root
         mode=0775
 
-- name: configure firewall, allow http traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=8880/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to port 8880
+  firewalld: port=8880/tcp
+             permanent=true
+             state=enabled
 
 - name: copy systemd service file
   template: src=files/pywebserve-service.j2 
