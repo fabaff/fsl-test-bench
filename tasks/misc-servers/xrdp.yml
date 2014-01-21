@@ -11,11 +11,10 @@
   with_items:
     - xrdp
 
-- name: configure firewall, allow RDP traffic
-  command: /usr/bin/firewall-cmd --permanent --add-port=3389/tcp
-
-- name: reload firewall configuration
-  command: /usr/bin/firewall-cmd --reload
+- name: configure firewall, allow traffic to 3389
+  firewalld: port=3389/tcp
+             permanent=true
+             state=enabled
 
 - name: start xrdp
   service: name=xrdp
