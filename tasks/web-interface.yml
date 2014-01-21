@@ -6,7 +6,7 @@
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=https://github.com/twbs/bootstrap/releases/download/v$bootstrap_version/bootstrap-$bootstrap_version-dist.zip
+  get_url: url=https://github.com/twbs/bootstrap/releases/download/v{{ bootstrap_version }}/bootstrap-{{ bootstrap_version }}-dist.zip
            dest=/var/www/lighttpd/bootstrap.zip
            mode=0644
 
@@ -26,7 +26,7 @@
            mode=0644
 
 - name: download the jquery library
-  get_url: url=http://code.jquery.com/jquery-$jquery_version.min.js
+  get_url: url=http://code.jquery.com/jquery-{{ jquery_version }}.min.js
            dest=/var/www/lighttpd/bootstrap/js/jquery.min.js
            mode=0775
 
