@@ -6,7 +6,7 @@
 #
 ---
 - name: install needed packages
-  yum: pkg=$item
+  yum: pkg={{ item }}
        state=present 
   with_items:
     - virt-install
@@ -31,10 +31,10 @@
   command: /usr/bin/bash /tmp/fsl-virt-install
 
 - name: wait till the virtual machine is ready
-  pause: minutes=$wait_time
+  pause: minutes={{ wait_time }}
 
 - name: delete temp files
-  file: path=/tmp/$item
+  file: path=/tmp/{{ item }}
         state=absent
   with_items:
     - fsl-testbench.ks
