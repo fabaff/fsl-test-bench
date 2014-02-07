@@ -1,7 +1,7 @@
 /*
 * time.c - A simple CGI which displays the system time.
 *
-* Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+* Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 *
 * All rights reserved.
 * 
@@ -47,7 +47,7 @@ void print_content(void) {
 
 void print_html_footer(void) {
     char date[3] = "now";
-    printf("<center><small>&copy; <a href='https://fedorahosted.org/security-spin/'>Fedora Security Lab</a> 2013 - Page generated %s</small></center>", date);
+    printf("<center><small>&copy; <a href='https://fedorahosted.org/security-spin/'>Fedora Security Lab</a> 2013-2014 - Page generated %s</small></center>", date);
 }
 
 void print_html_end(void) {
