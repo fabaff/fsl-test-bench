@@ -7,15 +7,15 @@
 #
 ---
 - name: download the archive
-  get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv$bwapp_version/bWAPPv$bwapp_version.zip
-           dest=/var/www/lighttpd/bwapp-$bwapp_version.zip
+  get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv{{ bwapp_version }}/bWAPPv{{ bwapp_version }}.zip
+           dest=/var/www/lighttpd/bwapp-{{ bwapp_version.zip
            mode=0440
 
 - name: unpack the archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/bwapp-$bwapp_version.zip -d /var/www/lighttpd/
+  command: /usr/bin/unzip -o /var/www/lighttpd/bwapp-{{ bwapp_version }}.zip -d /var/www/lighttpd/
 
 - name: delete the archive
-  file: path=/var/www/lighttpd/bwapp-$bwapp_version.zip
+  file: path=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
         state=absent
 
 - name: rename the folder
