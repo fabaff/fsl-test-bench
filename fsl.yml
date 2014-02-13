@@ -94,6 +94,7 @@
        - nethogs
        - netsed
        - netsniff-ng
+       - nfswatch
        - ngrep
        - nikto
        - nload
@@ -166,6 +167,7 @@
        - tcpjunk
        - tcpreen
        - tcpreplay
+       - tcptrack
        - tcpxtract
        - telnet
        - testdisk
