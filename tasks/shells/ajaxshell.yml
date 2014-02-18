@@ -1,7 +1,7 @@
 # This playbook install the AJAX/PHP Command Shell 
 # (http://sourceforge.net/projects/ajaxshell/).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -26,7 +26,7 @@
   command: /usr/bin/mv /var/www/lighttpd/ajaxshell/Shell_v0_7.php /var/www/lighttpd/ajaxshell/ajax-shell.php
 
 - name: remove unneeded files
-  file: path=/var/www/lighttpd/ajaxshell/$item
+  file: path=/var/www/lighttpd/ajaxshell/{{ item }}
         state=absent
   with_items:
     - README.txt
