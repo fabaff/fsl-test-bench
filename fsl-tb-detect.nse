@@ -12,7 +12,7 @@ categories = {"discovery", "safe"}
 
 ---
 -- @usage
--- nmap --script fsl-detect <host>
+-- nmap --script fsl-tb-detect <host>
 --
 --@output
 -- Nmap scan report for testbench01.lab-ex.security (10.0.0.64)
@@ -23,6 +23,8 @@ categories = {"discovery", "safe"}
 -- Changelog:
 -- 2013-05-09 Fabian Affolter  <fabian@affolter-engineering.ch>:
 --   + initial release
+-- 2014-02-22 Fabian Affolter  <fabian@affolter-engineering.ch>:
+--   + update @usage
 
 portrule = shortport.http
 
