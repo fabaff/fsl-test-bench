@@ -21,9 +21,9 @@ categories = {"discovery", "safe"}
 -- |_fsl-tb-detect: Fedora Security Lab Test bench Web interface FOUND.
 
 -- Changelog:
--- 2013-05-09 Fabian Affolter  <fabian@affolter-engineering.ch>:
+-- 2013-05-09 Fabian Affolter <fabian@affolter-engineering.ch>:
 --   + initial release
--- 2014-02-22 Fabian Affolter  <fabian@affolter-engineering.ch>:
+-- 2014-02-22 Fabian Affolter <fabian@affolter-engineering.ch>:
 --   + update @usage
 
 portrule = shortport.http
