@@ -25,10 +25,10 @@ phpshell_version: 2.4
 dvwa_version: 1.0.8
 
 # phpMyAdmin- http://www.phpmyadmin.net/
-phpmyadmin_version: 4.1.7
+phpmyadmin_version: 4.1.8
 
 # phpsysinfo - http://rk4an.github.com/phpsysinfo/
-phpsysinfo_version: 3.1.8
+phpsysinfo_version: 3.1.9
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
 bwapp_version: 1.8
