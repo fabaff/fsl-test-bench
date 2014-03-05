@@ -62,20 +62,22 @@ The available groups are:
 - **fsl-tb-master**: Hosts for FSL Test bench guests when using virtualization
 - **fsl_hosts**: Hosts to install the Fedora Security Lab package set
 
-Those groups are refected in the playbook to setup only the named hosts.
+Those groups are mentioned in the playbooks to setup only the named hosts.
 
 More information about this topic are available are in the 
 `Ansible documentation`_.
 
 Variables
 ---------
-After cloning the `git repository`_, edit the `variables/sensitive-variables.yml`
-`file`_ if you don't want to use *password* as default password for the 
-application and *testbench* for the system.
+After cloning the `git repository`_, please review and edit the variables files.
 
-The file ``variables/sensitive.yml`` contains all passwords for root and the 
-users and details for the certificate. Please edit this file according to your
-needs.
+The file ``variables/sensitive.yml`` contains all passwords for root, the 
+users, and the details for the certificate. Please edit this file according to
+your needs.
+
+In the file ``variables/local.yml`` are several networking preferences stored.
+If you run into conflicts with your local network settings (e.g. IP range, etc.)
+please change the values.
 
 Run it
 ------
