@@ -11,9 +11,9 @@
 
 Quick-start setup
 =================
-This section describes short the needed steps to setup a Test bench from a
-common point of view in quick and fast way. In the further sections covers 
-special use cases which are described in detail then.
+This section describes the needed steps to setup a Test bench from a common
+point of view in quick and fast way. In the further sections covers special
+use cases which are described in detail then.
 
 The setup of `Ansible`_ is explained on the `Ansible Getting Started`_ page.
 Here is only the setup of the managed nodes and special details for the
