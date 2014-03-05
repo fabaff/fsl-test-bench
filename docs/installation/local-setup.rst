@@ -30,7 +30,7 @@ The requirements for running a Test bench on your local system are minimal.
 * Fedora system which is capable to run a hypervisor (qemu/kvm)
 * a working connection to the internet
 * root access to the host
-* Disk space (at least 5 GB)
+* disk space (at least 8 GB)
 
 It may work on other distribution but this is not tested.
 
