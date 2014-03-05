@@ -132,5 +132,5 @@ Check the logs to see what's happening. ::
 .. rubric:: Footnotes
 
 .. [#f1] On a host system with an Intel(R) Core(TM)2 Quad CPU Q6600 @ 2.40 GHz 
-         CPU, 8 GB of memory, and Fedora 17 connected with a 35 Mbit/s line
+         CPU, 8 GB of memory, and Fedora 20 connected with a 35 Mbit/s line
          it take around 30 minutes to complete all tasks.
