@@ -9,6 +9,7 @@
   yum: pkg={{ item }}
        state=present 
   with_items:
+    - virsh
     - libvirt
     - libvirt-client
     - libvirt-daemon-qemu
