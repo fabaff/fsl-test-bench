@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-02-13
+# Synced at 2014-03-05
 #
 ---
 - hosts: fsl_hosts
@@ -38,6 +38,7 @@
        - dnstracer
        - driftnet
        - dsniff
+       - dstat
        - echoping
        - etherape
        - ettercap
@@ -56,6 +57,8 @@
        - horst
        - hping3
        - ht
+       - htop
+       - httpd-tools
        - httpie
        - httping
        - httpry
@@ -96,6 +99,7 @@
        - netsniff-ng
        - nfswatch
        - ngrep
+       - nicstat
        - nikto
        - nload
        - nmap
@@ -116,6 +120,7 @@
        - pads
        - paris-traceroute
        - pcapdiff
+       - pcapfix
        - pdfcrack
        - picviz-gui
        - powertop
@@ -160,6 +165,8 @@
        - subnetcalc
        - sucrack
        - swaks
+       - sysstat
+       - sysstat
        - tcpcopy
        - tcpdump
        - tcpflow
