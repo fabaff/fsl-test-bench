@@ -1,6 +1,6 @@
 # This variables file contains the parameters for the Linux containers.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -28,7 +28,6 @@ con_range_start: 10.10.1.50
 
 # End of the DHCP range
 con_range_end: 10.10.1.60
-
 
 # Variables for every single containers
 con_name1: web01
