@@ -28,7 +28,7 @@ dvwa_version: 1.0.8
 phpmyadmin_version: 4.1.8
 
 # phpsysinfo - http://rk4an.github.com/phpsysinfo/
-phpsysinfo_version: 3.1.9
+phpsysinfo_version: 3.1.10
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
 bwapp_version: 1.8
