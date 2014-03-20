@@ -18,6 +18,6 @@
              state=enabled
 
 - name: start openssh
-  service: name=ssh
+  service: name=sshd
            state=running
            enabled=yes
