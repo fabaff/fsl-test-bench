@@ -1,11 +1,11 @@
 # This playbook install the SQLI Labs (https://github.com/Audi-1/sqli-labs).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: checkout from the git repo
+- name: checkout from sqli git repo
   git: repo=git://github.com/Audi-1/sqli-labs.git
        dest=/var/www/lighttpd/sqli-labs
 
