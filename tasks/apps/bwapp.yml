@@ -8,7 +8,7 @@
 ---
 - name: download the archive
   get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv{{ bwapp_version }}/bWAPPv{{ bwapp_version }}.zip
-           dest=/var/www/lighttpd/bwapp-{{ bwapp_version.zip
+           dest=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
            mode=0440
 
 - name: unpack the archive
