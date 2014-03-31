@@ -31,7 +31,7 @@ phpmyadmin_version: 4.1.12
 phpsysinfo_version: 3.1.11
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
-bwapp_version: 1.8
+bwapp_version: 1.9
 
 # ani-shell - http://sourceforge.net/projects/ani-shell/
 ani_version: 1.5
