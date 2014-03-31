@@ -1,21 +1,24 @@
 # This playbook install the Damn Vulnerable Web Application (DVWA) 
 # (http://www.dvwa.co.uk/).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: download the archive
-  get_url: url=https://github.com/RandomStorm/DVWA/archive/v$dvwa_version.zip
-           dest=/var/www/lighttpd/dvwa-$dvwa_version.zip
+  get_url: url=https://github.com/RandomStorm/DVWA/archive/v{{ dvwa_version }}.zip
+           dest=/var/www/lighttpd/dvwa-{{ dvwa_version }}.zip
            mode=0440
 
 - name: unpack the archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/dvwa-$dvwa_version.zip -d /var/www/lighttpd/
+  command: /usr/bin/unzip -o /var/www/lighttpd/dvwa-{{ dvwa_version }}.zip -d /var/www/lighttpd/
+
+- name: rename the folder
+  command: /usr/bin/mv /var/www/lighttpd/DVWA-{{ dvwa_version }} /var/www/lighttpd/dvwa
 
 - name: delete the archive
-  file: path=/var/www/lighttpd/dvwa-$dvwa_version.zip
+  file: path=/var/www/lighttpd/dvwa-{{ dvwa_version }}.zip
         state=absent
 
 - name: install a default configuration file
