@@ -1,21 +1,21 @@
 # This playbook install the OWASP Hackademic Challenges Project 
 # (https://code.google.com/p/owasp-hackademic-challenges/).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: download the hackademic archive
-  get_url: url=https://owasp-hackademic-challenges.googlecode.com/files/OWASP_Hackademic_Challenges_en_v0.1.1.zip
-           dest=/var/www/lighttpd/hackademic-$hackadamemic_version.zip
+  get_url: url=https://owasp-hackademic-challenges.googlecode.com/files/OWASP_Hackademic_Challenges_en_v{{ hackadamemic_version }}.zip
+           dest=/var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip
            mode=0440
 
 - name: unpack the hackademic archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/hackademic-$hackadamemic_version.zip -d /var/www/lighttpd/
+  command: /usr/bin/unzip -o /var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip -d /var/www/lighttpd/
 
 - name: delete the hackademic archive
-  file: path=/var/www/lighttpd/hackademic-$hackadamemic_version.zip
+  file: path=/var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip
         state=absent
 
 - name: rename the hackademic directory
