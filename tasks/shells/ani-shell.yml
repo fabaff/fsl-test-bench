@@ -1,6 +1,6 @@
 # This playbook install the ani-shell (http://sourceforge.net/projects/ani-shell).
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -10,19 +10,19 @@
         state=directory
 
 - name: download the source tarball
-  get_url: url=http://downloads.sourceforge.net/project/ani-shell/Ani-Shell%20v$ani_version/Ani-Shell%20v$ani_version.zip
-           dest=/var/www/lighttpd/ani-shell-$ani_version.zip
+  get_url: url=http://downloads.sourceforge.net/project/ani-shell/Ani-Shell%20v{{ ani_version }}/Ani-Shell%20v{{ ani_version }}.zip
+           dest=/var/www/lighttpd/ani-shell-{{ ani_version }}.zip
            mode=0440
 
 - name: unpack the archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/ani-shell-$ani_version.zip -d /var/www/lighttpd/ani-shell
+  command: /usr/bin/unzip -o /var/www/lighttpd/ani-shell-{{ ani_version }}.zip -d /var/www/lighttpd/ani-shell
 
 - name: delete the archive
-  file: path=/var/www/lighttpd/ani-shell-$ani_version.zip
+  file: path=/var/www/lighttpd/ani-shell-{{ ani_version }}.zip
         state=absent
 
 - name: remove unneeded files
-  file: path=/var/www/lighttpd/ani-shell/$item
+  file: path=/var/www/lighttpd/ani-shell/{{ item }}
         state=absent
   with_items:
     - README.txt
