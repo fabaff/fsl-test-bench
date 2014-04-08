@@ -5,9 +5,9 @@
 Host system
 ===========
 
-The host system was a machine running Fedora 19. CPU is an Intel(R) Core(TM)2
+The host system was a machine running Fedora 20. CPU is an Intel(R) Core(TM)2
 Quad CPU Q6600 @ 2.40 GHz with 8 GB of memory. The hypervisor was KVM and
-libvirt 1.0.5.6. ::
+libvirt 1.1.3.4. ::
 
     $ cat /etc/fedora-release
     Fedora release 19 (Schrödinger’s Cat)
