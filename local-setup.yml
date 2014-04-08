@@ -37,7 +37,7 @@
       lineinfile: dest=/etc/ansible/hosts
               regexp='^'
               insertafter='127.0.0.1'
-              line='127.0.0.1\n\n[fsl-tb]\n$ip'
+              line='127.0.0.1\n\n[fsl-tb]\n{{ ip }}'
 
   handlers:
    - include: handlers/system.yml
