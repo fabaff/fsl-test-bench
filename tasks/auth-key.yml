@@ -5,5 +5,5 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: copy the ssh key to the test-bench
+- name: copy the ssh key to the test bench
   command: /usr/bin/ssh-copy-id -i /root/.ssh/id_rsa.pub root@{{ ip }}
