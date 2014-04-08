@@ -35,7 +35,7 @@
              state=enabled
 
 - name: install a default index.html file
-  template: src=files/website/default.j2 
+  template: src=files/web-interface/default.j2 
             dest=/var/www/darkhttpd/index.html
             owner=root
             group=root
