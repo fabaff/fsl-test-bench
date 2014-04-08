@@ -9,14 +9,16 @@ The host system was a machine running Fedora 20. CPU is an Intel(R) Core(TM)2
 Quad CPU Q6600 @ 2.40 GHz with 8 GB of memory. The hypervisor was KVM and
 libvirt 1.1.3.4. ::
 
-    $ cat /etc/fedora-release
-    Fedora release 19 (Schrödinger’s Cat)
+    $ cat /etc/fedora-release 
+    Fedora release 20 (Heisenbug)
+
 
 With one of the latest kernel. ::
 
     $ uname -a
-    Linux host01.home.network 3.11.2-201.fc19.x86_64
-    #1 SMP Fri Sep 27 19:20:55 UTC 2013 x86_64 x86_64 x86_64 GNU/Linux
+    Linux laptop011 3.13.5-202.fc20.x86_64
+    #1 SMP Mon Mar 3 19:08:00 UTC 2014 x86_64 x86_64 x86_64 GNU/Linux
+
 
 The network configuration looked like this: ::
 
