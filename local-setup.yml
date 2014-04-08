@@ -15,15 +15,15 @@
     - variables/application-versions.yml
     - variables/sensitive.yml
     - variables/local.yml
+    - variables/containers.yml
 
   tasks:
 # Virtual machine setup tasks
-#  - include: tasks/mc.yml # Just a playbook to test the local connection
     - include: tasks/libvirt.yml
     - include: tasks/virt-install.yml
 
     - name: start the virtual machine
-      virt: name=$virtname
+      virt: name={{ virtname }}
             state=running
 
     - name: wait till the virtual machine is launched
