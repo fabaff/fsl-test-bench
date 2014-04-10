@@ -82,6 +82,11 @@ Creating a libvirt-based virtual machine and using Ansible to configure it,
 takes something between 25 and 30 minutes. It heavily depends on your hardware
 and the speed of your internet connection.
 
+Is The Fedora Security Lab Test Bench vulnerable for Heartbleed?
+----------------------------------------------------------------
+It depends on the point in time when you created your Test bench. Check if
+you are running at least with ``openssl-1.0.1e-37.fc20``.
+
 Is this something similar to Fedora Formulas?
 ---------------------------------------------
 Yes, it is. Basically we skipped the discussions and just made an implementation
