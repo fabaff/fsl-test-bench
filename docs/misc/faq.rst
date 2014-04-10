@@ -76,8 +76,8 @@ Do you have some reference installations?
 -----------------------------------------
 No. This is project is a proof of concept only at the moment.
 
-How long does it take for Zero to go?
--------------------------------------
+How long does it take from Zero to go?
+--------------------------------------
 Creating a libvirt-based virtual machine and using Ansible to configure it, 
 takes something between 25 and 30 minutes. It heavily depends on your hardware
 and the speed of your internet connection.
