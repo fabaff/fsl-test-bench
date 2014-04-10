@@ -66,9 +66,10 @@ Yes, you can. Periodically the `fsl-packages.yml`_ playbook get synced. This
 ways you don't need to clone the `Fedora Security Lab`_ git repository
 to install Fedora Security Lab host.
 
-Why are you using dnf and not yum?
-----------------------------------
-The reason is simple DNF will become the next default Package manager for
+Why are you still using yum and not dnf?
+----------------------------------------
+First DNF was used, then we switched back to yum. Soon we will switch to DNF
+again because DNF will become the next default Package manager for
 Fedora. And as always we wanted to be ahead of the rest of the world.
 
 Do you have some reference installations?
