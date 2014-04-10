@@ -31,11 +31,6 @@
             group=root
             mode=0644
 
-- name: start nginx
-  service: name=nginx
-           state=running
-           enabled=yes 
-
 - name: configure firewall, allow traffic to port 8088
   firewalld: port=8088/tcp
              permanent=true
@@ -57,7 +52,7 @@
 #    - 50x.html
 
 - name: install a default index.html file
-  template: src=files/website/default.j2 
+  template: src=files/web-interface/default.j2 
             dest=/usr/share/nginx/html/index.html
             owner=root
             group=root
