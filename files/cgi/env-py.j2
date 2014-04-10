@@ -2,7 +2,7 @@
 #
 # env.py - A simple CGI in Python which displays the environment variables
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
@@ -31,5 +31,5 @@ print '<html>\n<head>\n<title>Information delivered by CGI (Python)</title>\n</h
 print '<h1>Environment variables</h1>'
 for param in os.environ.keys():
     print "<b>%20s</b>: %s</br>" % (param, os.environ[param])
-print '<center><small>&copy; <a href="https://fedorahosted.org/security-spin/">Fedora Security Lab</a> 2013 - Page generated on %s.</small></center>' % (date)
+print '<center><small>&copy; <a href="https://fedorahosted.org/security-spin/">Fedora Security Lab</a> 2013-2014 - Page generated on %s.</small></center>' % (date)
 print '</body></html>'
