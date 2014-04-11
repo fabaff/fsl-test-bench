@@ -35,7 +35,7 @@
 - name: start nodejs-http
   service: name=nodejs-http
            state=running
-           enabled=yes 
+           enabled=yes
 
 - name: configure firewall, allow traffic to port 8888
   firewalld: port=8888/tcp
