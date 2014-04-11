@@ -3,6 +3,7 @@
 .. _services-webserver:
 
 .. _Fedora: https://fedoraproject.org
+.. _nginx: http://nginx.org/
 
 Web servers
 ===========
@@ -14,6 +15,7 @@ bannergrabbing. The following web server are available.
 
 .. toctree::
    :maxdepth: 2
+   :glob:
 
    *
 
