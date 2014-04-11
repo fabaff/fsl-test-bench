@@ -10,7 +10,7 @@
         mode=0755
         state=directory
 
-- name: copy the python script to the test bench
+- name: copy the pywebserve python script to the test bench
   copy: src=files/pywebserve.py
         dest=/var/www/pywebserve/pywebserve.py
         owner=root
@@ -22,7 +22,7 @@
              permanent=true
              state=enabled
 
-- name: copy systemd service file
+- name: copy systemd service file for pywebserve
   template: src=files/pywebserve-service.j2 
             dest=/lib/systemd/system/pywebserve.service
             owner=root
@@ -32,7 +32,7 @@
 - name: reload systemd
   command: /usr/bin/systemctl --system daemon-reload
 
-- name: start pywebserve
+- name: start pywebserve webserver
   service: name=pywebserve
            state=running
-           enabled=yes 
+           enabled=yes
