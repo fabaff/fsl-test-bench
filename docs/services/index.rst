@@ -18,5 +18,5 @@ provides.
 
    file
    ftp
-   web
+   webserver/index
    misc/index
