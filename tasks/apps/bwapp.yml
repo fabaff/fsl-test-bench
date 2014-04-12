@@ -1,28 +1,28 @@
-# This playbook install the SQLol SQL injection test-bed
-# application (http://sourceforge.net/projects/bwapp/).
+# This playbook install the bWAPP, or a buggy web application,
+# (http://sourceforge.net/projects/bwapp/).
 #
 # Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: download the archive
-  get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv{{ bwapp_version }}/bWAPPv{{ bwapp_version }}.zip
+- name: download the bwapp archive
+  get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPP/bWAPPv{{ bwapp_version }}/bWAPPv{{ bwapp_version }}.zip
            dest=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
            mode=0440
 
-- name: unpack the archive
+- name: unpack the bwapp archive
   command: /usr/bin/unzip -o /var/www/lighttpd/bwapp-{{ bwapp_version }}.zip -d /var/www/lighttpd/
 
-- name: delete the archive
+- name: delete the bwapp archive
   file: path=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
         state=absent
 
-- name: rename the folder
+- name: rename the bwapp folder
   command: /usr/bin/mv /var/www/lighttpd/bWAPP /var/www/lighttpd/bwapp
 
 - name: set the default mysql password
-  command: /usr/bin/sed -i 's|$password = ""|$password = "$mysql_root_password"|g' /var/www/lighttpd/bwapp/config.inc.php
+  command: /usr/bin/sed -i 's|$password = ""|$password = "{{ mysql_root_password }}"|g' /var/www/lighttpd/bwapp/config.inc.php
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
