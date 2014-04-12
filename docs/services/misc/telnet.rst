@@ -5,14 +5,14 @@
 telnet
 ======
 
-telnet (xinetd) supports  bidirectional interactive text-oriented communication.
+telnet supports  bidirectional interactive text-oriented communication.
 
 You should be able to connect to a telnet server. ::
 
-    $ telnet 10.0.0.65
-    Trying 10.0.0.65...
-    Connected to 10.0.0.65.
+    [testbench@fsl-tb09 ~]$ telnet 10.1.1.5
+    Trying 10.1.1.5...
+    Connected to 10.1.1.5.
     Escape character is '^]'.
-    Fedora release 18 (Spherical Cow)
-    Kernel 3.9.4-200.fc18.x86_64 on an x86_64 (1)
-    test-bench login:
+    Fedora release 20 (Heisenbug)
+    Kernel 3.13.8-200.fc20.x86_64 on an x86_64 (1)
+    test-bench login: 
