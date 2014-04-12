@@ -6,7 +6,7 @@
 .. _DVWA: http://www.dvwa.co.uk
 .. _bWAPP: http://www.mmeit.be/bwapp
 .. _SQLI Labs: https://github.com/Audi-1/sqli-labs
-.. _SQLol: https://github.com/SpiderLabs/SQLol
+.. _MCIR: https://github.com/SpiderLabs/MCIR
 .. _OWASP Hackademic Challenges Project: https://code.google.com/p/owasp-hackademic-challenges/
 .. _XSSeducation: https://github.com/aj00200/xssed
 .. _Bricks: http://sechow.com/brick
@@ -22,7 +22,7 @@ high impact.
 * `DVWA`_
 * `bWAPP`_
 * `SQLI Labs`_
-* `SQLol`_
+* `MCIR`_
 * `OWASP Hackademic Challenges Project`_
 * `XSSeducation`_
 * `Bricks`_
@@ -47,11 +47,11 @@ SQLI Labs
 A platform to learn about SQL injection (SQLI). The labs are covering a wide
 range of injections (Union select, blind, update query, insert query, etc.). 
 
-SQLol
------
-A configurable SQL injection environment. SQLol allows to exploit SQL
-injection flaws, but furthermore allows a large amount of control over the
-manifestation of the flaw.
+MCIR
+----
+The Magical Code Injection Rainbow (MCIR) is a framework for building
+configurable vulnerability testbeds. It includes cryptomg, shellol, sqlol,
+xmlmao, and xssmh.
 
 OWASP Hackademic Challenges Project
 -----------------------------------
