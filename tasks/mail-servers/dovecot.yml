@@ -25,15 +25,21 @@
               line='mail_location = maildir:~/Maildir'
               state=present
 
-- name: configure firewall, allow traffic
+- name: configure firewall, allow encrypted traffic
   firewalld: service={{ item }}
              permanent=true
              state=enabled
   with_items:
-     - pop
-     - imap
-     - pops
-     - imap3
+     - pop3s
+     - imaps
+
+- name: configure firewall, allow plaintext traffic
+  firewalld: port={{ item }}/tcp
+             permanent=true
+             state=enabled
+  with_items:
+     - 110
+     - 143
 
 - name: start dovecot
   service: name=dovecot
