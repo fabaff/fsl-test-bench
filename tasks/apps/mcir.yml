@@ -1,0 +1,25 @@
+# This playbook install the Magical Code Injection Rainbow (MCIR) framework
+# (https://github.com/SpiderLabs/MCIR).
+#
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: checkout the source
+  command: /usr/bin/git clone https://github.com/SpiderLabs/MCIR.git /var/www/lighttpd/mcir
+
+- name: set the default mysql password
+  command: /usr/bin/sed -i "s|$password = ''|$password = '{{ mysql_root_password }}'|g" /var/www/lighttpd/mcir/sqlol/includes/database.config.php
+
+- name: set the default mysql password
+  command: /usr/bin/sed -i 's|$db_user = ""|$db_user = "root"|g' /var/www/lighttpd/mcir/cryptomg/includes/db.inc.php
+
+- name: set the default mysql password
+  command: /usr/bin/sed -i 's|$db_pass = ""|$db_pass = "{{ mysql_root_password }}"|g' /var/www/lighttpd/mcir/cryptomg/includes/db.inc.php
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--VA-->'
+              insertafter='        <!--VA-->'
+              line='        <a href="/mcir" class="btn btn-default">MCIR</a></br>'
