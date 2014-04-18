@@ -6,6 +6,13 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
+- name: install additional package
+  yum: pkg={{ item }}
+       state=present 
+  with_items:
+    - php-mcrypt
+    - libmcrypt
+
 - name: checkout the source
   command: /usr/bin/git clone https://github.com/SpiderLabs/MCIR.git /var/www/lighttpd/mcir
 
