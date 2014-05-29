@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-03-05
+# Synced at 2014-05-29
 #
 ---
 - hosts: fsl_hosts
@@ -26,12 +26,14 @@
        - bkhive
        - bonesi
        - bro
+       - captcp
        - chkrootkit
        - cmospwd
        - cowpatty
-       - dc3dd
+       - dc3dd --help
        - ddrescue
        - dhcping
+       - dislocker
        - dnsenum
        - dnsmap
        - dnstop
@@ -52,7 +54,7 @@
        - goaccess
        - gparted
        - halberd
-       - hexedit
+       - hexedit -h
        - hfsutils
        - horst
        - hping3
@@ -81,14 +83,14 @@
        - masscan
        - mausezahn
        - mc
-       - mcabber
+       - mcabber -h
        - medusa
        - mtr
        - mutt
        - nano
        - nbtscan
-       - nc
-       - nc6
+       - nc -h
+       - nc6 -h
        - ncrack
        - nebula
        - net-snmp
@@ -97,8 +99,9 @@
        - nethogs
        - netsed
        - netsniff-ng
+       - nfspy
        - nfswatch
-       - ngrep
+       - ngrep -h
        - nicstat
        - nikto
        - nload
@@ -139,7 +142,7 @@
        - samdump2
        - scalpel
        - scamper
-       - scanmem
+       - scanmem -h
        - scapy
        - screen
        - scrub
@@ -154,6 +157,7 @@
        - slowhttptest
        - snmpcheck
        - socat
+       - sockperf
        - splint
        - sqlninja
        - srm
@@ -178,6 +182,7 @@
        - tcpxtract
        - telnet
        - testdisk
+       - tlssled
        - trafshow
        - tripwire
        - unhide
