@@ -37,7 +37,7 @@ bwapp_version: 1.9
 ani_version: 1.5
 
 # jQuery - http://jquery.com
-jquery_version: 1.11.0
+jquery_version: 1.11.1
 
 # kippo - https://github.com/desaster/kippo
 kippo_version: 0.9
