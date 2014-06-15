@@ -20,7 +20,7 @@
 - name: add user 'tb'
   user: name=tb
         comment='Test bench user'
-        password=$tb_password
+        password={{ tb_password }}
         group=users
         createhome=yes
 
