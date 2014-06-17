@@ -17,3 +17,4 @@ other section.
    contribute/index
    faq
    testing
+   licenses
