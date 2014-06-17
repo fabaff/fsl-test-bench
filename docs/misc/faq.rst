@@ -24,7 +24,7 @@ Why not make RPMS of all parts?
 ---------------------------------
 Because the Package Review process in Fedora is slow (even for simple packages
 it takes months and I wanted to have the FSL Test bench now). Most software
-core parts are coming out of the Fedora Package Collection. The surrounding 
+core parts are coming out of the `Fedora Package Collection`_. The surrounding 
 items and the configuration are installed by Ansible out of their upstream 
 sources.
 
