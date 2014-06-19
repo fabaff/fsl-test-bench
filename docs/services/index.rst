@@ -16,6 +16,7 @@ provides.
 .. toctree::
    :maxdepth: 2
 
+   db
    file
    ftp
    webserver/index
