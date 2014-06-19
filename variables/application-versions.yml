@@ -28,11 +28,14 @@ linfo_version: 1.9
 # phpsysinfo - http://rk4an.github.com/phpsysinfo/
 phpsysinfo_version: 3.1.12
 
-# phpMyAdmin- http://www.phpmyadmin.net/
+# phpMyAdmin - http://www.phpmyadmin.net/
 phpmyadmin_version: 4.2.3
 
-# phpLDAPadmin- http://phpldapadmin.sourceforge.net
+# phpLDAPadmin - http://phpldapadmin.sourceforge.net
 phpldapadmin_version: 1.2.3
+
+# phpLiteAdmin - http://code.google.com/p/phpliteadmin/
+phpliteadmin_version: 1-9-5
 
 ## Web application
 ################################################################################
