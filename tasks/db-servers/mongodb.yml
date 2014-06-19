@@ -10,10 +10,42 @@
        state=present
   with_items:
     - mongodb
+    - mongodb-server
     - python-pymongo
+
+- name: start mongodb service and enable the service
+  service: name=mongod
+           state=started
+           enabled=yes
 
 - name: set the mongodb root password and create db
   mongodb_user: database=testbench
-                user=root
+                name=root
                 password={{ mysql_root_password }}
                 state=present
+
+- name: create an additional mongodb user (alice)
+  mongodb_user: database=testbench
+                name=alice
+                password={{ alice_password }}
+                roles='readWrite,dbAdmin,userAdmin'
+                state=present
+
+- name: create an additional mongodb user (bob)
+  mongodb_user: database=testbench
+                name=bob
+                password={{ bob_password }}
+                roles='read'
+                state=present
+
+- name: enable remote access to mongodb
+  lineinfile: dest=/etc/mongodb.conf
+              regexp='^bind_ip = 127.0.0.1'
+              insertafter='^bind_ip = 127.0.0.1'
+              line='#bind_ip = 127.0.0.1'
+              state=present
+
+- name: configure firewall, allow traffic to port 27017
+  firewalld: port=27017/tcp
+             permanent=true
+             state=enabled
