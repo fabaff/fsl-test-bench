@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-05-29
+# Synced at 2014-06-28
 #
 ---
 - hosts: fsl_hosts
@@ -63,6 +63,7 @@
        - httpd-tools
        - httpie
        - httping
+       - httpress
        - httpry
        - httrack
        - hunt
@@ -96,6 +97,7 @@
        - net-snmp
        - net-snmp-utils
        - netactview
+       - netdisco
        - nethogs
        - netsed
        - netsniff-ng
@@ -127,9 +129,6 @@
        - pdfcrack
        - picviz-gui
        - powertop
-       - prelude-lml
-       - prelude-manager
-       - prewikka
        - proxychains
        - pscan
        - pwgen
