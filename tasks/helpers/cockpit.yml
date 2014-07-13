@@ -1,0 +1,28 @@
+# This playbook install the cockpit (http://cockpit-project.org/).
+#
+# Copyright (c) 2014 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install additional packages
+  yum: pkg={{ item }}
+       state=present
+  with_items:
+    - cockpit
+
+- name: configure firewall, allow traffic to port 1001
+  firewalld: service=cockpit
+             permanent=true
+             state=enabled
+
+- name: start cockpit
+  service: name=cockpit
+           state=running
+           enabled=yes
+
+- name: add a new entry to the index.html page
+  lineinfile: dest=/var/www/lighttpd/index.html
+              regexp='^<!--IN-->'
+              insertafter='        <!--IN-->'
+              line='        <a href="http://localhost:1001" class="btn btn-default">Cockpit</a></br>'
