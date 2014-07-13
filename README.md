@@ -1,13 +1,13 @@
-# Fedora Security Lab Test bench
-The Fedora Security Lab Test bench provides a save environment for
+# FSL Test bench
+The Fedora Security Lab (FSL) Test bench provides a save environment for
 security auditing and testing and can be used for teaching security
 testing methodologies. At the moment the focus lies on web applications.
 All application are running on top of a current Fedora installation with
 a ​Lighttpd webserver and a ​MySQL server. 
 
-The Fedora Security Lab Test bench includes:
+The FSL Test bench includes:
 
-* Vulnerable web applications (DVWA, bWAPP, SQLI Labs, and SQLol)
+* Vulnerable web applications (DVWA, bWAPP, SQLI Labs, MIRC, and more)
 * PHP shells (PHP Shell, ​b374k, and ​DNA Shell)
 * Low-interaction honeypots
 * ​Helper tools (Log viewer, CGIs, ​linfo, and ​phpmyadmin) 
@@ -22,7 +22,7 @@ If you have just found Ansible or the Fedora Security Lab, you should start here
 
  * [Fedora Security Lab](https://fedorahosted.org/security-spin/)
 
-More details can be found at the [Fedora Security Lab Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
+More details can be found at the [FSL Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
 
 ## Prerequisites
 The setup of Ansible is explained on the
