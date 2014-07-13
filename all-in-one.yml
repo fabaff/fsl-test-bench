@@ -13,6 +13,7 @@
   vars_files:
     - variables/application-versions.yml
     - variables/sensitive.yml
+    - variables/containers.yml
 
   tasks:
 # Common tasks
@@ -30,14 +31,19 @@
 # Services
 ################################################################################
 ## Web servers
+#    - include: tasks/web-servers/apache.yml
+#    - include: tasks/web-servers/cherokee.yml
     - include: tasks/web-servers/nginx.yml
     - include: tasks/web-servers/tomcat.yml
     - include: tasks/web-servers/pywebserve.yml
     - include: tasks/web-servers/nodejs.yml
     - include: tasks/web-servers/mongoose.yml
     - include: tasks/web-servers/darkhttpd.yml
+    - include: tasks/web-servers/droopy.yml
 ## Database server
-    - include: tasks/db-servers/mysql.yml
+#    - include: tasks/db-servers/mysql.yml # replaced my MariaDB playbook
+    - include: tasks/db-servers/mariadb.yml
+    - include: tasks/db-servers/mongodb.yml
 ## FTP server
     - include: tasks/ftp-servers/vsftpd.yml
 ## Misc servers
@@ -46,7 +52,7 @@
     - include: tasks/misc-servers/tftp.yml
     - include: tasks/misc-servers/telnet.yml
     - include: tasks/misc-servers/cups.yml
-    - include: tasks/misc-servers/openvpn-static.yml
+#    - include: tasks/misc-servers/openvpn-static.yml
     - include: tasks/misc-servers/xrdp.yml
     - include: tasks/misc-servers/mosquitto.yml
     - include: tasks/misc-servers/snmp.yml
@@ -61,14 +67,17 @@
 ################################################################################
     - include: tasks/helpers/log-system.yml
     - include: tasks/helpers/phpinfo.yml
+    - include: tasks/helpers/cockpit.yml
 # Shell Detector is not able to handle the present amount of files. Memory?
 #    - include: tasks/helpers/php-shell-detector.yml
     - include: tasks/helpers/linfo.yml
     - include: tasks/helpers/phpmyadmin.yml
-
+    - include: tasks/helpers/phpldapadmin.yml
+    - include: tasks/helpers/phpliteadmin.yml
+#    - include: tasks/helpers/phpmoadmin.yml
 # Common Gateway Interface (CGI)
 ################################################################################
-    - include: tasks/cgi/cgi.yml
+#    - include: tasks/cgi/cgi.yml
 ## C (default)
     - include: tasks/cgi/time.yml
 ## Python
@@ -81,9 +90,9 @@
 
 # Vulnerable Web Application
 ################################################################################
-    - include: tasks/apps/sqlol.yml
+    - include: tasks/apps/mcir.yml
     - include: tasks/apps/sqli.yml
-    - include: tasks/apps/bwapp.yml
+#    - include: tasks/apps/bwapp.yml
     - include: tasks/apps/dvwa.yml
     - include: tasks/apps/hackademic.yml
     - include: tasks/apps/xssed.yml
@@ -99,7 +108,7 @@
     - include: tasks/shells/dnashell.yml
     - include: tasks/shells/phpshell.yml
     - include: tasks/shells/ajaxshell.yml
-
+#    - include: tasks/shells/wso.yml
 # Common tasks
 ################################################################################
     - include: tasks/cleanup.yml
