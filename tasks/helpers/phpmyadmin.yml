@@ -16,7 +16,7 @@
 
 - name: download the source tarball
   get_url: url=http://files.directadmin.com/services/all/phpMyAdmin/phpMyAdmin-{{ phpmyadmin_version }}-all-languages.tar.gz
-           dest=/var/www/lighttpd/phpmyadmin-$phpmyadmin_version.tar.gz
+           dest=/var/www/lighttpd/phpmyadmin-{{ phpmyadmin_version }}.tar.gz
            mode=0440
 
 - name: unpack the source tarball
