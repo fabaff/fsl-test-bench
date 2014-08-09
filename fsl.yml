@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-06-28
+# Synced at 2014-08-09
 #
 ---
 - hosts: fsl_hosts
@@ -117,7 +117,6 @@
        - nwipe
        - onesixtyone
        - openssh
-       - openvas-client
        - openvas-scanner
        - ophcrack
        - p0f
@@ -130,6 +129,7 @@
        - picviz-gui
        - powertop
        - proxychains
+       - psad
        - pscan
        - pwgen
        - pyrit
@@ -142,6 +142,8 @@
        - scalpel
        - scamper
        - scanmem -h
+       - scap-security-guide
+       - scap-workbench
        - scapy
        - screen
        - scrub
@@ -196,6 +198,7 @@
        - whois
        - wipe
        - wireshark
+       - wireshark-gnome
        - xmount
        - xprobe2
        - yersinia
