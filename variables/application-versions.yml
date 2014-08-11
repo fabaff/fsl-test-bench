@@ -15,7 +15,7 @@ fedora_next: 21
 # Web interface
 ################################################################################
 # Bootstrap - http://getbootstrap.com/
-bootstrap_version: 3.1.1
+bootstrap_version: 3.2.0
 
 # jQuery - http://jquery.com
 jquery_version: 1.11.1
