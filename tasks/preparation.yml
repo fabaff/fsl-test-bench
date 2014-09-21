@@ -1,4 +1,5 @@
-# This playbook install all needed components for the setup. 
+# This playbook checks if all needed components are available for the setup.
+# First task is the update of all packages.
 #
 # Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
