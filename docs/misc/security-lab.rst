@@ -9,12 +9,10 @@
 
 Setup the Fedora Security Lab
 =============================
-
 The setup of the `Fedora Security Lab`_ can be done by several ways. 
 
 Live media
 -----------
-
 There are two different Live images available of the Fedora Security Lab. Those
 images can be used to create physical CDs or Live USB key.
 
@@ -31,7 +29,7 @@ comps Package group
     This work only on Fedora 19 and beyond.
 
 You have a default Fedora installation and want all Fedora Security Lab
-packages installed, you can use the groupinstall feature of yum. ::
+packages installed, you can use the *groupinstall* feature of ``yum``. ::
 
     $ sudo yum groupinstall security-lab
 
@@ -45,5 +43,4 @@ Add all your hosts to ``/etc/ansible/hosts`` to the **[fsl_hosts]** group.
 Then run the playbook. ::
 
     $ sudo ansible-playbook fsl.yml -f 10
-
 
