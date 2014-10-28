@@ -70,24 +70,36 @@ At the moment the structure of the repository looks like this:
 
 ```bash
 .
-├── all-in-one.yml ------- Fedora Security Lab Test bench on a single machine 
-├── docs ----------------- Documentation
-├── files ---------------- Template files
-│   └── kickstart -------- Kickstart files for the installation
-├── fsl-packages-sync.py - Python script to sync with FSL package list
-├── fsl.yml -------------- Package list for setup a Fedora Security Lab
-├── handlers ------------- Handlers for services
-├── INSTALL.md ----------- Installation guide
-├── local-setup.yml ------ Local Fedora Security Test bench
-├── openvpn-server.yml --- Fedora Security Lab VPN server
-├── README.md ------------ This files
-├── tasks ---------------- A collection of tasks
-│   ├── apps ------------- Vulnerable web applications
-│   ├── helpers ---------- Helper tools
-│   ├── honeypots -------- Low-interaction honeypots
-│   └── shells ----------- PHP shells
-└── variables ------------ Storage files for variables
+├── all-in-one.yml -------- Fedora Security Lab Test bench on a single machine 
+├── docs ------------------ Documentation
+├── files ----------------- Template files
+│   ├── cgi --------------- Source files for CGI
+│   ├── kickstart --------- Kickstart files
+│   └── web-interface ----- All files for the web interface
+├── fsl-packages-sync.py -- Python script to sync with FSL package list
+├── fsl-tb-detect.nse ----- nmap script for the Test bench detection
+├── fsl.yml ---------------
+├── handlers -------------- Handlers for services
+├── INSTALL.md ------------ Installation guide
+├── local-setup.yml -------
+├── openvpn-server.yml ----
+├── README.md ------------- This files
+├── tasks ----------------- A collection of tasks (all playbooks)
+│   ├── apps -------------- Vulnerable web applications
+│   ├── cgi --------------- CGI
+│   ├── db-servers -------- Database servers
+│   ├── directory-servers - Directory Servers
+│   ├── file-servers ------ File servers
+│   ├── ftp-servers ------- FTP servers
+│   ├── helpers ----------- Helper tools
+│   ├── honeypots --------- Low-interaction honeypots
+│   ├── mail-servers ------ Mail server
+│   ├── misc-servers ------ Various servers
+│   └── shells ------------ PHP shells
+│   └── web-servers ------- Web servers
+└── variables ------------- Storage files for variables
 ```
+
 ## Warning
 The file *variables/sensitive.yml* contains most application passwords. If you
 don't want to run with default password, edit this file according your needs
