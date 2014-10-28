@@ -12,7 +12,7 @@ Licenses
 This section is to track the licenses of all parts which are not coming out of
 the `Fedora Package Collection`_ and didn't get a proper license check during
 a review process. To be as much as possible as Fedora the included tools should
-follow the Fedora `Licensing`_policies.
+follow the Fedora `Licensing`_ policies.
 
 Vulnerable web applications
 ---------------------------
