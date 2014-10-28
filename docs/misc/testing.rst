@@ -1,6 +1,4 @@
-.. -*- mode: rst -*-
-
-.. _misc-faq:
+.. _misc-testing:
 
 .. _Ansible: http://ansible.cc/
 .. _Fedora Package Collection: https://apps.fedoraproject.org/packages/
@@ -12,7 +10,6 @@
 
 Testing
 =======
-
 This section describe some basic steps to check if the Fedora Security Lab Test
 bench is properly setup and working.
 
