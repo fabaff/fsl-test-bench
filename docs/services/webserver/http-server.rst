@@ -1,13 +1,16 @@
-.. -*- mode: rst -*-
-
 .. _services-webserver-http-server:
 
 .. _http-server: https://github.com/nodeapps/http-server
 
 http-server (node.js)
 =====================
-
 The `http-server`_ functionality is used on top of `node.js`_.
+
+.. _http-server-fig:
+.. figure:: ../../images/http-server.png
+    :align: center
+    
+    http-server default page
 
 The next example shows a connection the `http-server`_. ::
 
