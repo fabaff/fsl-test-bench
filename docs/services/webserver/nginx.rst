@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
-
 .. _services-webserver-nginx:
 
 .. _nginx: http://nginx.org/
 
 nginx
 =====
-
 `nginx`_ [engine x] is an HTTP and reverse proxy server, as well as a mail
 proxy server. Thanks to accelerated reverse proxying with caching, nginx is 
 able to provide simple load balancing and fault tolerance. 
