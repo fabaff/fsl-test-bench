@@ -1,6 +1,6 @@
-.. _services-webserver-nginx:
-
 .. _nginx: http://nginx.org/
+
+.. _services-webserver-nginx:
 
 nginx
 =====
