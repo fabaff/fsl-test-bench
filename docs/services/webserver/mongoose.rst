@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
-
 .. _services-webserver-mongoose:
 
 .. _mongoose: http://code.google.com/p/mongoose/
 
 mongoose
 ========
-
 `mongoose`_ is built on top of libmongoose embedded library. Libmongoose is 
 used to serve Web GUI on embedded devices, implement RESTful services, RPC
 frameworks (e.g. JSON-RPC), handle telemetry data exchange, and perform many
