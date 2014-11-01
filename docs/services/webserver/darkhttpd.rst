@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
-
 .. _services-webserver-darkhttpd:
 
 .. _darkhttpd: http://unix4lyfe.org/darkhttpd/
 
 darkhttpd
 =========
-
 `darkhttpd`_ is a simple, fast HTTP 1.1 web server for static content. It
 does not support PHP or CGI etc but is designed to serve static content.
 
