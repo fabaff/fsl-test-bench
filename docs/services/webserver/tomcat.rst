@@ -14,3 +14,12 @@ the moment there are no pages served from this server.
     
     Tomcat admin web interface
 
+This example shows the details of the `Tomcat`_ web server. ::
+
+    $ bannergrab 10.0.0.64 8080
+    HTTP/1.1 200 OK
+    Server: Apache-Coyote/1.1
+    Content-Type: text/html;charset=ISO-8859-1
+    Date: Sat, 01 Nov 2014 13:17:27 GMT
+    Connection: close
+
