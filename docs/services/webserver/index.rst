@@ -48,5 +48,6 @@ ports. Table below shows the ports and the assigned web server.
 | 8886       | flask          |
 +------------+----------------+
 
-At the moment most web servers doesn't support https. This is a task for
-the future. The only web server with SSL support is `nginx`_.
+At the moment most web servers don't support https. This is a task for
+the future. The only web server with SSL support on the FSL Test bench
+is :ref:`nginx services-webserver-nginx`.
