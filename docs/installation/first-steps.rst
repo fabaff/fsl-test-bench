@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
+.. _Virtual Machine Manager: http://virt-manager.et.redhat.com/
 
 .. _installation-first-steps:
 
-.. _Virtual Machine Manager: http://virt-manager.et.redhat.com/
-
 First steps
 ===========
-
 After the installation is done, the first step is to check if the Test bench
 is responding to ping requests. This should work because the whole setup
 process was relaying on a working network connection between the all involved
