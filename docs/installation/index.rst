@@ -1,10 +1,7 @@
-.. -*- mode: rst -*-
-
 .. _installation-index:
 
 Installation & Setup
 ====================
-
 To setup a Test bench on a host in your network you need at least two systems
 either a physical machine with a virtual machine and a bridged network
 connection or two physical systems (one as system to perform the the actions
