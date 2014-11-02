@@ -1,15 +1,12 @@
-.. -*- mode: rst -*-
-
-.. _services-ftp:
-
 .. _Fedora: https://fedoraproject.org/
 .. _vsftpd: http://vsftpd.beasts.org
 .. _proftpd: http://www.proftpd.org/
 .. _pure-ftpd: http://www.pureftpd.org
 
+.. _services-ftp:
+
 FTP servers
 ===========
-
 File Transfer Protocol (FTP) is an importent protocol for transferring files
 from host to host. All FTP connections are unencrypted to make it possible to
 sniff the control and data connections between the client and the server. The
