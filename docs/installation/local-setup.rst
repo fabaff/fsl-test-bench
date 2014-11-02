@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _installation-local-setup:
-
 .. _script: https://git.fedorahosted.org/cgit/security-spin.git/plain/test-bench/fsl-tb-inst
 .. _git repository: https://github.com/fabaff/fsl-test-bench
 .. _Virtual Machine Manager: http://virt-manager.et.redhat.com/
 
+.. _installation-local-setup:
+
 Setup on a local machine
 ========================
-
 The setup of the Fedora Security Lab Test bench as virtual machine on a local
 system is useful if you want to carry your Test bench around on your laptop
 and use it only for yourself. Another good reasons to use the Test bench as
@@ -24,7 +21,6 @@ If you want to customize your Test bench the manual way is the right one to go.
 
 Requirement
 -----------
-
 The requirements for running a Test bench on your local system are minimal.
 
 * Fedora system which is capable to run a hypervisor (qemu/kvm)
@@ -36,7 +32,6 @@ It may work on other distribution but this is not tested.
 
 Automatic setup
 ---------------
-
 For a fast setup of a local Test bench, just download the ``fsl-tb-inst``
 `script`_.
 
