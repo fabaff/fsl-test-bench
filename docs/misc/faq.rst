@@ -1,7 +1,3 @@
-.. -*- mode: rst -*-
-
-.. _faq-index:
-
 .. _Ansible: http://ansible.cc/
 .. _Fedora Package Collection: https://apps.fedoraproject.org/packages/
 .. _setup page: https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup
@@ -9,6 +5,8 @@
 .. _Fedora Security Lab: https://fedorahosted.org/security-spin/
 .. _Fedorahosted.org: https://fedorahosted.org
 .. _Forbidden items: http://fedoraproject.org/wiki/Forbidden_items
+
+.. _misc-faq:
 
 FAQ
 ===
@@ -64,12 +62,12 @@ Can I use the FSL Test bench repository to setup a Fedora Security Lab?
 -----------------------------------------------------------------------
 Yes, you can. Periodically the `fsl-packages.yml`_ playbook get synced. This
 ways you don't need to clone the `Fedora Security Lab`_ git repository
-to install Fedora Security Lab host.
+to install a Fedora Security Lab host.
 
 Why are you still using yum and not dnf?
 ----------------------------------------
-First DNF was used, then we switched back to yum. Soon we will switch to DNF
-again because DNF will become the next default Package manager for
+First ``dnf`` was used, then we switched back to ``yum``. Soon we will switch
+to ``dnf`` again because DNF will become the next default Package manager for
 Fedora. And as always we wanted to be ahead of the rest of the world.
 
 Do you have some reference installations?
