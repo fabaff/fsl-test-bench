@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _applications-index:
-
 .. _Fedora: https://fedoraproject.org
 .. _bootstrap: http://twitter.github.io/bootstrap
 .. _MySQL: https://fedoraproject.org
 
+.. _applications-index:
+
 Applications
 ============
-
 All vulnerable web application and helper tools are accessible from the
 `bootstrap`_-based web interface hosted on the Test bench.
 
