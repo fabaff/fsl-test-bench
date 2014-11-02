@@ -1,10 +1,7 @@
-.. -*- mode: rst -*-
-
 .. _introduction-index:
 
 Introduction
 ============
-
 The `Fedora Security Lab`_ Test bench provides a save environment for
 security auditing and testing and can be used for teaching security
 testing methodologies. The purpose is to support students and teachers
