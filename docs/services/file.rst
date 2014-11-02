@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _services-file:
-
 .. _Fedora: https://fedoraproject.org/
 .. _samba: http://www.samba.org/
 .. _nfs: http://nfs.sourceforge.net/
 
+.. _services-file:
+
 File servers
 ============
-
 Serving file is often an essential feature of a server. In the Linux world
 two popular systems are used, samba and nfs. It depends on the use case which
 system is more common. In a Linux-only environment nfs is a good choice. If
