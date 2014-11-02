@@ -1,13 +1,10 @@
-.. -*- mode: rst -*-
-
-.. _services-webserver:
-
 .. _Fedora: https://fedoraproject.org
 .. _nginx: http://nginx.org/
 
+.. _services-webserver:
+
 Web servers
 ===========
-
 Every type of web server has its purpose and its unique fingerprint. To give
 the students the feeling of the real world, various web servers are running.
 They don’t serve content, they are just lurking around for fingerprinting and
