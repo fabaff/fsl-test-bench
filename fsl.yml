@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-08-09
+# Synced at 2014-11-07
 #
 ---
 - hosts: fsl_hosts
@@ -28,6 +28,7 @@
        - bro
        - captcp
        - chkrootkit
+       - ciphertest
        - cmospwd
        - cowpatty
        - dc3dd --help
@@ -69,6 +70,7 @@
        - hunt
        - hydra
        - iftop
+       - ike-scan
        - inception
        - iperf
        - iptraf-ng
@@ -117,6 +119,7 @@
        - nwipe
        - onesixtyone
        - openssh
+       - openvas-cli
        - openvas-scanner
        - ophcrack
        - p0f
