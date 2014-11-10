@@ -1,10 +1,8 @@
-.. -*- mode: rst -*-
-
-.. _installation-local-setup:
-
 .. _script: https://git.fedorahosted.org/cgit/security-spin.git/plain/test-bench/fsl-tb-inst
 .. _git repository: https://github.com/fabaff/fsl-test-bench
 .. _Virtual Machine Manager: http://virt-manager.et.redhat.com/
+
+.. _installation-local-setup:
 
 Setup in an isolated environment
 ================================
@@ -18,7 +16,6 @@ of an existing physical network or a class room.
 
 Requirement
 -----------
-
 The requirements for running a Fedora Security Lab Environment are:
 
 * A system which is capable of acting as server, is able to boot from external
@@ -46,11 +43,7 @@ point. ::
 
 Setup Course
 ------------
-
 * Disconnect the physical network from the outside
 * Start the system which will become the server
 * When the server is up and running, start your other system after you have
   changed their BIOS boot sequence to `Boot from network` or similar.
-
-
-
