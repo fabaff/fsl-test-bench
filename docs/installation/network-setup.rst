@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _installation-network-setup:
-
 .. _Ansible: http://ansible.cc/
 .. _git repository: https://github.com/fabaff/fsl-test-bench
 .. _script: https://git.fedorahosted.org/cgit/security-spin.git/tree/test-bench/fsl-virt-inst
 
+.. _installation-network-setup:
+
 Setup on a host
 ===============
-
 To setup a Test bench as a separate machine you need at least two pysical
 systems. A management system and the system for the Test bench. We recommand
 to use the Test bench as virtual machine on a host. This has some benefits over
