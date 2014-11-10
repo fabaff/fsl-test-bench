@@ -1,7 +1,3 @@
-.. -*- mode: rst -*-
-
-.. _base-system-details:
-
 .. _Network XML format: http://libvirt.org/formatnetwork.html
 .. _Libvirt Project: http://libvirt.org
 .. _NAT: http://wiki.libvirt.org/page/VirtualNetworking#Network_Address_Translation_.28NAT.29
@@ -11,9 +7,10 @@
 .. _network template: https://github.com/fabaff/fsl-test-bench/blob/master/files/libvirt-network.j2
 .. _fsl-virt-inst: https://git.fedorahosted.org/cgit/security-spin.git/tree/test-bench/fsl-virt-inst
 
+.. _base-system-details:
+
 System details
 ==============
-
 This section provides details about the different kind of Test bench setups
 which are possible and their specific default configuration.
 
