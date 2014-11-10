@@ -1,13 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _installation-quick-start:
-
 .. _Ansible: http://ansible.cc/
 .. _Ansible documentation: http://ansible.cc/docs/patterns.html
 .. _Ansible Getting Started: http://ansible.cc/docs/gettingstarted.html
 .. _Python: http://www.python.org/
 .. _git repository: https://github.com/fabaff/fsl-test-bench
 .. _file: https://github.com/fabaff/fsl-test-bench/blob/master/variables/sensitive-variables.yml
+
+.. _installation-quick-start:
 
 Quick-start setup
 =================
