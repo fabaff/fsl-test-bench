@@ -1,15 +1,12 @@
-.. -*- mode: rst -*-
-
-.. _applications-others:
-
 .. _Fedora: https://fedoraproject.org
 .. _linfo: http://linfo.sourceforge.net
 .. _phpMyAdmin: http://www.phpmyadmin.net
 .. _PHP shell detector: https://github.com/emposha/PHP-Shell-Detector
 
+.. _applications-others:
+
 Other web applications
 ======================
-
 Beside the vulnerable web applications, the services, and the PHP shells some
 additional web applications and tools are included. They facilitate the
 maintenance of the Test bench and are providing details about the various
