@@ -1,7 +1,3 @@
-.. -*- mode: rst -*-
-
-.. _applications-shells:
-
 .. _Fedora: https://fedoraproject.org/
 .. _AJAX shell: http://sourceforge.net/projects/ajaxshell
 .. _Ani Shell: http://sourceforge.net/projects/ani-shell
@@ -11,9 +7,10 @@
 .. _PHP Shell: http://phpshell.sourceforge.net
 .. _WSO Shell: https://github.com/orbweb/PHP-SHELL-WSO
 
+.. _applications-shells:
+
 PHP Shells
 ==========
-
 On a productive system shells are dangerous because they let an attacker to
 execute arbitrary shell-commands or browse the filesystem on your server.
 The shells mentioned below are available for easy integration to give a
