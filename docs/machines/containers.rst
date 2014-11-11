@@ -1,11 +1,9 @@
-.. -*- mode: rst -*-
-
-.. _machines-containers:
-
 .. _LXC: http://lxc.sourceforge.net/
 .. _Virtual Machine Manager: http://virt-manager.et.redhat.com/
 .. _libvirt: http://libvirt.org
 .. _virsh command reference: http://libvirt.org/virshcmdref.html
+
+.. _machines-containers:
 
 Containers
 ==========
