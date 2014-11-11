@@ -1,13 +1,10 @@
-.. -*- mode: rst -*-
-
-.. _base-index:
-
 .. _Fedora: https://fedoraproject.org
 .. _Fedora Package Collection: https://admin.fedoraproject.org/pkgdb
 
+.. _base-index:
+
 Base
 ====
-
 The initial idea behind the Test benches is that they can be built on-site by
 the customers. This way we don't need to ship pre-configured virtual machine
 images which are like blackboxes. The customers doesn't need to trust us about
