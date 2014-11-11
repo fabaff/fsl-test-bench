@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _applications-honeypots:
-
 .. _Fedora: https://fedoraproject.org
 .. _honeyd: http://www.honeyd.org
 .. _template: https://github.com/fabaff/fsl-test-bench/blob/master/files/honeyd.j2
 
+.. _machines-honeypots:
+
 Honeypots
 =========
-
 Currently the low-interaction honeypots make use of `honeyd`_. Those
 honeypots are only intended to be targets for port scans. For details about
 the honeypot configuration, please check the configuration `template`_.
@@ -22,7 +19,6 @@ The honeypots are requesting IP addresses by DHCP. ::
     Apr 24 10:09:35 test-bench honeyd[1077]: [eth0] got DHCP offer: 10.0.0.133
     Apr 24 10:09:35 test-bench honeyd[1077]: [eth0] got DHCP offer: 10.0.0.134
     Apr 24 10:09:35 test-bench honeyd[1077]: [eth0] got DHCP offer: 10.0.0.135
-
 
 A fast ``nmap`` scan shows the details about the honeypots: ::
 
@@ -59,5 +55,4 @@ A fast ``nmap`` scan shows the details about the honeypots: ::
     Service Info: Host: test-bench.; OS: Unix
 
     Nmap done: 3 IP addresses (3 hosts up) scanned in 163.53 seconds
-
 
