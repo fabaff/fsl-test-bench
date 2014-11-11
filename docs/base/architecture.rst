@@ -1,17 +1,13 @@
-.. -*- mode: rst -*-
-
-.. _base-architecture:
-
 .. _Fedora: https://fedoraproject.org
 .. _Ansible: http://ansible.cc
 .. _Jinja2: http://fedoraproject.org/
 .. _Lighttpd: https://fedoraproject.org
 .. _MySQL: https://fedoraproject.org
 
+.. _base-architecture:
 
 Architecture
 ============
-
 The whole configuration of the Fedora Security Test bench is always made on
 top of a minimal `Fedora`_ installation or a default installation. It doesn't
 matter if the target system is a physical one or a virtual machine. After the
