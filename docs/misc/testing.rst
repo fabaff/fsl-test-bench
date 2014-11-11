@@ -1,5 +1,3 @@
-.. _misc-testing:
-
 .. _Ansible: http://ansible.cc/
 .. _Fedora Package Collection: https://apps.fedoraproject.org/packages/
 .. _setup page: https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup
@@ -7,6 +5,8 @@
 .. _Fedora Security Lab: https://fedorahosted.org/security-spin/
 .. _Fedorahosted.org: https://fedorahosted.org
 .. _Forbidden items: http://fedoraproject.org/wiki/Forbidden_items
+
+.. _misc-testing:
 
 Testing
 =======
