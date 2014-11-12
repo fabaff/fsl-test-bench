@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
+.. _OpenVPN: http://openvpn.net
 
 .. _services-misc-openvpn:
 
-.. _OpenVPN: http://openvpn.net
-
 OpenVPN
 =======
-
 `OpenVPN`_ is an software application which makes virtual private network
 (VPN) techniques available for creating secure point-to-point or site-to-site
 connections over unsecure networks like the internet. OpenVPN is capable of
