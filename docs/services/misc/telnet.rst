@@ -1,11 +1,8 @@
-.. -*- mode: rst -*-
-
 .. _services-misc-telnet:
 
 telnet
 ======
-
-telnet supports  bidirectional interactive text-oriented communication.
+``telnet`` supports  bidirectional interactive text-oriented communication.
 
 You should be able to connect to a telnet server. ::
 
