@@ -1,14 +1,11 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-syslog:
-
 .. _syslog-ng: http://www.balabit.com/network-security/syslog-ng
 .. _RFC3164: http://tools.ietf.org/html/rfc3164
 .. _RFC5424: http://tools.ietf.org/html/rfc5424
 
+.. _services-misc-syslog:
+
 syslog-ng
 =========
-
 `syslog-ng`_ is an implementation of the Syslog protocol. It uses the standard
 BSD syslog protocol, specified in `RFC3164`_ and the proposed `RFC5424`_.
 
