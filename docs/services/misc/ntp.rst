@@ -1,13 +1,10 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-ntp:
-
 .. _ntp: http://www.ntp.org/
 .. _nmap: http://nmap.org/
 
+.. _services-misc-ntp:
+
 ntp
 ===
-
 The Network Time Protocol (`ntp`_) is a networking protocol for the
 synchronization of clocks of computer systems over networks. NTP is
 providing the information in UTC (Coordinated Universal Time).
