@@ -1,8 +1,6 @@
-.. -*- mode: rst -*-
+.. _ngircd: http://ngircd.barton.de/
 
 .. _services-misc-ngircd:
-
-.. _ngircd: http://ngircd.barton.de/
 
 ngircd
 ======
