@@ -1,13 +1,10 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-openssh:
-
 .. _openssh: http://www.openssh.org/
 .. _nmap: http://nmap.org/
 
+.. _services-misc-openssh:
+
 openssh
 =======
-
 `openssh`_ (Port 22) encrypts communication sessions over a computer network
 using the SSH protocol. 
 
