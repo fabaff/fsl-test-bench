@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
+.. _Fedora: https://fedoraproject.org/
 
 .. _services-others:
 
-.. _Fedora: https://fedoraproject.org/
-
 Other servers/services
 ======================
-
 The Fedora Security Lab Test bench is hosting some services which are usualy
 not found on public accessible systems. ``telnet`` was replaced with more secure
 systems. Nowadays ``tftp`` is mainly used for provisioning VoIP installations.
