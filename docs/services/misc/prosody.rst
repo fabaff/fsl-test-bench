@@ -1,21 +1,17 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-prosody:
-
 .. _prosody: http://prosody.im
 .. _XMPP: http://xmpp.org/
 .. _Jabber: http://www.jabber.org/
 .. _mcabber: http://www.lilotux.net/~mikael/mcabber/
 .. _console: http://prosody.im/doc/console
 
+.. _services-misc-prosody:
+
 prosody
 =======
-
 `prosody`_ is a communications server for `Jabber`_/`XMPP`_.
 
 Using the server
 ----------------
-
 To connect the Jabber server with `mcabber`_ create the configuration file
 ``.mcabberrc`` in the home directory with the following content for the
 **admin**::
@@ -64,7 +60,6 @@ When done, quit::
 
 Telnet console
 --------------
-
 On the Fedora Security Lab Test bench the prosody server provides a telnet
 `console`_ to interact with. ::
 
