@@ -1,13 +1,10 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-dropbear:
-
 .. _dropbear: https://matt.ucc.asn.au/dropbear/dropbear.html
 .. _nmap: http://nmap.org/
 
+.. _services-misc-dropbear:
+
 dropbear
 ========
-
 `dropbear`_ which is running on port 222 is a lightweight SSH server.
 
 To retrieve the version with `nmap`_, use the command mentioned below::
