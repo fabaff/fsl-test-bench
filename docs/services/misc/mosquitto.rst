@@ -1,9 +1,7 @@
-.. -*- mode: rst -*-
-
-.. _services-misc-mosquitto:
-
 .. _MQTT: http://mqtt.org/
 .. _mosquitto: http://mosquitto.org/
+
+.. _services-misc-mosquitto:
 
 mosquitto
 =========
