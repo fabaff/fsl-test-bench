@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
+.. _cherokee: http://cherokee-project.com
 
 .. _services-webserver-cherokee:
 
-.. _cherokee: http://cherokee-project.com
-
 cherokee
 ========
-
 `cherokee`_ is a lightweight, high-performance web server/reverse proxy. This
 webserver offers support for FastCGI, SCGI, PHP, CGI, SSI, TLS and SSL encrypted
 connections, Virtual hosts, Authentication, on the fly encoding, Load Balancing,
