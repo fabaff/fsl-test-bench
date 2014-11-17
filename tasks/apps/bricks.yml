@@ -10,8 +10,13 @@
            dest=/var/www/lighttpd/bricks.zip
            mode=0440
 
-- name: unpack the bricks archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/bricks.zip -d /var/www/lighttpd/
+- name: unpack the source archive
+  unarchive: src=/var/www/lighttpd/bricks.zip
+             dest=/var/www/lighttpd/
+             copy=no
+             mode=0775
+             owner=lighttpd
+             group=lighttpd
 
 - name: delete the bricks archive
   file: path=/var/www/lighttpd/bricks.zip
