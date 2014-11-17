@@ -16,8 +16,13 @@
            dest=/var/www/lighttpd/phpldapadmin.tgz
            mode=0440
 
-- name: unpack the source tarball
-  command: /usr/bin/tar -xzf /var/www/lighttpd/phpldapadmin.tgz -C /var/www/lighttpd/
+- name: unpack the source archive
+  unarchive: src=/var/www/lighttpd/phpldapadmin.tgz
+             dest=/var/www/lighttpd/
+             copy=no
+             mode=0775
+             owner=lighttpd
+             group=lighttpd
 
 - name: rename the source directory
   command: /usr/bin/mv /var/www/lighttpd/phpldapadmin-{{ phpldapadmin_version }} /var/www/lighttpd/phpldapadmin
