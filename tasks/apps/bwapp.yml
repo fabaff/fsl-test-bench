@@ -11,18 +11,44 @@
            dest=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
            mode=0440
 
-- name: unpack the bwapp archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/bwapp-{{ bwapp_version }}.zip -d /var/www/lighttpd/
+- name: unpack the source archive
+  unarchive: src=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
+             dest=/var/www/lighttpd/
+             copy=no
+             mode=0775
+             owner=lighttpd
+             group=lighttpd
 
 - name: delete the bwapp archive
   file: path=/var/www/lighttpd/bwapp-{{ bwapp_version }}.zip
         state=absent
 
+- name: delete files andstuff that comes with bwapp
+  file: path=/var/www/lighttpd/{{ item }}
+        state=absent
+  with_items:
+    - bWAPP_intro.pdf
+    - ClientAccessPolicy.xml
+    - crossdomain.xml
+    - INSTALL.txt
+    - README.txt
+    - release_notes.txt
+    - evil
+
 - name: rename the bwapp folder
   command: /usr/bin/mv /var/www/lighttpd/bWAPP /var/www/lighttpd/bwapp
 
-- name: set the default mysql password
-  command: /usr/bin/sed -i 's|$password = ""|$password = "{{ mysql_root_password }}"|g' /var/www/lighttpd/bwapp/config.inc.php
+- name: set permissions
+  file: path=/var/www/lighttpd/bwapp/{{ item }}
+        mode=0777
+  with_items:
+    - passwords
+    - images
+    - documents
+    - logs
+
+- name: set the default db password
+  command: /usr/bin/sed -i 's|$db_password = "";|$db_password = "{{ mysql_root_password }}"|g' /var/www/lighttpd/bwapp/admin/settings.php
 
 - name: add a new entry to the index.html page
   lineinfile: dest=/var/www/lighttpd/index.html
