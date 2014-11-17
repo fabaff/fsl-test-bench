@@ -11,8 +11,13 @@
            dest=/var/www/lighttpd/dvwa-{{ dvwa_version }}.zip
            mode=0440
 
-- name: unpack the archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/dvwa-{{ dvwa_version }}.zip -d /var/www/lighttpd/
+- name: unpack the source archive
+  unarchive: src=/var/www/lighttpd/dvwa-{{ dvwa_version }}.zip
+             dest=/var/www/lighttpd/
+             copy=no
+             mode=0775
+             owner=lighttpd
+             group=lighttpd
 
 - name: rename the folder
   command: /usr/bin/mv /var/www/lighttpd/DVWA-{{ dvwa_version }} /var/www/lighttpd/dvwa
