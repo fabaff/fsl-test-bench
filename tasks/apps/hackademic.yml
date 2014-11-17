@@ -11,8 +11,13 @@
            dest=/var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip
            mode=0440
 
-- name: unpack the hackademic archive
-  command: /usr/bin/unzip -o /var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip -d /var/www/lighttpd/
+- name: unpack the source archive
+  unarchive: src=/var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip
+             dest=/var/www/lighttpd/
+             copy=no
+             mode=0775
+             owner=lighttpd
+             group=lighttpd
 
 - name: delete the hackademic archive
   file: path=/var/www/lighttpd/hackademic-{{ hackadamemic_version }}.zip
