@@ -1,10 +1,7 @@
-.. -*- mode: rst -*-
-
-.. _misc-licenses:
-
 .. _Licensing: https://fedoraproject.org/wiki/Licensing:Main
 .. _Fedora Package Collection: https://apps.fedoraproject.org/packages/
 
+.. _misc-licenses:
 
 Licenses
 ========
