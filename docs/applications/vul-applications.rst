@@ -1,7 +1,3 @@
-.. -*- mode: rst -*-
-
-.. _applications-vul-application:
-
 .. _Fedora: https://fedoraproject.org
 .. _DVWA: http://www.dvwa.co.uk
 .. _bWAPP: http://www.mmeit.be/bwapp
@@ -11,9 +7,10 @@
 .. _XSSeducation: https://github.com/aj00200/xssed
 .. _Bricks: http://sechow.com/brick
 
+.. _applications-vul-application:
+
 Vulnerable web applications
 ===========================
-
 The focus of vulnerable web application is to educate the people about
 security flaws in web application. SQL injection, file injection, cross-site
 scripting, code injection, and request forgery are threats which could have
