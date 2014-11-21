@@ -1,11 +1,11 @@
-.. _misc-security-lab:
-
 .. _playbook: https://github.com/fabaff/fsl-test-bench/blob/master/fsl.yml
 .. _Fedora Security Lab: https://fedorahosted.org/security-spin/
 .. _Fedora 20 x86_64: http://mirror.karneval.cz/pub/linux/fedora-alt/releases/20/Spins/x86_64/Fedora-Live-Security-x86_64-20-1.iso
 .. _Fedora 20 i686: http://mirror.karneval.cz/pub/linux/fedora-alt/releases/20/Spins/i386/Fedora-Live-Security-i686-20-1.iso
 .. _Making Media: http://docs.fedoraproject.org/en-US/Fedora/18/html/Installation_Guide/sn-making-media.html
 .. _Installation Guide: http://docs.fedoraproject.org/en-US/Fedora/18/html/Installation_Guide/index.html
+
+.. _misc-security-lab:
 
 Setup the Fedora Security Lab
 =============================
@@ -35,7 +35,6 @@ packages installed, you can use the *groupinstall* feature of ``yum``. ::
 
 Ansible playbook
 ----------------
-
 The `fsl.yml` `playbook`_ contains all packages which are included in the 
 Fedora Security Lab. 
 
