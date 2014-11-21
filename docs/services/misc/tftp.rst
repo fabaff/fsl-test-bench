@@ -1,12 +1,9 @@
-.. -*- mode: rst -*-
+.. _tftp: http://sourceforge.net/projects/tftp-server/
 
 .. _services-misc-tftp:
 
-.. _tftp: http://sourceforge.net/projects/tftp-server/
-
 tftp
 ====
-
 `tftp`_ (xinetd) is a single port Trivial File Transfer Protocol server
 
 The tftp server is serving a simple text file. ::
