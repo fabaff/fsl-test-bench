@@ -18,7 +18,7 @@
 #              line='        listen       8088;'
 #              state=present
 
-- name: create the certs
+- name: create the certificate
   command: /usr/bin/openssl req -new -x509 -subj "/C={{ cert_country }}/ST={{ cert_province }}/L={{ cert_city }}/O={{ cert_org }}/CN={{ cert_cn }}/Email={{ cert_email }}" -days 3650 -keyout /etc/nginx/cert.key -out /etc/nginx/cert.pem -nodes
 
 - name: create signing request
