@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2014-11-07
+# Synced at 2014-12-10
 #
 ---
 - hosts: fsl_hosts
@@ -24,6 +24,7 @@
        - bannergrab
        - binwalk
        - bkhive
+       - bmon
        - bonesi
        - bro
        - captcp
@@ -51,6 +52,7 @@
        - firstaidkit-plugin-all
        - flawfinder
        - foremost
+       - fpdns
        - fping
        - goaccess
        - gparted
@@ -192,6 +194,7 @@
        - unhide
        - unicornscan
        - uperf
+       - usbsniff
        - vim-enhanced
        - vnstat
        - wavemon
