@@ -28,7 +28,7 @@ is needed.
 
 To access the container network you need to add a static route the this network.
 libvirt acts as virtual router on your Fedora Security Lab Test Bench and the 
-hosts on the physical network do not know that there exists a subnet. ::
+hosts on the physical network do not know that there is a subnet. ::
 
     $ sudo route add -net 10.10.1.0 netmask 255.255.255.0 gw [IP address of your FSL Test Bench] dev [Interface]
 
@@ -37,13 +37,13 @@ After adding the route, check if the containers are responding.
 Available systems
 -----------------
 
-+----------------+-------------------+--------------+----------+
-| Container name | MAC address       | IP address   | Details  |
-+================+===================+==============+==========+
-| web01          | 52:52:22:22:22:22 | 10.10.1.60   |          |
-+----------------+-------------------+--------------+----------+
-| web02          | 52:52:33:33:33:33 | 10.10.1.61   |          |
-+----------------+-------------------+--------------+----------+
++----------------+-------------------+--------------+-------------------------+
+| Container name | MAC address       | IP address   | Details                 |
++================+===================+==============+=========================+
+| web01          | 52:52:22:22:22:22 | 10.10.1.60   | -                       |
++----------------+-------------------+--------------+-------------------------+
+| web02          | 52:52:33:33:33:33 | 10.10.1.61   | -                       |
++----------------+-------------------+--------------+-------------------------+
 
 
 Management
