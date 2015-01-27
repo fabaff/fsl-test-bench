@@ -8,7 +8,7 @@ xrdp
 `xrdp`_ is an remote desktop protocol (RDP) server. To connect to the FSL Test
 Bench use `Vinagre`_ which is named usually **Remote Desktop Viewer** in 
 graphical user environment (``yum -y install vinagre``) and is a client that
-support various protocols (VNC, ssh, rdp, and spice) or a lient of your choice.
+support various protocols (VNC, ssh, rdp, and spice) or a client of your choice.
 
 .. _rdp-config-fig:
 .. figure:: ../../images/rdp-config.png
