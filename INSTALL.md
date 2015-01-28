@@ -30,7 +30,7 @@ which contains the playbooks on System 1. Playbooks are recipes to perform
 task on a remote system. 
 
 ``bash
-git clone git@github.com:fabaff/fsl-test-bench.git
+git clone https://github.com/fabaff/fsl-test-bench.git
 ```
 
 System 2 needs Python. Make sure that it is available. If not install it.
