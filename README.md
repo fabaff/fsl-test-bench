@@ -46,7 +46,7 @@ everything is done with yum.
 
 ### SSH key
 Add the SSH key to the *authorized_keys* file. Assuming you are logged-in with
-SSH on your 
+SSH on your management system.
 
 ```bash
 sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of your managed note]
