@@ -32,7 +32,7 @@
        - ciphertest
        - cmospwd
        - cowpatty
-       - dc3dd --help
+       - dc3dd
        - dcfldd
        - ddrescue
        - dhcping
@@ -58,7 +58,7 @@
        - goaccess
        - gparted
        - halberd
-       - hexedit -h
+       - hexedit
        - hfsutils
        - horst
        - hping3
@@ -90,7 +90,7 @@
        - masscan
        - mausezahn
        - mc
-       - mcabber -h
+       - mcabber
        - medusa
        - mtr
        - mutt
@@ -148,7 +148,7 @@
        - samdump2
        - scalpel
        - scamper
-       - scanmem -h
+       - scanmem
        - scap-security-guide
        - scap-workbench
        - scapy
