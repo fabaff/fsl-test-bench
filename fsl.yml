@@ -4,7 +4,7 @@
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2015-01-11
+# Synced at 2015-04-13
 #
 ---
 - hosts: fsl_hosts
@@ -33,6 +33,7 @@
        - cmospwd
        - cowpatty
        - dc3dd --help
+       - dcfldd
        - ddrescue
        - dhcping
        - dislocker
@@ -74,6 +75,7 @@
        - iftop
        - ike-scan
        - inception
+       - inxi
        - iperf
        - iptraf-ng
        - irssi
@@ -94,8 +96,8 @@
        - mutt
        - nano
        - nbtscan
-       - nc -h
-       - nc6 -h
+       - nc
+       - nc6
        - ncrack
        - nebula
        - net-snmp
@@ -178,6 +180,7 @@
        - sysstat
        - sysstat
        - tcpcopy
+       - tcpcrypt
        - tcpdump
        - tcpflow
        - tcpick
