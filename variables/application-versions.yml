@@ -40,7 +40,7 @@ phpliteadmin_version: 1-9-5
 ## Web application
 ################################################################################
 # Damn Vulnerable Web App (DVWA) - http://www.dvwa.co.uk/
-dvwa_version: 1.0.8
+dvwa_version: 1.9
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
 bwapp_version: 2.0
