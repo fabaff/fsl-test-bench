@@ -3,7 +3,7 @@ The Fedora Security Lab (FSL) Test bench provides a save environment for
 security auditing and testing and can be used for teaching security
 testing methodologies. At the moment the focus lies on web applications.
 All application are running on top of a current Fedora installation with
-a ​Lighttpd webserver and a ​MySQL server. 
+a ​Lighttpd web server and a ​MySQL server. 
 
 The FSL Test bench includes:
 
