@@ -1,14 +1,14 @@
 # This variables file contains the parameters for the Linux containers.
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 # This entry is needed for the libvirt network template.
 containers: [
-                [web01, '52:52:22:22:22:22', 10.10.1.10],
-                [web02, '52:52:33:33:33:33', 10.10.1.11]
+                ['web01', '52:52:22:22:22:22', '10.10.1.10'],
+                ['web02', '52:52:33:33:33:33', '10.10.1.11']
             ]
 
 # Common variables
