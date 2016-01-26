@@ -26,7 +26,7 @@ jquery_version: 1.12.0
 linfo_version: 2.0.3
 
 # phpsysinfo - http://rk4an.github.com/phpsysinfo/
-phpsysinfo_version: 3.2.3
+phpsysinfo_version: 3.2.4
 
 # phpMyAdmin - http://www.phpmyadmin.net/
 phpmyadmin_version: 4.5.0.2
