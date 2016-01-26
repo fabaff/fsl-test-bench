@@ -15,3 +15,9 @@
 - name: shutdown the system
   command: /usr/sbin/poweroff
 
+- name: reload firewalld
+  command: /usr/bin/firewall-cmd --reload
+
+- name: reload systemd
+  command: /usr/bin/systemctl --system daemon-reload
+
