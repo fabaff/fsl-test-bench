@@ -3,7 +3,7 @@
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
 #
-# Copyright (c) 2013-2015 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
@@ -31,11 +31,11 @@ import os
 try:
     import git
 except ImportError:
-    print 'Please install GitPython first -> sudo yum -y install GitPython'
+    print 'Please install GitPython first -> sudo dnf -y install GitPython'
 try:
     import yaml
 except ImportError:
-    print 'Please install PyYAML first -> sudo yum -y install PyYAML'
+    print 'Please install PyYAML first -> sudo dnf -y install PyYAML'
 
 
 urllib.urlretrieve ("https://git.fedorahosted.org/cgit/security-spin.git/plain/pkglist.yaml", "pkglist.yaml")
