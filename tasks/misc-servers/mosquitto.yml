@@ -10,7 +10,7 @@
        state=present 
   with_items:
     - mosquitto
-    - mosquitto-python
+    - python-paho-mqtt
 
 - name: configure firewall, allow traffic to port 1883
   firewalld: port=1883/tcp
