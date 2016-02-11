@@ -14,7 +14,9 @@
     - libmcrypt
 
 - name: checkout the source
-  command: /usr/bin/git clone https://github.com/SpiderLabs/MCIR.git /var/www/lighttpd/mcir
+  git: repo=https://github.com/SpiderLabs/MCIR.git
+       dest=/var/www/lighttpd/mcir
+       force=yes
 
 - name: set the default mysql password
   command: /usr/bin/sed -i "s|$password = ''|$password = '{{ mysql_root_password }}'|g" /var/www/lighttpd/mcir/sqlol/includes/database.config.php
