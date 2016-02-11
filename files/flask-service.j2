@@ -1,0 +1,11 @@
+[Unit]
+Description=A simple flask Web server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python /var/www/flask/flask.py 
+
+[Install]
+WantedBy=multi-user.target
