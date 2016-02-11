@@ -16,7 +16,7 @@ restrict -6 ::1
 
 # Hosts on local network are less restricted.
 #restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
-restrict {{ ansible_eth0.ipv4.network }} mask 255.255.255.0 nomodify notrap
+restrict {{ ansible_default_ipv4.address }} mask 255.255.255.0 nomodify notrap
 
 # Use public servers from the pool.ntp.org project.
 # Please consider joining the pool (http://www.pool.ntp.org/join.html).
