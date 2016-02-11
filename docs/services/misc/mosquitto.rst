@@ -21,8 +21,9 @@ local machine::
     Client mosqsub/24366-laptop011 received SUBACK
     Subscribed (mid: 1): 0
 
-The FSL Test Bench is publishing permanently messages. The default string
-contains **MQTT message from FSL Test Bench.** and a time stamp.
+The FSL Test Bench is publishing permanently on a random value in the interval
+between 1 to 30 seconds messages. The default string contains
+**MQTT message from FSL Test Bench.** and a time stamp.
 
 Manually publishing messages on your FSL Test bench can be done with the topic
 **fsl/testbench**. If you want to publish the message directly from your FSL 
