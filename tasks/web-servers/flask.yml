@@ -1,0 +1,44 @@
+# This playbook install a flask (http://flask.pocoo.org/) server.
+#
+# Copyright (c) 2014-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: install flask package
+  dnf: pkg={{ item }}
+       state=present 
+  with_items:
+    - python-flask
+
+- name: create the directory
+  file: path=/var/www/flask
+        mode=0755
+        state=directory
+
+- name: copy the python script to the test bench
+  copy: src=files/flask.py
+        dest=/var/www/flask/flask.py
+        owner=root
+        group=root
+        mode=0775
+
+- name: configure firewall, allow traffic to port 8880
+  firewalld: port=8880/tcp
+             permanent=true
+             state=enabled
+
+- name: copy systemd service file
+  template: src=files/flask-service.j2 
+            dest=/lib/systemd/system/flask.service
+            owner=root
+            group=root
+            mode=0644
+
+- name: reload systemd
+  command: /usr/bin/systemctl --system daemon-reload
+
+- name: start flask webserver
+  service: name=flask
+           state=running
+           enabled=yes
