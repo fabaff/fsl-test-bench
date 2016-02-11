@@ -1,13 +1,13 @@
 # This playbook install a dropbear ssh server
 # (https://matt.ucc.asn.au/dropbear/dropbear.html).
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install dropbear package
-  yum: pkg={{ item }}
+  dnf: pkg={{ item }}
        state=present 
   with_items:
     - dropbear

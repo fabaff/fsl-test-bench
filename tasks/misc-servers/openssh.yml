@@ -1,21 +1,56 @@
 # This playbook install the openssh server (http://www.openssh.org/).
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install openssh package
-  yum: pkg={{ item }}
+  dnf: pkg={{ item }}
        state=present 
   with_items:
     - openssh-server
     - xorg-x11-xauth
 
-- name: configure firewall, allow traffic to port 22
-  firewalld: port=22/tcp
+  - name: create key directory
+    file: path=/etc/ssh/authorized_keys
+          state=directory
+          owner=root
+          group=root
+          mode=0755
+
+  - name: upload user key
+    copy: src={{ item }}
+          dest=/etc/ssh/authorized_keys/
+          owner=root
+          group=root
+          mode=644
+    with_items: sshusers
+
+
+
+- name: configure firewall, allow traffic to port 222
+  firewalld: port=222/tcp
              permanent=true
              state=enabled
+
+
+
+
+
+  - name: sshd configuration file update
+    template: src=/etc/ansible/configs/etc/ssh/sshd_config.j2
+      dest=/etc/ssh/sshd_config
+      backup=yes
+      owner=0 group=0 mode=0644
+      validate='/usr/sbin/sshd -T -f %s'
+    notify:
+    - restart sshd
+
+    - name: restart sshd
+      service: name=sshd state=restarted
+
+
 
 - name: start openssh
   service: name=sshd
