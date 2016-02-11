@@ -32,6 +32,7 @@
     - include: tasks/web-servers/tomcat.yml
     - include: tasks/misc-servers/cups.yml
     - include: tasks/misc-servers/xrdp.yml
+    - include: tasks/misc-servers/ntp.yml
     - include: tasks/misc-servers/mosquitto.yml
     - include: tasks/misc-servers/snmp.yml
 
