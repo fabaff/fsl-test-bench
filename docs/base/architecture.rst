@@ -45,7 +45,7 @@ the `Jinja2`_ engine. ::
       Order deny,allow
       Deny from all
       Allow from 127.0.0.1
-      Allow from ${ansible_eth0.ipv4.network}/24
+      Allow from {{ ansible_eth0.ipv4.network }}/24
     </Location>
 
 Ansible is based on Python and doesn't need a client on the managed system.
