@@ -16,5 +16,6 @@ provides.
    db
    file
    ftp
+   mail
    webserver/index
    misc/index
