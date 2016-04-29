@@ -2,7 +2,7 @@
 #
 # mqtt_pub.py - A simple script to send MQTT message.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
