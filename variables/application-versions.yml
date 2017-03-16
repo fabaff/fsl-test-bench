@@ -8,9 +8,9 @@
 #
 ---
 # Fedora - http://fedoraproject.org
-fedora_previous: 23
-fedora_current: 24
-fedora_next: 25
+fedora_previous: 24
+fedora_current: 25
+fedora_next: 26
 
 # Web interface
 ################################################################################
@@ -29,7 +29,7 @@ linfo_version: 2.0.3
 phpsysinfo_version: 3.2.7
 
 # phpMyAdmin - http://www.phpmyadmin.net/
-phpmyadmin_version: 4.6.5.2
+phpmyadmin_version: 4.6.6
 
 # phpLDAPadmin - http://phpldapadmin.sourceforge.net
 phpldapadmin_version: 1.2.3
