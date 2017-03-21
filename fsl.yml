@@ -1,10 +1,10 @@
 # This playbook install all packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2015 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2016-01-26
+# Synced at 2017-03-21
 #
 ---
 - hosts: fsl_hosts
@@ -158,6 +158,7 @@
        - scrub
        - sectool-gui
        - security-menus
+       - setools-gui
        - siege
        - sing
        - sipp
@@ -193,6 +194,7 @@
        - tcpxtract
        - telnet
        - testdisk
+       - thc-ipv6
        - tlssled
        - trafshow
        - tripwire
@@ -209,9 +211,8 @@
        - whois
        - wipe
        - wireshark
-       - wireshark-gnome
+       - wireshark-gtk
        - xmount
-       - xprobe2
        - yersinia
        - yum-utils
        - zmap
