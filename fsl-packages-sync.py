@@ -3,7 +3,7 @@
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
@@ -38,7 +38,7 @@ except ImportError:
     print 'Please install PyYAML first -> sudo dnf -y install PyYAML'
 
 
-urllib.urlretrieve ("https://git.fedorahosted.org/cgit/security-spin.git/plain/pkglist.yaml", "pkglist.yaml")
+urllib.urlretrieve ("https://pagure.io/security-lab/raw/master/f/pkglist.yaml", "pkglist.yaml")
 repo = git.Repo(os.getcwd())
 
 def playbook_sync():
@@ -52,7 +52,7 @@ def playbook_sync():
 
     part1 = """# This playbook install all packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
@@ -78,7 +78,7 @@ def playbook_sync():
 
     # Commit the changed file to the repository
     repo.git.add('fsl.yml')
-    repo.git.commit(m='Synced playbook with origin from https://fedorahosted.org/security-spin/')
+    repo.git.commit(m='Synced playbook with origin from https://pagure.io/security-lab')
     repo.git.push()
 
     # Remove the pkglist.yaml file
