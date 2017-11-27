@@ -8,13 +8,13 @@
 #
 ---
 # Fedora - http://fedoraproject.org
-fedora_previous: 25
-fedora_current: 26
-fedora_next: 27
+fedora_previous: 26
+fedora_current: 27
+fedora_next: 28
 
 # Web interface
 ################################################################################
-# Bootstrap - http://getbootstrap.com/ 
+# Bootstrap - http://getbootstrap.com/
 bootstrap_version: 3.3.7
 
 # jQuery - http://jquery.com
