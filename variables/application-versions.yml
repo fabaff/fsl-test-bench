@@ -2,15 +2,15 @@
 # which will be installed without the package management tool and basic release
 # number as helper variables for playbooks.
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 # Fedora - http://fedoraproject.org
-fedora_previous: 26
-fedora_current: 27
-fedora_next: 28
+fedora_previous: 27
+fedora_current: 28
+fedora_next: 29
 
 # Web interface
 ################################################################################
