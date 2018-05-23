@@ -3,7 +3,7 @@
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
@@ -31,14 +31,14 @@ import os
 try:
     import git
 except ImportError:
-    print 'Please install GitPython first -> sudo dnf -y install GitPython'
+    print "Please install GitPython first -> sudo dnf -y install python3-GitPython"
 try:
     import yaml
 except ImportError:
-    print 'Please install PyYAML first -> sudo dnf -y install PyYAML'
+    print "Please install PyYAML first -> sudo dnf -y install PyYAML"
 
 
-urllib.urlretrieve ("https://pagure.io/security-lab/raw/master/f/pkglist.yaml", "pkglist.yaml")
+urllib.urlretrieve('https://pagure.io/security-lab/raw/master/f/pkglist.yaml', 'pkglist.yaml')
 repo = git.Repo(os.getcwd())
 
 def playbook_sync():
@@ -46,13 +46,13 @@ def playbook_sync():
     Generates a Ansible playbook for the installation of the Fedora Security
     Lab packages.
     """
-    file = open("pkglist.yaml", "r") 
+    file = open('pkglist.yaml', 'r') 
     pkgslist = yaml.safe_load(file)
     file.close()
 
     part1 = """# This playbook install all packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
@@ -78,7 +78,7 @@ def playbook_sync():
 
     # Commit the changed file to the repository
     repo.git.add('fsl.yml')
-    repo.git.commit(m='Synced playbook with origin from https://pagure.io/security-lab')
+    repo.git.commit(m="Synced playbook with origin from https://pagure.io/security-lab")
     repo.git.push()
 
     # Remove the pkglist.yaml file
