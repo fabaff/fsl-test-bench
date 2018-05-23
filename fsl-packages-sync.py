@@ -31,11 +31,11 @@ import os
 try:
     import git
 except ImportError:
-    print "Please install GitPython first -> sudo dnf -y install python3-GitPython"
+    print("Please install GitPython first -> sudo dnf -y install python3-GitPython")
 try:
     import yaml
 except ImportError:
-    print "Please install PyYAML first -> sudo dnf -y install PyYAML"
+    print("Please install PyYAML first -> sudo dnf -y install PyYAML")
 
 
 urllib.urlretrieve('https://pagure.io/security-lab/raw/master/f/pkglist.yaml', 'pkglist.yaml')
