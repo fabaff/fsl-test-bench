@@ -22,7 +22,8 @@
 # Foundation, Inc.,
 # 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 #
-import urllib
+import requests
+
 import operator
 import itertools
 import datetime
@@ -37,18 +38,12 @@ try:
 except ImportError:
     print("Please install PyYAML first -> sudo dnf -y install PyYAML")
 
-
-urllib.urlretrieve('https://pagure.io/security-lab/raw/master/f/pkglist.yaml', 'pkglist.yaml')
 repo = git.Repo(os.getcwd())
 
 def playbook_sync():
-    """
-    Generates a Ansible playbook for the installation of the Fedora Security
-    Lab packages.
-    """
-    file = open('pkglist.yaml', 'r') 
-    pkgslist = yaml.safe_load(file)
-    file.close()
+    """Generate a Ansible playbook for the installation."""
+    pkg_file = requests.get('https://pagure.io/security-lab/raw/master/f/pkglist.yaml')
+    pkgslist = yaml.safe_load(pkg_file.text)
 
     part1 = """# This playbook install all packages for the Fedora Security Lab.
 #
@@ -56,15 +51,15 @@ def playbook_sync():
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at %s
+# Synced at {}
 #
 ---
 - hosts: fsl_hosts
   user: root
   tasks:
   - name: install $item
-    action: yum pkg=$item state=installed
-    with_items:\n""" % (datetime.date.today())
+    dnf: pkg=$item state=installed
+    with_items:\n""".format(datetime.date.today())
 
     # Split list of packages into eincluded and excluded packages
     sorted_pkgslist = sorted(pkgslist, key=operator.itemgetter('pkg'))
@@ -85,4 +80,6 @@ def playbook_sync():
     os.remove('pkglist.yaml')
 
 if __name__ == '__main__':
+    """Run the script."""
     playbook_sync()
+
