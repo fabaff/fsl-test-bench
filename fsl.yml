@@ -1,17 +1,17 @@
 # This playbook install all packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
-# Synced at 2017-03-21
+# Synced at 2018-05-24
 #
 ---
 - hosts: fsl_hosts
   user: root
   tasks:
   - name: install $item
-    action: yum pkg=$item state=installed
+    dnf: pkg=$item state=installed
     with_items:
        - ArpON
        - afftools
@@ -47,7 +47,9 @@
        - echoping
        - etherape
        - ettercap
+       - ewftools
        - examiner
+       - extundelete
        - firewalk
        - firstaidkit-gui
        - firstaidkit-plugin-all
@@ -58,6 +60,7 @@
        - goaccess
        - gparted
        - halberd
+       - hans
        - hexedit
        - hfsutils
        - horst
@@ -136,7 +139,7 @@
        - pdfcrack
        - picviz-gui
        - powertop
-       - proxychains
+       - proxychains-ng
        - psad
        - pscan
        - pwgen
@@ -182,7 +185,6 @@
        - swaks
        - sysstat
        - sysstat
-       - tcpcopy
        - tcpcrypt
        - tcpdump
        - tcpflow
