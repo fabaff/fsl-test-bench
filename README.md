@@ -20,9 +20,7 @@ maintained by [Fabian Affolter](http://fabian-affolter.ch).
 
 If you have just found Ansible or the Fedora Security Lab, you should start here:
 
- * [Fedora Security Lab](https://fedorahosted.org/security-spin/)
-
-More details can be found at the [FSL Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench) page and the [Test bench](https://fedorahosted.org/security-spin/wiki/Test%20bench%20setup) setup page.
+ * [Fedora Security Lab](https://pagure.io/security-lab)
 
 ## Prerequisites
 The setup of Ansible is explained on the
