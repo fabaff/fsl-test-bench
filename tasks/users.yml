@@ -1,32 +1,36 @@
 # This playbook adds some users to the Test bench.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: add user default users
-  user: name={{ item }}
-        password={{ item }}_password
-        comment='Test bench user {{ item }}'
-        group=users
-        createhome=yes
-        generate_ssh_key=yes
-        ssh_key_bits=2048
+  user:
+    name: "{{ item }}"
+    password: "{{ item }}_password"
+    comment: 'Test bench user "{{ item }}"'
+    group: users
+    createhome: yes
+    generate_ssh_key: yes
+    ssh_key_bits: 2048
   with_items:
     - bob
     - alice
 
 - name: add user 'tb'
-  user: name=tb
-        comment='Test bench user'
-        password={{ tb_password }}
-        group=users
-        createhome=yes
+  user:
+    name: tb
+    comment: 'Test bench user'
+    password: "{{ tb_password }}"
+    group: users
+    createhome: yes
 
 - name: add user 'testbench'
-  user: name=testbench
-        comment='Test bench user'
-        group=users
-        createhome=no
-        shell=/sbin/nologin
+  user:
+    name: testbench
+    comment: 'Test bench user'
+    group: users
+    createhome: no
+    shell: /sbin/nologin
+

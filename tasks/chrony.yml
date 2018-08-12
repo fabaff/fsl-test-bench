@@ -1,13 +1,14 @@
 # This playbook set the system time.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: check if chronyd is running
-  service: name=chronyd
-           state=started
+  service:
+    name: chronyd
+    state: started
 
 - name: use ntp server as long the internet access is available
   command: /usr/bin/timedatectl set-ntp true

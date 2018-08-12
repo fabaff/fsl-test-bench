@@ -7,7 +7,7 @@
 ---
 - name: remove additional packages
   dnf:
-    pkg: "{{ item }}"
+    name: "{{ item }}"
     state: absent
   with_items:
     - unzip

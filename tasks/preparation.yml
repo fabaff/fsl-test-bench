@@ -1,7 +1,7 @@
 # This playbook checks if all needed components are available for the setup.
 # First task is the update of all packages.
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -10,8 +10,9 @@
   command: /usr/bin/dnf -y update
 
 - name: install additional packages
-  dnf: pkg={{ item }}
-       state=present
+  dnf:
+    name: "{{ item }}"
+    state: present
   with_items:
     - unzip
     - tar

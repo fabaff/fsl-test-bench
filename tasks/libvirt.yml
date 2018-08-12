@@ -1,13 +1,14 @@
 # This playbook install and setup libvirt (http://libvirt.org/) for local use.
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved. Licensed under CC BY 3.0
 #
 ---
 - name: install libvirt and other needed packages
-  yum: pkg={{ item }}
-       state=present 
+  dnf:
+    name: "{{ item }}"
+    state: present
   with_items:
     - libvirt
     - libvirt-client
@@ -15,18 +16,20 @@
     - libvirt-daemon-kvm
 
 - name: start libvirtd
-  service: name=libvirtd
-           state=running
-           enabled=yes
+  service:
+    name: libvirtd
+    state: running
+    enabled: yes
 
 # Network setup for the virtual machine
 # Configuration stored in /var/lib/libvirt/network/
 # Templates stored in /usr/share/libvirt/networks/
 
 - name: create the network template 
-  template: src=files/libvirt-network.j2
-            dest=/usr/share/libvirt/networks/testbench.xml
-            mode=0644
+  template:
+    src: files/libvirt-network.j2
+    dest: /usr/share/libvirt/networks/testbench.xml
+    mode: 0644
 
 # Destroy default network if needed
 #- name: destroy default network

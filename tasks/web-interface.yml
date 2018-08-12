@@ -1,14 +1,15 @@
-# This playbook install the default web interface (html files incl. bootstrap). 
+# This playbook install the default web interface (HTML files incl. bootstrap). 
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=https://github.com/twbs/bootstrap/releases/download/v{{ bootstrap_version }}/bootstrap-{{ bootstrap_version }}-dist.zip
-           dest=/var/www/lighttpd/bootstrap.zip
-           mode=0644
+  get_url:
+    url: https://github.com/twbs/bootstrap/releases/download/v{{ bootstrap_version }}/bootstrap-{{ bootstrap_version }}-dist.zip
+    dest: /var/www/lighttpd/bootstrap.zip
+    mode: 0644
 
 - name: unpack the bootstrap archive
   command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
@@ -17,38 +18,45 @@
   command: /usr/bin/mv /var/www/lighttpd/bootstrap-{{ bootstrap_version }}-dist /var/www/lighttpd/bootstrap
 
 - name: delete the bootstrap archive
-  file: path=/var/www/lighttpd/bootstrap.zip
-        state=absent
+  file:
+    path: /var/www/lighttpd/bootstrap.zip
+    state: absent
 
 - name: download the jquery library
-  get_url: url=http://code.jquery.com/jquery-{{ jquery_version }}.min.js
-           dest=/var/www/lighttpd/bootstrap/js/jquery.min.js
-           mode=0775
+  get_url:
+    url: http://code.jquery.com/jquery-{{ jquery_version }}.min.js
+    dest: /var/www/lighttpd/bootstrap/js/jquery.min.js
+    mode: 0775
 
 - name: install the fsl test bench index.html file
-  template: src=files/web-interface/index.j2
-            dest=/var/www/lighttpd/index.html 
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/index.j2
+    dest: /var/www/lighttpd/index.html 
+    owner: root
+    group: root
+    mode: 0644
 
 - name: install the fsl test bench about.html file
-  template: src=files/web-interface/about.j2
-            dest=/var/www/lighttpd/about.html 
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/about.j2
+    dest: /var/www/lighttpd/about.html 
+    owner: root
+    group: root
+    mode: 0644
 
 - name: install the fsl test bench contact.html file
-  template: src=files/web-interface/contact.j2
-            dest=/var/www/lighttpd/contact.html 
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/contact.j2
+    dest: /var/www/lighttpd/contact.html 
+    owner: root
+    group: root
+    mode: 0644
 
 - name: copy the fsl banner
-  copy: src=files/web-interface/banner.png
-        dest=/var/www/lighttpd/banner.png
-        owner=root
-        group=root
-        mode=0644
+  copy:
+    src: files/web-interface/banner.png
+    dest: /var/www/lighttpd/banner.png
+    owner: root
+    group: root
+    mode: 0644
+
