@@ -1,29 +1,34 @@
 # This playbook install an ntp server.
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install ntp package
-  dnf: pkg={{ item }}
-       state=present 
+  dnf:
+    name: "{{ item }}"
+    state: present 
   with_items:
     - ntp
 
 - name: copy configuration ntp file
-  template: src=files/ntp-conf.j2 
-            dest=/etc/ntp.conf
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/ntp-conf.j2 
+    dest: /etc/ntp.conf
+    owner: root
+    group: root
+    mode: 0644
 
 - name: configure firewall, allow traffic to port 123
-  firewalld: port=123/udp
-             permanent=true
-             state=enabled
+  firewalld:
+    port: 123/udp
+    permanent: true
+    state: enabled
 
 - name: start ntpd
-  service: name=ntpd
-           state=running
-           enabled=yes
+  service:
+    name: ntpd
+    state: running
+    enabled: yes
+
