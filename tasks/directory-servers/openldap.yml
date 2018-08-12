@@ -1,44 +1,49 @@
 # This playbook install the openldap (http://www.openldap.org/) server.
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install the needed ldap packages
-  yum: pkg={{ item }}
-       state=present
+  dnf:
+    pkg: "{{ item }}"
+    state: present
   with_items:
     - openldap
     - openldap-clients
     - openldap-servers
 
 - name: start openldap
-  service: name=slapd
-           state=running
-           enabled=yes
+  service:
+    name: slapd
+    state: running
+    enabled: yes
 
 - name: add a password
-  command: /usr/sbin/slappasswd -h {SSHA} -s {{ server_root_password }}
+  command: /usr/sbin/slappasswd -h {SSHA} -s "{{ server_root_password }}"
 
 - name: put config file in place
-  template: src=files/openldap-manager.j2
-            dest=/tmp/manager.ldif
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/openldap-manager.j2
+    dest: /tmp/manager.ldif
+    owner: root
+    group: root
+    mode: 0644
 
 - name: put config file in place
-  template: src=files/openldap-frontend.j2
-            dest=/tmp/frontend.ldif
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/openldap-frontend.j2
+    dest: /tmp/frontend.ldif
+    owner: root
+    group: root
+    mode: 0644
 
 - name: configure firewall, allow traffic to port 389
-  firewalld: port=389/tcp
-             permanent=true
-             state=enabled
+  firewalld:
+    port: 389/tcp
+    permanent: true
+    state: enabled
 
 - name: add a password
   command: /usr/bin/ldapmodify -Y EXTERNAL -H ldapi:/// -f /tmp/manager.ldif
