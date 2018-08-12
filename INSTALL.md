@@ -17,11 +17,11 @@ is working.
 
 System 1 can run a Linux distribution of your choice. We assume that is a
 Fedora installation too. The setup process for System 2 will be done with
-[Ansible](http://ansible.cc/ Ansible). It enables us to manage systems over
+[Ansible](http://ansible.cc/). It enables us to manage systems over
 SSH in a simple, secure, and fast way. Install Ansible on System 1:
 
 ``bash
-sudo yum -y install ansible
+$ sudo dnf -y install ansible
 ```
 
 Now we need to clone the Fedora Security Lab test bench 
@@ -30,7 +30,7 @@ which contains the playbooks on System 1. Playbooks are recipes to perform
 task on a remote system. 
 
 ``bash
-git clone https://github.com/fabaff/fsl-test-bench.git
+$ git clone https://github.com/fabaff/fsl-test-bench.git
 ```
 
 System 2 needs Python. Make sure that it is available. If not install it.
@@ -39,7 +39,7 @@ Then we must copy the SSH key of System 1 to the *authorized_keys* file of
 System 2. Lauch the command from below on System 1.
 
 ```bash
-sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of System 2]
+$ sudo ssh-copy-id -i /root/.ssh/id_rsa.pub root@[IP address of System 2]
 ```
 
 On System 1 edit the */etc/ansible/hosts* file and add the IP address of
@@ -60,7 +60,7 @@ Now let Ansible do the work. Below the command is shown to setup the Fedora
 Security Lab Test bench on a single machine.
 
 ```bash
-sudo ansible-playbook fsl-test-bench/all-in-one.yml
+$ sudo ansible-playbook fsl-test-bench/all-in-one.yml
 ```
 
 When all tasks are finished, the Test bench is ready. The overview page
