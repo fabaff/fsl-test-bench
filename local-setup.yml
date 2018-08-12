@@ -10,7 +10,7 @@
 - hosts: 127.0.0.1
   connection: local
   gather_facts: no
-  user: root
+  remote_user: root
   vars_files:
     - variables/application-versions.yml
     - variables/sensitive.yml
@@ -18,16 +18,7 @@
     - variables/containers.yml
 
   tasks:
-# Virtual machine setup tasks
-    - include: tasks/libvirt.yml
-    - include: tasks/virt-install.yml
-
-    - name: start the virtual machine
-      virt: name={{ virtname }}
-            state=running
-
-    - name: wait till the virtual machine is launched
-      pause: minutes=1
+# Virtual machine setup
 
 # Setup Test bench connection
     - include: tasks/auth-key.yml
