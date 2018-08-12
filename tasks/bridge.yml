@@ -1,27 +1,30 @@
 # This playbook creates a network bridge.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 # Details: http://wiki.libvirt.org/page/Networking#Creating_network_initscripts
 ---
 - name: install needed packages
-  yum: pkg=$item
-       state=present
+  dnf:
+    pkg: "{{ $item }}"
+    state: present
   with_items:
     - bridge-utils
 
 - name: add the bridge to the configuration file of eth0
-  lineinfile: dest=/etc/sysconfig/network-scripts/ifcfg-eth0
-              regexp=''
-              insertafter=EOF
-              line='BRIDGE=br0'
+  lineinfile:
+    dest: /etc/sysconfig/network-scripts/ifcfg-eth0
+    regexp: ''
+    insertafter: EOF
+    line: 'BRIDGE=br0'
 
 - name: create the br0 configuration file
-  template: src=files/br0.j2
-            dest=/etc/sysconfig/network-scripts/ifcfg-br0
-            mode=0644
+  template:
+    src: files/br0.j2
+    dest: /etc/sysconfig/network-scripts/ifcfg-br0
+    mode: 0644
 
 - name: add interface to bridge
   command: /usr/sbin/brctl addif br0 eth0
