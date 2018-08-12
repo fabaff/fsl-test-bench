@@ -1,7 +1,7 @@
 # This playbook contains all tasks to setup a Fedora Security Lab test bench as
 # virtual machine.
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -25,10 +25,11 @@
 
 # Runtime changes aren't detected
     - name: setup ansible host file
-      lineinfile: dest=/etc/ansible/hosts
-              regexp='^'
-              insertafter='127.0.0.1'
-              line='127.0.0.1\n\n[fsl-tb]\n{{ ip }}'
+      lineinfile:
+        dest: /etc/ansible/hosts
+        regexp: '^'
+        insertafter: '127.0.0.1'
+        line: '127.0.0.1\n\n[fsl-tb]\n{{ ip }}'
 
   handlers:
    - include: handlers/system.yml
