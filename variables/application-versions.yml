@@ -25,7 +25,7 @@ jquery_version: 3.3.1
 # linfo - http://linfo.sourceforge.net/
 linfo_version: 2.0.3
 
-# phpsysinfo - http://rk4an.github.com/phpsysinfo/
+# phpsysinfo - https://github.com/phpsysinfo/phpsysinfo
 phpsysinfo_version: 3.2.10
 
 # phpMyAdmin - http://www.phpmyadmin.net/
