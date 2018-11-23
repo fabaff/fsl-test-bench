@@ -20,7 +20,7 @@ Fedora installation too. The setup process for System 2 will be done with
 [Ansible](http://ansible.cc/). It enables us to manage systems over
 SSH in a simple, secure, and fast way. Install Ansible on System 1:
 
-``bash
+```bash
 $ sudo dnf -y install ansible
 ```
 
@@ -29,7 +29,7 @@ Now we need to clone the Fedora Security Lab test bench
 which contains the playbooks on System 1. Playbooks are recipes to perform
 task on a remote system. 
 
-``bash
+```bash
 $ git clone https://github.com/fabaff/fsl-test-bench.git
 ```
 
