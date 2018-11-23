@@ -43,7 +43,7 @@ phpliteadmin_version: 1-9-5
 dvwa_version: 1.9
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
-bwapp_version: 2.0
+bwapp_version: 2.2
 
 # kippo - https://github.com/desaster/kippo
 kippo_version: 0.9
