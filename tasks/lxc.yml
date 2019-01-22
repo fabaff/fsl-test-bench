@@ -1,14 +1,15 @@
 # This playbook install the Linux Container aka LXC tools 
 # (http://lxc.sourceforge.net/).
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2019 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install the needed packages
-  yum: pkg={{ item }}
-       state=present
+  dnf:
+    name: "{{ item }}"
+    state: present
   with_items:
     - lxc
     - libvirt-daemon-lxc
@@ -17,6 +18,7 @@
     - virt-install
 
 - name: start libvirtd
-  service: name=libvirtd
-           state=running
-           enabled=yes
+  service:
+    name: libvirtd
+    state: running
+    enabled: yes
