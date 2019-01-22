@@ -1,38 +1,43 @@
 # This playbook install the default html file (incl. bootstrap) for an openvpn
 # server with a static key. 
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2019 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
-           dest=/var/www/lighttpd/bootstrap.zip
-           mode=0440
+  get_url:
+    url: http://twitter.github.com/bootstrap/assets/bootstrap.zip
+    dest: /var/www/lighttpd/bootstrap.zip
+    mode: 0440
 
 - name: unpack the bootstrap archive
   command: /usr/bin/unzip -o /var/www/lighttpd/bootstrap.zip -d /var/www/lighttpd/
 
 - name: delete the bootstrap archive
-  file: path=/var/www/lighttpd/bootstrap.zip
-        state=absent
+  file:
+    path: /var/www/lighttpd/bootstrap.zip
+    state: absent
 
 - name: download the jquery library
-  get_url: url=http://code.jquery.com/jquery-{{ jquery_version }}.min.js
-           dest=/var/www/lighttpd/bootstrap/js/jquery.min.js
-           mode=0775
+  get_url:
+    url: http://code.jquery.com/jquery-{{ jquery_version }}.min.js
+    dest: /var/www/lighttpd/bootstrap/js/jquery.min.js
+    mode: 0775
 
 - name: install the fsl test bench vpn index.html file
-  template: src=files/web-interface/openvpn-static-index.j2
-            dest=/var/www/lighttpd/index.php 
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/openvpn-static-index.j2
+    dest: /var/www/lighttpd/index.php 
+    owner: root
+    group: root
+    mode: 0644
 
 - name: copy the fsl banner
-  copy: src=./files/web-interface/Spins-banner_security.png
-        dest=/var/www/lighttpd/Spins-banner_security.png
-        owner=root
-        group=root
-        mode=0644
+  copy:
+    src: ./files/web-interface/Spins-banner_security.png
+    dest: /var/www/lighttpd/Spins-banner_security.png
+    owner: root
+    group: root
+    mode: 0644
