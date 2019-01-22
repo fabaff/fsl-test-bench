@@ -14,7 +14,7 @@
 
 - name: copy configuration ntp file
   template:
-    src: files/ntp-conf.j2 
+    src:  files/ntp-conf.j2 
     dest: /etc/ntp.conf
     owner: root
     group: root
