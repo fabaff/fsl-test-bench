@@ -51,8 +51,8 @@ kippo_version: 0.9
 # hackadamemic - https://github.com/Hackademic/hackademic
 hackadamemic_version: 0.1.1
 
-# NOWASP (Mutillidae) - http://sourceforge.net/projects/mutillidae/
-mutillidae_version: 2.6.43
+# NOWASP (Mutillidae) - https://github.com/webpwnized/mutillidae
+mutillidae_version: 2.7.9
 
 ## PHP shells
 ################################################################################
