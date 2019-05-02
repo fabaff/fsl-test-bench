@@ -77,7 +77,7 @@ At the moment the structure of the repository looks like this:
 
 ```bash
 .
-├── all-in-one.yml -------- Fedora Security Lab Test bench on a single machine 
+├── all-in-one.yml -------- FSL Test bench on a single machine 
 ├── docs ------------------ Documentation
 ├── files ----------------- Template files
 │   ├── cgi --------------- Source files for CGI

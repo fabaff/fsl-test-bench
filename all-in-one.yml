@@ -1,5 +1,5 @@
 # This playbook contains tasks to perform on a fresh Fedora installation to
-# create a Fedora Security Lab Test bench. 
+# create a FSL Test bench.
 #
 # Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #

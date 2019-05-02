@@ -11,7 +11,7 @@ The high-interaction "honeypots" are running as `LXC`_ (Linux containers).
 LXC provides system-level virtualization which has its own processes and own
 network space. This means that the containers are able to run linux systems 
 in a isolated and virtual environment. The containers are separated from the
-Fedora Security Lab Test Bench and are using `libvirt`_ for the network.
+FSL Test Bench and are using `libvirt`_ for the network.
 
 Network
 -------
@@ -27,7 +27,7 @@ is needed.
 - DHCP range: 10.10.1.50 - 10.10.1.60
 
 To access the container network you need to add a static route the this network.
-libvirt acts as virtual router on your Fedora Security Lab Test Bench and the 
+libvirt acts as virtual router on your FSL Test Bench and the
 hosts on the physical network do not know that there is a subnet. ::
 
     $ sudo route add -net 10.10.1.0 netmask 255.255.255.0 gw [IP address of your FSL Test Bench] dev [Interface]
@@ -48,7 +48,7 @@ Available systems
 
 Management
 ----------
-The containers are launched automatically then the Fedora Security Lab Test
+The containers are launched automatically then the FSL Test
 Bench starts. It makes sense to shut them down if you are running a system which
 has only limited resources and you are working on different sections. 
 
@@ -74,11 +74,11 @@ For more details about ``virsh`` please check the virsh man page. ::
 or the `virsh command reference`_.
 
 For managing the containers in a GUI way launch `Virtual Machine Manager`_
-(``virt-manager``). The first step is to connect to your Fedora Security Lab
+(``virt-manager``). The first step is to connect to your FSL
 Test Bench. Goto **File** and choose **Add connection...** after
 `Virtual Machine Manager`_ was started. Choose **LXC (Linux Containers)**
 as Hypervisor, **SSH** as Method, **root** as Username is ok, and enter the
-IP address of Fedora Security Lab Test Bench.
+IP address of FSL Test Bench.
 
 .. _virt-man-lxc1-fig:
 .. figure:: ../images/virt-man-lxc1.png

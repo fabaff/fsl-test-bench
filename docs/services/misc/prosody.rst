@@ -60,7 +60,8 @@ When done, quit::
 
 Telnet console
 --------------
-On the Fedora Security Lab Test bench the prosody server provides a telnet
+
+On the FSL Test bench the prosody server provides a telnet
 `console`_ to interact with. ::
 
     $ telnet localhost 5582

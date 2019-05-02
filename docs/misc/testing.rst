@@ -10,13 +10,13 @@
 
 Testing
 =======
-This section describe some basic steps to check if the Fedora Security Lab Test
+This section describe some basic steps to check if the FSL Test
 bench is properly setup and working.
 
 Ansible
 -------
 A simple test to check if Ansible is ready to work. Execute the command 
-mentined below from the management system. ::
+mentioned below from the management system. ::
 
     $ sudo ansible [IP address of the FSL Test bench] -m setup
 
@@ -25,7 +25,7 @@ If you get an authentication failure like the one shown below. ::
     10.0.0.64 | FAILED => FAILED: Authentication failed.
 
 Means this that the SSH key is not present in the ``authorized_keys`` file of
-your future Fedora Security Lab Test bench. 
+your future FSL Test bench.
 
 From the managed node: ::
 
@@ -42,10 +42,10 @@ Assuming that you already have an SSH key on your server. ::
 Logging
 -------
 The system log (aka ``/var/log/messages``) is viewable on the web interface of
-the Fedora Security Lab Test bench. To check if the web interface is working
+the FSL Test bench. To check if the web interface is working
 proberly, send a message to the logging system. 
 
-Open two terminals and connect over SSH with the Fedora Security Lab Test 
+Open two terminals and connect over SSH with the FSL Test
 bench. In one terminal execute the command from below to display the lastest
 log entries: ::
 

@@ -19,7 +19,7 @@ Login your FSL Test bench to check if you have connections to ntp servers.::
      ntppublic.uzh.c 130.60.205.7     3 u    1   64    1   16.315    2.361   0.341
      aerith.projectd 217.147.208.1    3 u    2   64    1   22.728   -0.846   0.022
 
-Sync your clock with the Fedora Security Lab Test Bench::
+Sync your clock with the FSL Test Bench::
 
     $ sudo ntpdate 10.0.0.65
     16 Aug 10:56:08 ntpdate[30588]: adjust time server 10.0.0.65 offset 0.002292 sec

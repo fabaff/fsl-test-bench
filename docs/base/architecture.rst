@@ -19,9 +19,9 @@ all included items.
 .. blockdiag::
 
     blockdiag admin {
-      "Fedora Installation" -> Ansible -> "Fedora Security Lab Test bench";
+      "Fedora Installation" -> Ansible -> "FSL Test bench";
 
-    "Fedora Security Lab Test bench" [color = "greenyellow"];
+    "FSL Test bench" [color = "greenyellow"];
     }
 
 It's possible to setup multiple Test benches at the same time with different
@@ -53,7 +53,7 @@ Ansible is based on Python and doesn't need a client on the managed system.
 For a permanent lab setup and for performance reasons separating and/or
 multiplying the Test benches would be a good choice.
 
-All application and services included by the Fedora Security Lab Test bench
+All application and services included by the FSL Test bench
 are running on a current minimal `Fedora`_ installation. The `Lighttpd`_ 
 server acts as primary web server and is serving the web interface of the Test
 bench. A `MySQL`_ server is available for database interactions and is hosting

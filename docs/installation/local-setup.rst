@@ -6,13 +6,13 @@
 
 Setup on a local machine
 ========================
-The setup of the Fedora Security Lab Test bench as virtual machine on a local
+The setup of the FSL Test bench as virtual machine on a local
 system is useful if you want to carry your Test bench around on your laptop
 and use it only for yourself. Another good reasons to use the Test bench as
 local machine are when you don't want to expose a system like this in your
 network or not want to use the Test bench on a dedicated/remote system.
 
-At the moment there are two way available to deploy a Fedora Security Lab
+At the moment there are two way available to deploy a FSL
 Test bench from scratch. One way is to use a simple bash script which is a
 collection of all needed steps. With the script the Test bench is setup 
 without any user intervention and runs with the default values.  

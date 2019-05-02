@@ -5,8 +5,7 @@
 Contribute
 ==========
 
-There are several ways users can contribute to the Fedora Security Lab
-Test bench project.
+There are several ways users can contribute to the FSL Test bench project.
 
 .. toctree::
    :maxdepth: 2

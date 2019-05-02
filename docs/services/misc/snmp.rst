@@ -5,7 +5,7 @@ snmp
 The Simple Network Management Protocol (SNMP) protocol was designed for
 monitoring the health and welfare of computer and network equipment.
 
-Get the data pn your Fedora Security Lab Test Bench::
+Get the data pn your FSL Test Bench::
 
     $ snmpwalk -v2c -c public localhost system
 

@@ -3,7 +3,7 @@ local shortport = require "shortport"
 local string = require "string"
 
 description = [[
-Checks for the Fedora Security Lab Test Bench web interface.
+Checks for the FSL Test Bench web interface.
 ]]
 
 author = "Fabian Affolter"
