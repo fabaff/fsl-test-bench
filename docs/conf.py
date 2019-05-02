@@ -47,7 +47,7 @@ extensions = [
             'sphinx.ext.intersphinx',
             'sphinx.ext.todo',
             'sphinx.ext.coverage',
-            'sphinx.ext.pngmath',
+            #'sphinx.ext.pngmath',
             'sphinx.ext.ifconfig',
             'sphinxcontrib.blockdiag',
             'sphinxcontrib.nwdiag'
@@ -341,7 +341,7 @@ epub_copyright = u'2012-%s, Fabian Affolter' % time.strftime('%Y')
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'http://docs.python.org/': None}
 
-# -- Options for blockdiag -----------------------------------------------------
+# -- Options for blockdiag ----------------------------------------------------
 
 blockdiag_antialias = 1
 blockdiag_fontpath = '/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf'
