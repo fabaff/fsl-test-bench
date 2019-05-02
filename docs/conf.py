@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Fedora Security Lab Test bench documentation build configuration file, created by
+# FSL Test bench documentation build configuration file, created by
 # sphinx-quickstart on Wed May  1 22:17:14 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -66,7 +66,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Fedora Security Lab Test bench'
+project = u'FSL Test bench'
 copyright = u'2012-%s, Fabian Affolter' % time.strftime('%Y')
 
 # The version info for the project you're documenting, acts as replacement for
@@ -219,7 +219,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'FedoraSecurityLabTestbenchdoc'
+htmlhelp_basename = 'FSLTestbenchdoc'
 
 # -- Options for LaTeX output --------------------------------------------------
 
@@ -237,7 +237,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'FedoraSecurityLabTestbench.tex', u'Fedora Security Lab Test bench Documentation',
+  ('index', 'FFSLTestbench.tex', u'FSL Test bench Documentation',
    u'Fabian Affolter', 'manual'),
 ]
 
@@ -267,7 +267,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fedorasecuritylabtestbench', u'Fedora Security Lab Test bench Documentation',
+    ('index', 'fsltestbench', u'FSL Test bench Documentation',
      [u'Fabian Affolter'], 1)
 ]
 
@@ -281,8 +281,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'FedoraSecurityLabTestbench', u'Fedora Security Lab Test bench Documentation',
-   u'Fabian Affolter', 'FedoraSecurityLabTestbench', 'One line description of project.',
+  ('index', 'FSLTestbench', u'FSLTest bench Documentation',
+   u'Fabian Affolter', 'FSLTestbench', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -299,7 +299,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'Fedora Security Lab Test bench'
+epub_title = u'FSL Test bench'
 epub_author = u'Fabian Affolter'
 epub_publisher = u'Fabian Affolter'
 epub_copyright = u'2012-%s, Fabian Affolter' % time.strftime('%Y')
@@ -345,4 +345,3 @@ intersphinx_mapping = {'http://docs.python.org/': None}
 
 blockdiag_antialias = 1
 blockdiag_fontpath = '/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf'
-
