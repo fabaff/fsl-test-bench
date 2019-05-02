@@ -3,7 +3,7 @@
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
 #
-# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2019 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
@@ -32,22 +32,24 @@ import os
 try:
     import git
 except ImportError:
-    print("Please install GitPython first -> sudo dnf -y install python3-GitPython")
+    print("Please install GitPython -> sudo dnf -y install python3-GitPython")
 try:
     import yaml
 except ImportError:
-    print("Please install PyYAML first -> sudo dnf -y install PyYAML")
+    print("Please install PyYAML -> sudo dnf -y install PyYAML")
 
 repo = git.Repo(os.getcwd())
 
+
 def playbook_sync():
     """Generate a Ansible playbook for the installation."""
-    pkg_file = requests.get('https://pagure.io/security-lab/raw/master/f/pkglist.yaml')
+    pkg_file = requests.get(
+        'https://pagure.io/security-lab/raw/master/f/pkglist.yaml')
     pkgslist = yaml.safe_load(pkg_file.text)
 
-    part1 = """# This playbook install all packages for the Fedora Security Lab.
+    part1 = """# This playbook install packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2019 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
@@ -65,19 +67,21 @@ def playbook_sync():
     sorted_pkgslist = sorted(pkgslist, key=operator.itemgetter('pkg'))
 
     # Write the playbook files
-    fileOut = open('fsl.yml','w')
+    fileOut = open('fsl.yml', 'w')
     fileOut.write(part1)
     for pkg in sorted_pkgslist:
-        fileOut.write('       - %s\n' %  pkg['pkg'])
+        fileOut.write('       - %s\n' % pkg['pkg'])
     fileOut.close()
 
     # Commit the changed file to the repository
     repo.git.add('fsl.yml')
-    repo.git.commit(m="Synced playbook with origin from https://pagure.io/security-lab")
+    repo.git.commit(
+        m="Synced playbook with origin from https://pagure.io/security-lab")
     repo.git.push()
 
     # Remove the pkglist.yaml file
     os.remove('pkglist.yaml')
+
 
 if __name__ == '__main__':
     """Run the script."""
