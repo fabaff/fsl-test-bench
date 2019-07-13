@@ -29,7 +29,7 @@ linfo_version: 2.0.3
 phpsysinfo_version: 3.3.0
 
 # phpMyAdmin - http://www.phpmyadmin.net/
-phpmyadmin_version: 4.8.5
+phpmyadmin_version: 4.9.0
 
 # phpLDAPadmin - http://phpldapadmin.sourceforge.net
 phpldapadmin_version: 1.2.3
