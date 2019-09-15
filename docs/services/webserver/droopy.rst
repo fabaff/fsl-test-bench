@@ -1,6 +1,6 @@
 .. _services-webserver-droopy:
 
-.. _droopy: http://gitorious.org/droopy
+.. _droopy: https://github.com/stackp/Droopy
 
 droopy
 ======
