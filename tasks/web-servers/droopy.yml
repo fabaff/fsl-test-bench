@@ -1,48 +1,55 @@
-# This playbook install droopy webserver (http://gitorious.org/droopy).
+# This playbook install droopy webserver (https://github.com/stackp/Droopy).
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2019 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: create the directory
-  file: path=/var/www/droopy
-        mode=0755
-        state=directory
+  file:
+    path: /var/www/droopy
+    mode: 0755
+    state: directory
 
 - name: create the directory
-  file: path=/var/www/droopy/uploads
-        mode=0755
-        state=directory
+  file:
+    path: /var/www/droopy/uploads
+    mode: 0755
+    state: directory
 
 - name: download the source
-  get_url: url=http://gitorious.org/droopy/droopy/blobs/raw/master/droopy
-           dest=/var/www/droopy/droopy
-           mode=0777
+  get_url:
+    url: https://raw.githubusercontent.com/stackp/Droopy/master/droopy
+    dest: /var/www/droopy/droopy
+    mode: 0777
 
 - name: copy configuration file
-  template: src=files/droopy-config.j2 
-            dest=/root/.droopy
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/droopy-config.j2 
+    dest: /root/.droopy
+    owner: root
+    group: root
+    mode: =0644
 
 - name: configure firewall, allow traffic to port 8000
-  firewalld: port=8000/tcp
-             permanent=true
-             state=enabled
+  firewalld:
+    port: 8000/tcp
+    permanent: true
+    state: =enabled
 
 - name: copy systemd service file
-  template: src=files/droopy-service.j2 
-            dest=/lib/systemd/system/droopy.service
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/droopy-service.j2 
+    dest: /lib/systemd/system/droopy.service
+    owner: root
+    group: root
+    mode: 0644
 
 - name: reload systemd
   command: /usr/bin/systemctl --system daemon-reload
 
 - name: start droopy
-  service: name=droopy
-           state=running
-           enabled=yes 
+  service:
+    name: droopy
+    state: running
+    enabled: yes 
