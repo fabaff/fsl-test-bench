@@ -35,7 +35,7 @@ phpmyadmin_version: 4.9.1
 phpldapadmin_version: 1.2.3
 
 # phpLiteAdmin - http://code.google.com/p/phpliteadmin/
-phpliteadmin_version: 1-9-5
+phpliteadmin_version: 1-9-8-2
 
 ## Web application
 ################################################################################
