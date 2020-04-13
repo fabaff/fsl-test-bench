@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
