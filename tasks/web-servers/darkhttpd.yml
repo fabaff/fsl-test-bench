@@ -1,42 +1,48 @@
 # This playbook install the darkhttpd (http://unix4lyfe.org/darkhttpd/) web
 # server.
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install darkhttpd package
-  dnf: pkg={{ item }}
-       state=present 
+  dnf:
+    pkg: "{{ item }}"
+    state: present
   with_items:
     - darkhttpd
 
 - name: create a directory for darkhttpd
-  file: path=/var/www/darkhttpd
-        mode=0755
-        state=directory
+  file:
+    path: /var/www/darkhttpd
+    mode: 0755
+    state: directory
 
 - name: enable darkhttpd options
-  template: src=files/darkhttpd-config.j2 
-            dest=/etc/sysconfig/darkhttpd
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/darkhttpd-config.j2 
+    dest: /etc/sysconfig/darkhttpd
+    owner: root
+    group: root
+    mode: 0644
 
 - name: start darkhttpd
-  service: name=darkhttpd
-           state=running
-           enabled=yes 
+  service:
+    name: darkhttpd
+    state: started
+    enabled: yes 
 
 - name: configure firewall, allow traffic to port 8887
-  firewalld: port=8887/tcp
-             permanent=true
-             state=enabled
+  firewalld:
+    port: 8887/tcp
+    permanent: true
+    state: enabled
 
 - name: install a default index.html file
-  template: src=files/web-interface/default.j2 
-            dest=/var/www/darkhttpd/index.html
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/default.j2 
+    dest: /var/www/darkhttpd/index.html
+    owner: root
+    group: root
+    mode: 0644
