@@ -1,6 +1,6 @@
 .. _services-webserver-mongoose:
 
-.. _mongoose: http://code.google.com/p/mongoose/
+.. _mongoose: https://github.com/cesanta/mongoose/
 
 mongoose
 ========
