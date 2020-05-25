@@ -25,7 +25,7 @@
     dest: /lib/systemd/system/mongoose.service
     owner: root
     group: root
-    mode: =0644
+    mode: 0644
 
 - name: reload systemd
   command: /usr/bin/systemctl --system daemon-reload
@@ -33,7 +33,7 @@
 - name: start mongoose
   service:
     name: mongoose
-    state: running
+    state: started
     enabled: yes 
 
 - name: configure firewall, allow traffic to port 8889
@@ -48,4 +48,4 @@
     dest: /var/www/mongoose/index.html
     owner: root
     group: root
-    mode: =0644
+    mode: 0644
