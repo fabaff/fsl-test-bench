@@ -1,13 +1,14 @@
 # This playbook install the node.js webserver (http://nodejs.org/).
 #
-# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: install node.js and related packages
-  dnf: pkg={{ item }}
-       state=present 
+  dnf:
+    pkg: "{{ item }}"
+    state: present 
   with_items:
     - nodejs
     - npm
@@ -18,33 +19,38 @@
     - http-server
 
 - name: create a directory for nodejs
-  file: path=/var/www/nodejs
-        mode=0755
-        state=directory
+  file:
+    path: /var/www/nodejs
+    mode: 0755
+    state: directory
 
 - name: copy nodejs systemd service file
-  template: src=files/nodejs-http-service.j2 
-            dest=/lib/systemd/system/nodejs-http.service
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/nodejs-http-service.j2 
+    dest: /lib/systemd/system/nodejs-http.service
+    owner: root
+    group: root
+    mode: 0644
 
 - name: reload systemd
   command: /usr/bin/systemctl --system daemon-reload
 
 - name: start nodejs-http
-  service: name=nodejs-http
-           state=running
-           enabled=yes
+  service:
+    name: nodejs-http
+    state: started
+    enabled: yes
 
 - name: configure firewall, allow traffic to port 8888
-  firewalld: port=8888/tcp
-             permanent=true
-             state=enabled
+  firewalld:
+    port: 8888/tcp
+    permanent: true
+    state: enabled
 
 - name: install a default index.html file
-  template: src=files/web-interface/default.j2 
-            dest=/var/www/nodejs/index.html
-            owner=root
-            group=root
-            mode=0644
+  template:
+    src: files/web-interface/default.j2 
+    dest: /var/www/nodejs/index.html
+    owner: root
+    group: root
+    mode: 0644
