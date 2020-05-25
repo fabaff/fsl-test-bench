@@ -19,7 +19,7 @@ packages and behave with integrity.
 After the setup of the FSL Test bench is possible to update the system with
 the package management tools. ::  
 
-    $ sudo yum -y update
+    $ sudo dnf -y update
 
 Vulnerable web application, PHP shells, and some helper tools are download 
 directly from their upstream locations. It's not possible to update those 
