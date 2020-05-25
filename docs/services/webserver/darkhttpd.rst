@@ -5,17 +5,15 @@
 darkhttpd
 =========
 `darkhttpd`_ is a simple, fast HTTP 1.1 web server for static content. It
-does not support PHP or CGI etc but is designed to serve static content.
+does not support PHP or CGI but is designed to serve static content.
 
 This example shows the details of the `darkhttpd`_ web server. ::
 
     $ bannergrab 10.0.0.65 8887
     HTTP/1.1 200 OK
-    Date: Wed, 29 May 2013 15:24:20 GMT
-    Last-Modified: Wed, 29 May 2013 14:44:55 GMT
-    Etag: "51a61467.3b0"
-    Content-Type: text/html
-    Content-Length: 944
-    Connection: close
+    Date: Mon, 25 May 2020 10:35:42 GMT
+    Server: darkhttpd/1.12
     Accept-Ranges: bytes
-
+    Connection: close
+    Content-Length: 1352
+    Content-Type: text/html; charset=UTF-8
