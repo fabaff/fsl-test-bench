@@ -1,7 +1,7 @@
 # This playbook contains tasks to perform on an installation of various web
 # server.
 #
-# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 # 
@@ -19,7 +19,7 @@
 
 # Web server tasks
     - include: tasks/webserver/lighttpd.yml
-#    - include: tasks/webserver/apache.yml
+    - include: tasks/webserver/apache.yml
 #    - include: tasks/webserver/cherokee.yml
     - include: tasks/webserver/droopy.yml
     - include: tasks/webserver/nginx.yml
