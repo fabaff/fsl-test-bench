@@ -3,7 +3,7 @@
 # fsl-tb-inst - This script create a full working Fedora Security Lab Test
 # bench as libvirt-based virtual machine on your local machine.
 #
-# Copyright (c) 2013-2018 Fabian Affolter <fab@fedoraproject.org>
+# Copyright (c) 2013-2022 Fabian Affolter <fab@fedoraproject.org>
 #
 # All rights reserved.
 # 
@@ -71,4 +71,3 @@ ansible-playbook fsl-test-bench/all-in-one.yml
 rm -rf fsl-test-bench
 mv /etc/ansible/hosts /etc/ansible/hosts-tb-setup
 mv /etc/ansible/hosts-old /etc/ansible/hosts
-
