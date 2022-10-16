@@ -18,7 +18,7 @@ fedora_next: 37
 bootstrap_version: 5.0.1
 
 # jQuery - http://jquery.com
-jquery_version: 3.6.0
+jquery_version: 3.6.1
 
 # Web tools
 ################################################################################
