@@ -49,7 +49,7 @@ def playbook_sync():
 
     part1 = """# This playbook install packages for the Fedora Security Lab.
 #
-# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2024 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved. 
 #
