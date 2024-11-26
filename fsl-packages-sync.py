@@ -3,7 +3,7 @@
 # fsl-packages-sync - A helper script to sync the Fedora Security Lab package
 # list with the origin list from https://fedorahosted.org/security-spin/
 #
-# Copyright (c) 2013-2022 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2024 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved.
 # 
