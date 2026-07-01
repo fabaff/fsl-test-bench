@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# fsl-tb-inst - This script create a full working Fedora Security Lab Test
+# stb-inst - This script create a full working Security Lab Test
 # bench as libvirt-based virtual machine on your local machine.
 #
-# Copyright (c) 2013-2024 Fabian Affolter <fab@fedoraproject.org>
+# Copyright (c) 2013-2026 Fabian Affolter <fab@fedoraproject.org>
 #
 # All rights reserved.
 # 
@@ -24,9 +24,9 @@
 #
 usage() {
         cat <<__EOF__
-usage: fsl-tb-inst [-h] [-i IP address of the Test bench]
+usage: stb-inst [-h] [-i IP address of the Test bench]
 
-Create a FSL Test bench as libvirt/KVM virtual machine
+Create a Security Test bench as libvirt/KVM virtual machine
 
 options:
  -h  Show this help
@@ -61,13 +61,13 @@ cat <<END_ENTRY >> /etc/ansible/hosts
 END_ENTRY
 
 # Clone all needed files to the local machine
-git clone git://github.com/fabaff/fsl-test-bench.git
+git clone git://github.com/fabaff/security-test-bench.git
 
 # Run playbook
-ansible-playbook fsl-test-bench/local-setup.yml --connection=local
-ansible-playbook fsl-test-bench/all-in-one.yml
+ansible-playbook security-test-bench/local-setup.yml --connection=local
+ansible-playbook security-test-bench/all-in-one.yml
 
 # Clean-up
-rm -rf fsl-test-bench
+rm -rf security-test-bench
 mv /etc/ansible/hosts /etc/ansible/hosts-tb-setup
 mv /etc/ansible/hosts-old /etc/ansible/hosts
