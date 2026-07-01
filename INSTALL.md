@@ -1,5 +1,5 @@
-# Setup the FSL Test bench
-To setup a Test bench you need at least two systems either a physical machine
+# Set up the Security Test bench
+To setup a Security Test bench you need at least two systems either a physical machine
 with a virtual machine and a bridged network connection or two physical
 systems (one as system to perform the actions and one which will serve as
 Test bench). In the latter case a working network is needed too, incl.
