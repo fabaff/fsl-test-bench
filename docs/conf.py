@@ -66,7 +66,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'FSL Test bench'
+project = u'Security Test bench'
 copyright = u'2012-%s, Fabian Affolter' % time.strftime('%Y')
 
 # The version info for the project you're documenting, acts as replacement for
