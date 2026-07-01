@@ -237,7 +237,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'FFSLTestbench.tex', u'FSL Test bench Documentation',
+  ('index', 'SecurityTestbench.tex', u'Security Test bench Documentation',
    u'Fabian Affolter', 'manual'),
 ]
 
@@ -267,7 +267,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'fsltestbench', u'FSL Test bench Documentation',
+    ('index', 'securitytestbench', u'Security Test bench Documentation',
      [u'Fabian Affolter'], 1)
 ]
 
@@ -281,8 +281,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'FSLTestbench', u'FSLTest bench Documentation',
-   u'Fabian Affolter', 'FSLTestbench', 'One line description of project.',
+  ('index', 'SecurityTestbench', u'SecurityTest bench Documentation',
+   u'Fabian Affolter', 'SecurityTestbench', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -299,7 +299,7 @@ texinfo_documents = [
 # -- Options for Epub output ---------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'FSL Test bench'
+epub_title = u'Security Test bench'
 epub_author = u'Fabian Affolter'
 epub_publisher = u'Fabian Affolter'
 epub_copyright = u'2012-%s, Fabian Affolter' % time.strftime('%Y')
