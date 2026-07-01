@@ -8,9 +8,9 @@
 #
 ---
 # Fedora - http://fedoraproject.org
-fedora_previous: 40
-fedora_current: 41
-fedora_next: 42
+fedora_previous: 43
+fedora_current: 44
+fedora_next: 45
 
 # Web interface
 ################################################################################
