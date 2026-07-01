@@ -1,10 +1,9 @@
-# FSL Test bench
+# Security Test bench
 
-The **FSL Test bench** provides a save environment for security auditing and
+The **Security Test bench** provides a save environment for security auditing and
 testing and can be used for teaching security testing methodologies. At the
 moment the focus lies on web applications. All application are running on 
-top of a current Fedora installation with
-a ​Lighttpd web server and a ​MySQL server. 
+top of a current Fedora installation with a ​Lighttpd web server and a ​MySQL server. 
 
 The FSL Test bench includes:
 
@@ -15,7 +14,7 @@ The FSL Test bench includes:
 
 All applications are directly accessible from a [bootstrap](http://twitter.github.io/bootstrap/)-based website. 
 
-The FSL Test bench repository contains a subset of playbooks from the 
+The Security Test bench repository contains a subset of playbooks from the 
 [**fedora-ansible** git repository](https://github.com/fabaff/fedora-ansible) 
 maintained by [Fabian Affolter](http://fabian-affolter.ch). 
 
@@ -41,6 +40,7 @@ Fedora installation Python is available.
 ```bash
 $ sudo dnf -y install python
 ```
+
 The playbooks will use DNF as package management software instead of `yum` as
 soon as DNF is the default Package management tool in Fedora. But for now, 
 everything is done with `yum`.
